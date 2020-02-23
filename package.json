@@ -1,0 +1,27 @@
+{
+  "name": "green-social-network",
+  "version": "1.0.0",
+  "description": "social network",
+  "main": "service.js",
+  "scripts": {
+    "start": "node .src/service.js",
+    "dev": "nodemon .src/service.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gulidamarta/green_social_network.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gulidamarta/green_social_network/issues"
+  },
+  "homepage": "https://github.com/gulidamarta/green_social_network#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
