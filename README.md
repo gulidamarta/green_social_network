@@ -8,11 +8,11 @@ A network that is provided for users that want to make the world greener.
 
 #### Project setup:
 
-Install node.js from [Official Web Page](#https://nodejs.org/en/download/).
+Install node.js from [Official Web Page](https://nodejs.org/en/download/).
 
 Install necessary node modules `nmp install`.
 
-Install mongoDB from [Official Web Page](#https://www.mongodb.com/download-center/community).
+Install mongoDB from [Official Web Page](https://www.mongodb.com/download-center/community).
 
 Make some configuration for mongoDB from official web page (for Windows go to `C:\ProgramFiles\MongoDB\Server\4.2\bin` and run `mongo.exe`).
 
