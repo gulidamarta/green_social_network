@@ -8,7 +8,7 @@ A network that is provided for users that want to make the world greener.
 
 #### Project setup:
 
-Install node.js from [Official Web Page](https://nodejs.org/en/download/).
+Install `node.js` from [Official Web Page](https://nodejs.org/en/download/).
 
 Install necessary node modules `nmp install`.
 
