@@ -18,6 +18,8 @@ Make some configuration for mongoDB from official web page (for Windows go to `C
 
 Create db named `nodekb` (simply use command `use nodekb`).
 
+## Using guide
+
 ### Running App:
 
 Change directory to `.src` and enter command `node service.js`.
