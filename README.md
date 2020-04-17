@@ -1,6 +1,6 @@
 # Green Social Network 0.0.2.1
 
-A network that is provided for users that want to make the world greener.
+A network that provides for users that want to make the world greener all functionality.
 
 ## Development guide
 
