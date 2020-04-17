@@ -14,7 +14,7 @@ Install necessary node modules `nmp install`.
 
 Install mongoDB from [Official Web Page](#https://www.mongodb.com/download-center/community).
 
-Make some configuration for mongoDB from official web page (for Windows go to C:\ProgramFiles\MongoDB\Server\4.2\bin and run mongo.exe).
+Make some configuration for mongoDB from official web page (for Windows go to `C:\ProgramFiles\MongoDB\Server\4.2\bin` and run `mongo.exe`).
 
 Create db named `nodekb` (simply use command `use nodekb`).
 
