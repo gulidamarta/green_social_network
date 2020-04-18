@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        title Green Social Network
+        link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
+        link(rel="stylesheet", href="/css/layout.css", type="text/css")
+    body
+        .container
+            ul(class='main_nav')
+                li(class='li_nav')
+                    a(href='/', class='a_nav') Green Social Network
+                li(class='li_nav')
+                    a(href='/', class='a_nav') Home
+                if user
+                    li(class='li_nav')
+                        a(href='/news/add/', class='a_nav') Add News
+                if user
+                    li(class='right_nav')
+                        a(href='/users/logout', class='a_nav') Logout
+                else
+                    li(class='right_nav')
+                        a(href='/users/register', class='a_nav') Register
+                    li(class='right_nav')
+                        a(href='/users/login', class='a_nav') Login
+        .container
+            br
+            != messages('message', locals)
+            if errors
+                each error, i in errors
+                    div(class="alert alert-danger") #{error.msg}
+            block content
+            br
+            hr
+            footer
+                p Copyright &copy; 2020
+            script(src='/js/main.js')
