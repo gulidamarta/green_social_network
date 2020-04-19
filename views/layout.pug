@@ -26,7 +26,6 @@ html
                     li(class='right_nav')
                         a(href='/users/login', class='a_nav') Login
         .container
-            br
             != messages('message', locals)
             if errors
                 each error, i in errors

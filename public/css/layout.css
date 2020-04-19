@@ -50,3 +50,14 @@
     background-color: #dff0d8;
     border-color: #d6e9c6;
 }
+
+.activity_div{
+    float: right;
+    width: 350px;
+    height: 515px
+}
+
+.div_map{
+    width: 700px;
+    height: 515px
+}
