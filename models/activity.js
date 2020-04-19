@@ -11,11 +11,11 @@ let activitiesSchema = mongoose.Schema({
         required: true
     },
     latitude: {
-        type: Number,
+        type:  mongoose.Schema.Types.Decimal,
         required: true
     },
     longitude: {
-        type: Number,
+        type: mongoose.Schema.Types.Decimal,
         required: true
     },
     start_date: {
