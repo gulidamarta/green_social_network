@@ -104,8 +104,10 @@ app.get('/', function(req, res){
 // Route Files
 let news = require('../routes/news');
 let users = require('../routes/users');
+let activities = require('../routes/activities');
 app.use('/news', news);
 app.use('/users', users);
+app.use('/activities', activities);
 
 // Start Server
 app.listen(port, function () {

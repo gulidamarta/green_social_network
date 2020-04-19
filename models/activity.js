@@ -1,7 +1,11 @@
 let mongoose = require('mongoose');
 
 // News schema
-let activitySchema = mongoose.Schema({
+let activitiesSchema = mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
     author: {
         type: String,
         required: true
@@ -14,14 +18,14 @@ let activitySchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    date_created: {
+    start_date: {
         type: Date,
         required: true
     },
-    date_finished: {
+    end_date: {
         type: Date,
         required: true
     }
 });
 
-let News = module.exports = mongoose.model('Activity', activitySchema);
+let Activities = module.exports = mongoose.model('Activities', activitiesSchema);

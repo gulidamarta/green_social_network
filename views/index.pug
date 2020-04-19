@@ -1,10 +1,36 @@
 extends layout
 
 block content
-        div(id="map" style="width: 800px; height: 400px")
-        h1 #{title}
-        ul.list-group
-                each news, i in news_list
-                        li.list-group-item
-                                a(href="/news/"+news._id)= news.title
-                                p= news.body
+        .container
+                div(style="width: 80px; float: right")
+                div(class='activity_div' )
+                        h5 Create Activity:
+                        form(method='POST', action='/activities/add')
+                                #form-group
+                                        label Name:
+                                        input.form-control(name='name', type='text')
+                                #form-group
+                                        label Author:
+                                        input.form-control(name='author', type='text')
+                                #form-group
+                                        label Latitude:
+                                        input.form-control(name='latitude', type='number')
+                                #form-group
+                                        label Longitude:
+                                        input.form-control(name='longitude', type='number')
+                                #form-group
+                                        label Start Date:
+                                        input.form-control(name='start_date', type='date')
+                                #form-group
+                                        label End Date:
+                                        input.form-control(name='end_date', type='date')
+                                br
+                                input.btn.btn-primary(type='submit', value='Create')
+                div(class="div_map" id="map")
+        .container
+                h1 #{title}
+                ul.list-group
+                        each news, i in news_list
+                                li.list-group-item
+                                        a(href="/news/"+news._id)= news.title
+                                        p= news.body
