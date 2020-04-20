@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    .container
+        br
+        p(style='text-align:center;')
+            img(class='profile_image' src='https://cdn4.iconfinder.com/data/icons/green-shopper/1068/user.png')
+    .container
+        div(class='user_info_container')
+            h5
+                a(href='/users/'+user.id+'/profile/edit') Profile
+            h5
+                a(href='/users/'+user.id+'/profile/news') User News
+            h5
+                a(href='/users/'+user.id+'/profile/activities') User Activities
+        if user
+            label Name:
+            p= user.name
+
+            label Email:
+            p= user.email
+
+            label Username:
+            p= user.username

@@ -83,4 +83,13 @@ router.get('/logout', function (req, res) {
     res.redirect('/');
 });
 
+// User Profile
+router.get('/:id', function (req, res) {
+    User.findById(req.params.id, function (err, user){
+        res.render('profile',{
+            user: user
+        });
+    })
+});
+
 module.exports = router;
