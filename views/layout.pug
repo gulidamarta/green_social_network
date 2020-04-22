@@ -20,6 +20,8 @@ html
                 if user
                     li(class='right_nav')
                         a(href='/users/logout', class='a_nav') Logout
+                    li(class='right_nav')
+                        a(href='/users/' + user.id, class='a_nav') Profile
                 else
                     li(class='right_nav')
                         a(href='/users/register', class='a_nav') Register
