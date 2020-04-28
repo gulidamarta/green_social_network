@@ -43,7 +43,7 @@ db.once('open', function () {
 
         // Listen for chatMessage
         socket.on('chatMessage', function (msg) {
-            io.emit('message', formatMessage('USER',msg));
+            io.emit('message', formatMessage('Current User', msg));
         });
     });
     // client.on('connection', function (socket) {
@@ -115,6 +115,8 @@ app.use(bodyParser.json());
 
 // Set Public Folder
 app.use(express.static(path.join(__dirname, '../public')));
+let staticDir = express.static(path.join(__dirname, '../uploads/images'));
+app.use(staticDir);
 
 // Express Session Middleware
 app.use(session({
@@ -155,15 +157,21 @@ require('../config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/chats', function (req, res) {
-    res.render('chats');
-});
-
 app.get('*', function (req, res, next) {
     res.locals.user = req.user || null;
     next();
 });
 
+function prepare_news_preview(news_list){
+    const news_length = 650;
+
+    for (let i = 0; i < news_list.length; i++){
+        if (news_list[i].body.length > news_length){
+            news_list[i].body = news_list[i].body.slice(0, news_length) + '...';
+        }
+    }
+    return news_list
+}
 
 // Home Route
 app.get('/', function(req, res){
@@ -173,7 +181,7 @@ app.get('/', function(req, res){
         } else {
             res.render('index', {
                 title: 'Green News',
-                news_list: news_list
+                news_list: prepare_news_preview(news_list)
             });
         }
     });
@@ -183,9 +191,11 @@ app.get('/', function(req, res){
 let news = require('../routes/news');
 let users = require('../routes/users');
 let activities = require('../routes/activities');
+let chats = require('../routes/chats');
 app.use('/news', news);
 app.use('/users', users);
 app.use('/activities', activities);
+app.use('/chats', chats);
 
 // Start Server
 server.listen(port, function () {

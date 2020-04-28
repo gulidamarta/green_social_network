@@ -6,6 +6,10 @@
     background-color: #008000;
 }
 
+.green_news_title{
+    color: #008000;
+}
+
 .li_nav {
     float: left;
 }
@@ -32,6 +36,10 @@
 
 .right_nav .a_nav:hover{
     background-color: #111;
+}
+
+.chat_link{
+    font-size: large;
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -75,6 +83,25 @@
 
 .message-box {
     height: 300px;
+}
+
+.news_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.news_image{
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.news_body{
+    text-align: justify;
+    width: 700px;
 }
 
 .card-body{

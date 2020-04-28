@@ -9,6 +9,10 @@ block content
             form(id='chat-form')
                 br
                 div(class='chat-messages')
+                    each message_item, i in message_list
+                        p(class="meta")= message_item.username
+                        span=message_item.date
+                        p(class="text")=message_item.text
 
                 br
                 #form-group
