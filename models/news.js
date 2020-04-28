@@ -13,6 +13,10 @@ let newsSchema = mongoose.Schema({
     body: {
         type: String,
         required: true
+    },
+    image_url: {
+        type: String,
+        required: false
     }
 });
 

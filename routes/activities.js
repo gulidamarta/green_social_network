@@ -5,6 +5,8 @@ const router = express.Router();
 let User = require('../models/user');
 // Activity Model
 let Activities = require('../models/activity');
+// Chat Model
+let Chats = require('../models/chat');
 
 // Add Submit POST Route
 router.post('/add', function (req, res) {
@@ -29,6 +31,9 @@ router.post('/add', function (req, res) {
         activity.latitude = req.body.latitude;
         activity.longitude = req.body.longitude;
 
+        let chat = new Chats();
+        chat.title = req.body.name;
+
         // TODO: add checking that end date is later than start date
         activity.start_date = req.body.start_date;
         activity.end_date = req.body.end_date;
@@ -42,6 +47,11 @@ router.post('/add', function (req, res) {
                 return;
             }
             else{
+                chat.save(function (err) {
+                    if (err){
+                        console.log(err);
+                    }
+                });
                 req.flash('success', 'Activity added.');
                 res.redirect('/');
             }

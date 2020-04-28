@@ -1,10 +1,28 @@
 const express = require('express');
+const multer = require('multer');
+const path = require('path');
 const router = express.Router();
 
 // News Model
 let News = require('../models/news');
 // User Model
 let User = require('../models/user');
+
+let staticDir = express.static(path.join(__dirname, '../uploads/images'));
+router.use(staticDir);
+
+// Disk Storage Configuration
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, '../uploads/images');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+
+// Execute multer
+const upload = multer({storage: storage});
 
 // Add Route
 router.get('/add', ensureAuthenticated, function (req, res) {
@@ -14,7 +32,10 @@ router.get('/add', ensureAuthenticated, function (req, res) {
 });
 
 // Add Submit POST Route
-router.post('/add', function (req, res) {
+router.post('/add',
+    upload.single('image'),
+    function (req, res) {
+
     req.checkBody('title', 'Title is required.').notEmpty();
     // req.checkBody('author', 'Author is required.').notEmpty();
     req.checkBody('body', 'Body is required.').notEmpty();
@@ -29,8 +50,11 @@ router.post('/add', function (req, res) {
     }else{
         let news = new News();
         news.title = req.body.title;
-        news.author = req.user._id;
+        news.author = req.user.id;
         news.body = req.body.body;
+        if (req.file) {
+            news.image_url = req.file.originalname;
+        }
 
         news.save(function (err) {
             if (err){

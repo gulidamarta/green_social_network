@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    .container
+        br
+        h1 Discussions
+        br
+        ul.list-group
+            each chat, i in chat_list
+                li.list-group-item
+                    a(href="/chats/" + chat._id class='chat_link')= chat.title

@@ -6,7 +6,7 @@ html
         link(rel="stylesheet", href="/css/layout.css", type="text/css")
         script(src="https://api-maps.yandex.ru/2.1/?apikey=195348e7-eea7-45a3-b1fe-5d91933185df&lang=ru_RU", type="text/javascript")
         script
-            include ../public/js/maps.js
+            include ../utils/maps.js
     body
         .container
             ul(class='main_nav')
@@ -17,6 +17,8 @@ html
                 if user
                     li(class='li_nav')
                         a(href='/news/add/', class='a_nav') Add News
+                    li(class='li_nav')
+                        a(href='/chats', class='a_nav') Chats
                 if user
                     li(class='right_nav')
                         a(href='/users/logout', class='a_nav') Logout
@@ -37,4 +39,3 @@ html
             hr
             footer
                 p Copyright &copy; 2020
-            script(src='/js/main.js')

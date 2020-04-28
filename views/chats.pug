@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    .container
+        br
+        a.btn.btn-danger(href='#' id='clear') Clear
+        div(id='status')
+        div(id='chat')
+            form(id='chat-form')
+                br
+                div(class='chat-messages')
+                    each message_item, i in message_list
+                        p(class="meta")= message_item.username
+                        span=message_item.date
+                        p(class="text")=message_item.text
+
+                br
+                #form-group
+                    textarea.form-control(id='msg' class='message-box' name='message' placeholder='Enter message' required autocomplete="on")
+                br
+                input.btn.btn-primary(class="btn" type='submit', value='Send')
+    script(
+    src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+    integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+    crossorigin="anonymous")
+    script(src="/socket.io/socket.io.js")
+    script
+        include ../public/js/chat.js

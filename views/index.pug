@@ -14,13 +14,13 @@ block content
                                         input.form-control(name='author', type='text')
                                 #form-group
                                         label Latitude:
-                                        input.form-control(name='latitude', type='number')
+                                        input.form-control(id='latitude' name='latitude', type='number' step="0.000000000000000001")
                                 #form-group
                                         label Longitude:
-                                        input.form-control(name='longitude', type='number')
+                                        input.form-control(id='longitude' name='longitude', type='number' step="0.000000000000000001")
                                 #form-group
                                         label Start Date:
-                                        input.form-control(name='start_date', type='date')
+                                        input.form-control(id='start_date' name='start_date', type='date')
                                 #form-group
                                         label End Date:
                                         input.form-control(name='end_date', type='date')
@@ -28,9 +28,14 @@ block content
                                 input.btn.btn-primary(type='submit', value='Create')
                 div(class="div_map" id="map")
         .container
-                h1 #{title}
+                h1(class='green_news_title') #{title}
                 ul.list-group
                         each news, i in news_list
                                 li.list-group-item
                                         a(href="/news/"+news._id)= news.title
-                                        p= news.body
+                                        div(class='news_container')
+                                                p(class='news_body')= news.body
+                                                if news.image_url
+                                                        img(src= news.image_url class='news_image')
+                                                else
+                                                        img(src='https://magazineclonerepub.blob.core.windows.net/mcepub/2535/175821/image/6773d272-71de-4e36-a4c4-c8590231b677.jpg' class='news_image')
