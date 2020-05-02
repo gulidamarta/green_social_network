@@ -108,6 +108,43 @@
     height: 600px;
 }
 
+.width-for-carousel{
+    height: 400px;
+}
+
+.margin-for-image-profile{
+    margin-top: -120px !important;
+}
+
+.opacity-for-image-profile{
+    opacity: 0.8;
+    border-radius: 120px;
+    margin-left: 50px;
+}
+
+.margin-for-carousel{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.margine-for-profile{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.list-group-item:hover{
+    background-color: #008000;
+}
+
+.image-in-carousel{
+    width: 100%;
+    background-size: cover;
+}
+
+
 /* Chat Page */
 
 .chat-container {
