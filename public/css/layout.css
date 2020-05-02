@@ -15,7 +15,86 @@
 }
 
 .right_nav{
+    float: right !important;
+}
+
+.btn-green{
+    background-color: #008000;
+    width: 30%
+}
+
+.custom-link{
+    width: 100%;
+    color: #fff; 
+    text-decoration: none;
+    user-select: none; 
+    text-align: center;
+    outline: none;
+    align-self: center;
+}
+
+.custom-link:hover{
+    color: #fff;
+    width: 100%;
+    text-decoration: none;
+    user-select: none;
+    background: #00ad00;
+    text-align: center;
+    outline: none; 
+    align-self: center;
+}
+
+.div-profile-info{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.div-float-right{
     float: right;
+    background-color: #008000;
+    height: 40px;
+    display: flex;
+    width: 45%;
+}
+
+.div-float-right:hover{
+    background: #00ad00;  
+}
+
+.div-float-right:active{
+    background: #005700;
+}
+
+.link-like-p{
+    font-size: 25px;
+    color: #008000;
+    text-decoration: none;
+    user-select: none; 
+    outline: none; 
+}
+
+.link-like-p:hover{
+    color: #005700;
+    text-decoration: none;
+    user-select: none; 
+    outline: none; 
+}
+
+.custom-link:active{
+    width: 100%;
+    color: #fff; 
+    text-decoration: none;
+    user-select: none; 
+    background: #005700;
+    text-align: center;
+    align-self: center;
+    outline: none; 
+}
+
+input#file-upload-button{
+    background-color: #008000 !important;
+    color: white !important;
 }
 
 .right_nav .a_nav{
@@ -61,12 +140,12 @@
 
 .activity_div{
     float: right;
-    width: 350px;
+    width: 40%;
     height: 515px
 }
 
 .div_map{
-    width: 700px;
+    width: 55%;
     height: 515px;
 }
 
@@ -122,6 +201,11 @@
     margin-left: 50px;
 }
 
+.container{
+    padding-right: 0;
+    padding-left: 0;
+}
+
 .margin-for-carousel{
     margin: 0;
     padding: 0;
@@ -133,10 +217,6 @@
     margin: 0;
     padding: 0;
     width: 100%;
-}
-
-.list-group-item:hover{
-    background-color: #008000;
 }
 
 .image-in-carousel{
@@ -285,6 +365,23 @@
     width: 100%;
 }
 
+.flex-box-container{
+    display: flex;
+}
+
+
+@media (max-width: 768px){
+    .right_nav{
+        float: left !important;
+    }
+
+    .navbar-nav{
+        display: flex;
+        float: none;
+        flex-direction: column;
+    }
+}
+
 @media (max-width: 700px) {
     .chat-main {
         display: block;
@@ -292,5 +389,18 @@
 
     .chat-sidebar {
         display: none;
+    }
+
+    .flex-box-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .div_map{
+        width: 440px;
+    }
+
+    .activity_div{
+        width: 440px;
     }
 }

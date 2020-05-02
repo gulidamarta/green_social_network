@@ -42,20 +42,21 @@ block content
         img(class='profile_image opacity-for-image-profile' src="https://i.ibb.co/dQXbPqz/1786-oooo-plus.png", alt="")
 
         .container(class='margine-for-profile')
-
-            div(class='list-group')
-                a(class='list-group-item' href='/users/'+user.id+'/profile/edit') Profile
-                a(class='list-group-item' href='/users/'+user.id+'/profile/news') User News
-                a(class='list-group-item' href='/users/'+user.id+'/profile/activities') User Activities
+            div(class="div-float-right")
+                a(class='custom-link' href='/users/'+user.id+'/profile/edit') Profile
             if user
-                label Name:
-                p= user.name
+                div(style="float:left; width:45%")
+                    div(class='div-profile-info')
+                        label Name:
+                        p= user.name
 
-                label Email:
-                p= user.email
+                    div(class='div-profile-info')
+                        label Email:
+                        p= user.email
 
-                label Username:
-                p= user.username
+                    div(class='div-profile-info')
+                        label Username:
+                        p= user.username
     </div>
 
     

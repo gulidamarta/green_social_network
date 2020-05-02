@@ -1,8 +1,9 @@
 extends layout
 
 block content
-        .container
-                div(style="width: 80px; float: right")
+        .container(class='flex-box-container')
+                div(class="div_map" id="map")
+                div(style="width: 5%; float: right")
                 div(class='activity_div' )
                         h5 Create Activity:
                         form(method='POST', action='/activities/add')
@@ -25,14 +26,13 @@ block content
                                         label End Date:
                                         input.form-control(name='end_date', type='date')
                                 br
-                                input.btn.btn-primary(type='submit', value='Create')
-                div(class="div_map" id="map")
+                                input.btn.btn-primary(class="btn-green" type='submit', value='Create')
         .container
                 h1(class='green_news_title') #{title}
                 ul.list-group
                         each news, i in news_list
                                 li.list-group-item
-                                        a(href="/news/"+news._id)= news.title
+                                        a(class="link-like-p" href="/news/"+news._id)= news.title
                                         div(class='news_container')
                                                 p(class='news_body')= news.body
                                                 if news.image_url
