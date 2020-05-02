@@ -1,34 +1,57 @@
 doctype html
 html
     head
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         title Green Social Network
-        link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         link(rel="stylesheet", href="/css/layout.css", type="text/css")
         script(src="https://api-maps.yandex.ru/2.1/?apikey=195348e7-eea7-45a3-b1fe-5d91933185df&lang=ru_RU", type="text/javascript")
         script
             include ../utils/maps.js
     body
+
         .container
-            ul(class='main_nav')
-                li(class='li_nav')
-                    a(href='/', class='a_nav') Green Social Network
-                li(class='li_nav')
-                    a(href='/', class='a_nav') Home
-                if user
-                    li(class='li_nav')
-                        a(href='/news/add/', class='a_nav') Add News
-                    li(class='li_nav')
-                        a(href='/chats', class='a_nav') Chats
-                if user
-                    li(class='right_nav')
-                        a(href='/users/logout', class='a_nav') Logout
-                    li(class='right_nav')
-                        a(href='/users/' + user.id, class='a_nav') Profile
-                else
-                    li(class='right_nav')
-                        a(href='/users/register', class='a_nav') Register
-                    li(class='right_nav')
-                        a(href='/users/login', class='a_nav') Login
+
+            <nav class="main_nav">
+                <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span style="background-color: white; height: 2.5px" class="icon-bar"></span>
+                    <span style="background-color: white; height: 2.5px" class="icon-bar"></span>
+                    <span style="background-color: white; height: 2.5px" class="icon-bar"></span>
+                    </button>
+                    <a  style="color:white" class="navbar-brand" href="/">Green Social Network</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul style="float: none" class="nav navbar-nav">
+                    <li class="li_nav"><a style="color:white" class="a_nav" href="/">Home <span class="sr-only">(current)</span></a></li>
+                    if user
+                        <li class='li_nav'>
+                            a(style="color:white" class="a_nav" href='/news/add/') Add News
+                        </li>
+                        <li class='li_nav'>
+                            a(href='/chats' style="color:white" class="a_nav") Chats
+                        </li>
+                        <li class='right_nav'>
+                            a(style="color:white" class="a_nav" href='/users/logout') Logout
+                        </li>
+                        <li class='right_nav'>
+                            a(href='/users/' + user.id, class='a_nav' style="color:white") Profile
+                        </li>
+                    else
+                        <li class='right_nav'><a style="color:white" class="a_nav" href='/users/login'>Log in</a></li>
+                        <li class='right_nav'><a style="color:white" class="a_nav" href='/users/register'>Register</a></li>
+                    </ul>
+                </div>
+                </div>
+            </nav>
         .container
             != messages('message', locals)
             if errors
