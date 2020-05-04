@@ -77,17 +77,20 @@ block content
             if activities_list
                 h2(class="user-news") User Activities
                 each activity_item, i in activities_list
-                    a(class="link-like-p" href='/activities/'+ activity_item._id)= activity_item.name
-                    div
-                        h4 Author:
-                            p= activity_item.author
-                        h4 Start Date:
+                    li.list-group-item
+                        a(class="link-like-p" href='/activities/'+ activity_item._id)= activity_item.name
+                        div
+                            h4
+                                i Start Date:
                             p= activity_item.start_date
-                        h4 End Date:
+                            h4
+                                i End Date:
                             p= activity_item.end_date
-                        h4 Latitude:
+                            h4
+                                i Latitude:
                             p= activity_item.latitude
-                        h4 Longitude:
+                            h4
+                                i Longitude:
                             p= activity_item.longitude
     </div>
 
