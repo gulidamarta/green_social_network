@@ -6,6 +6,9 @@ const passport = require('passport');
 // Bring in User Model
 let User = require('../models/user');
 
+// Bring in News Model
+let News = require('../models/news');
+
 // Register Form
 router.get('/register', function (req, res) {
     res.render('register');
@@ -83,13 +86,57 @@ router.get('/logout', function (req, res) {
     res.redirect('/');
 });
 
+function prepare_news_preview(news_list){
+    const news_length = 650;
+
+    for (let i = 0; i < news_list.length; i++){
+        if (news_list[i].body.length > news_length){
+            news_list[i].body = news_list[i].body.slice(0, news_length) + '...';
+        }
+    }
+    return news_list
+}
+
 // User Profile
 router.get('/:id', function (req, res) {
     User.findById(req.params.id, function (err, user){
-        res.render('profile',{
-            user: user
+        News.find({'author': req.params.id}, function (err, news_list) {
+            res.render('profile',{
+                user: user,
+                news_list: prepare_news_preview(news_list)
+            });
         });
     })
+});
+
+// Edit Profile Page Render
+router.get('/:id/edit', function (req, res) {
+    User.findById(req.params.id, function (err, user) {
+        res.render('edit_profile', {
+            user: user
+        })
+    })
+});
+
+// Update Submit POST User Route
+router.post('/:id/edit', function (req, res) {
+    let users = {};
+    users.name = req.body.name;
+    users.email = req.body.email;
+    users.username = req.body.username;
+
+    let query = {_id: req.params.id};
+
+    User.updateOne(query, users, function (err) {
+        if (err){
+            console.log(err);
+            return;
+        }
+        else{
+            req.flash('success', 'User Profile updated.');
+            res.redirect('/');
+        }
+    });
 });
 
 module.exports = router;

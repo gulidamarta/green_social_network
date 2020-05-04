@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+    form(method='POST', action='/users/'+user.id+'/edit')
+        #form-group
+            label Name:
+            input.form-control(name='name', type='text', value=user.name)
+        #form-group
+            label Email:
+            input.form-control(name='email', type='text', value=user.email)
+        #form-group
+            label Username:
+            textarea.form-control(name='username')= user.username
+        br
+        input.btn.btn-primary(type='submit', value='Submit')

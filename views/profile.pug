@@ -43,7 +43,7 @@ block content
 
         .container(class='margine-for-profile')
             div(class="div-float-right")
-                a(class='custom-link' href='/users/'+user.id+'/profile/edit') Profile
+                a(class='custom-link' href='/users/'+user.id+'/edit') Profile
             if user
                 div(style="float:left; width:45%")
                     div(class='div-profile-info')
@@ -57,6 +57,18 @@ block content
                     div(class='div-profile-info')
                         label Username:
                         p= user.username
+        .container
+            h2(class="user-news") User News
+            each news, i in news_list
+                li.list-group-item
+                    a(class="link-like-p" href="/news/" + news._id)= news.title
+                    div(class='news_container')
+                        p(class='news_body')= news.body
+                        if news.image_url
+                            img(src= news.image_url class='news_image')
+                        else
+                            img(src='https://magazineclonerepub.blob.core.windows.net/mcepub/2535/175821/image/6773d272-71de-4e36-a4c4-c8590231b677.jpg' class='news_image')
+
     </div>
 
     
