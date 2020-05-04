@@ -59,4 +59,16 @@ router.post('/add', function (req, res) {
     }
 });
 
+router.get('/:id', function (req, res) {
+    Activities.findById(req.params.id, function (err, activity_item){
+        if (err){
+            console.log(err);
+        }
+
+        res.render('activity',{
+           activity_item: activity_item
+        });
+    });
+});
+
 module.exports = router;

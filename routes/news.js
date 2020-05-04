@@ -89,11 +89,14 @@ router.get('/edit/:id', ensureAuthenticated, function (req, res) {
 });
 
 // Update Submit POST Route
-router.post('/edit/:id', function (req, res) {
+router.post('/edit/:id', upload.single('image'), function (req, res) {
     let news = {};
     news.title = req.body.title;
     news.author = req.body.author;
     news.body = req.body.body;
+    if (req.file) {
+        news.image_url = req.file.originalname;
+    }
 
     let query = {_id: req.params.id};
 

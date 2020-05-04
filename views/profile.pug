@@ -39,7 +39,10 @@ block content
     </div>
 
     <div class="container margine-for-profile margin-for-image-profile">
-        img(class='profile_image opacity-for-image-profile' src="https://i.ibb.co/dQXbPqz/1786-oooo-plus.png", alt="")
+        if user.image_url
+            img(src= user.image_url class='profile_image opacity-for-image-profile')
+        else
+            img(class='profile_image opacity-for-image-profile' src="https://i.ibb.co/dQXbPqz/1786-oooo-plus.png", alt="")
 
         .container(class='margine-for-profile')
             div(class="div-float-right")
@@ -58,17 +61,34 @@ block content
                         label Username:
                         p= user.username
         .container
-            h2(class="user-news") User News
-            each news, i in news_list
-                li.list-group-item
-                    a(class="link-like-p" href="/news/" + news._id)= news.title
-                    div(class='news_container')
-                        p(class='news_body')= news.body
-                        if news.image_url
-                            img(src= news.image_url class='news_image')
-                        else
-                            img(src='https://magazineclonerepub.blob.core.windows.net/mcepub/2535/175821/image/6773d272-71de-4e36-a4c4-c8590231b677.jpg' class='news_image')
+            if news_list
+                h2(class="user-news") User News
+                each news, i in news_list
+                    li.list-group-item
+                        a(class="link-like-p" href="/news/" + news._id)= news.title
+                        div(class='news_container')
+                            p(class='news_body')= news.body
+                            if news.image_url
+                                img(src= news.image_url class='news_image')
+                            else
+                                img(src='https://magazineclonerepub.blob.core.windows.net/mcepub/2535/175821/image/6773d272-71de-4e36-a4c4-c8590231b677.jpg' class='news_image')
 
+        .container
+            if activities_list
+                h2(class="user-news") User Activities
+                each activity_item, i in activities_list
+                    a(class="link-like-p" href='/activities/'+ activity_item._id)= activity_item.name
+                    div
+                        h4 Author:
+                            p= activity_item.author
+                        h4 Start Date:
+                            p= activity_item.start_date
+                        h4 End Date:
+                            p= activity_item.end_date
+                        h4 Latitude:
+                            p= activity_item.latitude
+                        h4 Longitude:
+                            p= activity_item.longitude
     </div>
 
     

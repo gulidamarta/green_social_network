@@ -2,12 +2,29 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const multer = require('multer');
+const path = require('path');
 
-// Bring in User Model
+// Bring in User, News, Activities Models
 let User = require('../models/user');
-
-// Bring in News Model
 let News = require('../models/news');
+let Activities = require('../models/activity');
+
+let staticDir = express.static(path.join(__dirname, '../uploads/profile_images'));
+router.use(staticDir);
+
+// Disk Storage Configuration
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, '../uploads/profile_images');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+
+// Execute multer
+const upload = multer({storage: storage});
 
 // Register Form
 router.get('/register', function (req, res) {
@@ -15,7 +32,7 @@ router.get('/register', function (req, res) {
 });
 
 // Register Process
-router.post('/register', function (req, res) {
+router.post('/register', upload.single('image'), function (req, res) {
     const name = req.body.name;
     const email = req.body.email;
     const username = req.body.username;
@@ -35,30 +52,61 @@ router.post('/register', function (req, res) {
             errors: errors
         });
     }else{
-        let newUser = new User({
-            name: name,
-            email: email,
-            username: username,
-            password: password
-        });
-        bcrypt.genSalt(10, function (err, salt) {
-            bcrypt.hash(newUser.password, salt, function (err, hash) {
-                if (err){
-                    console.log(err);
-                }
+        if (req.file){
+            let newUser = new User({
+                name: name,
+                email: email,
+                username: username,
+                password: password,
+                image_url: req.file.originalname,
+            });
 
-                newUser.password = hash;
-                newUser.save(function (err) {
+            bcrypt.genSalt(10, function (err, salt) {
+                bcrypt.hash(newUser.password, salt, function (err, hash) {
                     if (err){
                         console.log(err);
-                        return;
-                    }else{
-                        req.flash('success', 'You are now registered and can log in.');
-                        res.redirect('/users/login');
                     }
-                })
+
+                    newUser.password = hash;
+                    newUser.save(function (err) {
+                        if (err){
+                            console.log(err);
+                            return;
+                        }else{
+                            req.flash('success', 'You are now registered and can log in.');
+                            res.redirect('/users/login');
+                        }
+                    })
+                });
             });
-        });
+        }
+        else {
+            let newUser = new User({
+                name: name,
+                email: email,
+                username: username,
+                password: password,
+            });
+
+            bcrypt.genSalt(10, function (err, salt) {
+                bcrypt.hash(newUser.password, salt, function (err, hash) {
+                    if (err){
+                        console.log(err);
+                    }
+
+                    newUser.password = hash;
+                    newUser.save(function (err) {
+                        if (err){
+                            console.log(err);
+                            return;
+                        }else{
+                            req.flash('success', 'You are now registered and can log in.');
+                            res.redirect('/users/login');
+                        }
+                    })
+                });
+            });
+        }
     }
 
 });
@@ -100,10 +148,25 @@ function prepare_news_preview(news_list){
 // User Profile
 router.get('/:id', function (req, res) {
     User.findById(req.params.id, function (err, user){
+        if (err){
+            console.log(err);
+        }
+
         News.find({'author': req.params.id}, function (err, news_list) {
-            res.render('profile',{
-                user: user,
-                news_list: prepare_news_preview(news_list)
+            if (err){
+                console.log(err);
+            }
+
+            Activities.find({'author': req.params.id}, function (err, activities_list) {
+                if (err){
+                    console.log(err);
+                }
+
+                res.render('profile',{
+                    user: user,
+                    news_list: prepare_news_preview(news_list),
+                    activities_list: activities_list
+                });
             });
         });
     })
@@ -112,6 +175,10 @@ router.get('/:id', function (req, res) {
 // Edit Profile Page Render
 router.get('/:id/edit', function (req, res) {
     User.findById(req.params.id, function (err, user) {
+        if(err){
+            console.log(err);
+        }
+
         res.render('edit_profile', {
             user: user
         })
@@ -119,11 +186,14 @@ router.get('/:id/edit', function (req, res) {
 });
 
 // Update Submit POST User Route
-router.post('/:id/edit', function (req, res) {
+router.post('/:id/edit', upload.single('image'), function (req, res) {
     let users = {};
     users.name = req.body.name;
     users.email = req.body.email;
     users.username = req.body.username;
+    if (req.file) {
+        users.image_url = req.file.originalname;
+    }
 
     let query = {_id: req.params.id};
 

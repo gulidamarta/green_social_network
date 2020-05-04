@@ -18,6 +18,10 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    image_url: {
+        type: String,
+        required: false
+    }
 });
 
 const User = module.exports = mongoose.model('User', UserSchema);
