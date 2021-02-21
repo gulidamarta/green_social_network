@@ -1,12 +1,8 @@
 let mongoose = require('mongoose');
 
-// Message schema
-let messagesSchema = mongoose.Schema({
-    user_id: {
-        type: mongoose.Schema.Types.ObjectID,
-        required: true
-    },
-    chat_room_id: {
+// Post schema
+let postSchema = mongoose.Schema({
+    channel_id: {
         type: mongoose.Schema.Types.ObjectID,
         required: true
     },
@@ -20,4 +16,4 @@ let messagesSchema = mongoose.Schema({
     }
 });
 
-let Messages = module.exports = mongoose.model('Messages', messagesSchema);
+let Post = module.exports = mongoose.model('Post', postSchema);

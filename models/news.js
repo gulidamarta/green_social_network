@@ -17,6 +17,14 @@ let newsSchema = mongoose.Schema({
     image_url: {
         type: String,
         required: false
+    },
+    created_at: {
+        type: Date,
+        required: true
+    },
+    category_id: {
+        type: mongoose.Schema.Types.ObjectID,
+        required: false
     }
 });
 

@@ -1,13 +1,13 @@
 let mongoose = require('mongoose');
 
-// Message schema
-let messagesSchema = mongoose.Schema({
+// NewsComment schema
+let NewsCommentSchema = mongoose.Schema({
     user_id: {
         type: mongoose.Schema.Types.ObjectID,
         required: true
     },
-    chat_room_id: {
-        type: mongoose.Schema.Types.ObjectID,
+    news_id: {
+      type: mongoose.Schema.Types.ObjectID,
         required: true
     },
     text: {
@@ -20,4 +20,4 @@ let messagesSchema = mongoose.Schema({
     }
 });
 
-let Messages = module.exports = mongoose.model('Messages', messagesSchema);
+let NewsComment = module.exports = mongoose.model('NewsComment', NewsCommentSchema);

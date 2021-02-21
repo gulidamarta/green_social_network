@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 
-// News schema
+// Activity schema
 let activitiesSchema = mongoose.Schema({
     name: {
         type: String,
@@ -10,20 +10,12 @@ let activitiesSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    latitude: {
-        type:  mongoose.Schema.Types.Decimal,
+    activityPlace_id: {
+        type: mongoose.Schema.Types.ObjectID,
         required: true
     },
-    longitude: {
-        type: mongoose.Schema.Types.Decimal,
-        required: true
-    },
-    start_date: {
-        type: Date,
-        required: true
-    },
-    end_date: {
-        type: Date,
+    activitySchedule_id: {
+        type: mongoose.Schema.Types.ObjectID,
         required: true
     }
 });

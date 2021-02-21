@@ -6,6 +6,10 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    surname: {
+        type: String,
+        required: false,
+    },
     email: {
         type: String,
         required: true
@@ -20,6 +24,22 @@ const UserSchema = mongoose.Schema({
     },
     image_url: {
         type: String,
+        required: false
+    },
+    role_id: {
+        type: Number,
+        required: false
+    },
+    residence_place_id: {
+        type: Number,
+        required: false,
+    },
+    current_status_id: {
+        type: Number,
+        required: false
+    },
+    rating_table_id: {
+        type: Number,
         required: false
     }
 });

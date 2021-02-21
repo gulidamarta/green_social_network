@@ -3,6 +3,10 @@ const router = express.Router();
 
 // User Model
 let User = require('../models/user');
+// ActivitySchedule Model
+let ActivitySchedule = require('../models/activitySchedule');
+// ActivityPlace Model
+let ActivityPlace = require('../models/activityPlace');
 // Activity Model
 let Activities = require('../models/activity');
 // Chat Model
@@ -25,18 +29,35 @@ router.post('/add', function (req, res) {
             errors: errors
         })
     }else{
+        // TODO: add checking that end date is later than start date
+        let activitySchedule = new ActivitySchedule();
+        activitySchedule.start_date = req.body.start_date;
+        activitySchedule.end_date = req.body.end_date;
+
+        activitySchedule.save(function (err){
+            if (err){
+                console.log(err);
+            }
+        });
+
+        let activityPlace = new ActivityPlace();
+        activityPlace.latitude = req.body.latitude;
+        activityPlace.longitude = req.body.longitude;
+
+        activityPlace.save(function (err){
+            if (err){
+                console.log(err);
+            }
+        });
+
         let activity = new Activities();
         activity.name = req.body.name;
         activity.author = req.body.author;
-        activity.latitude = req.body.latitude;
-        activity.longitude = req.body.longitude;
+        activity.activityPlace_id = activityPlace._id;
+        activity.activitySchedule_id = activitySchedule._id;
 
         let chat = new Chats();
         chat.title = req.body.name;
-
-        // TODO: add checking that end date is later than start date
-        activity.start_date = req.body.start_date;
-        activity.end_date = req.body.end_date;
 
         // TODO: add author info in such way
         // news.author = req.user._id;
@@ -52,6 +73,7 @@ router.post('/add', function (req, res) {
                         console.log(err);
                     }
                 });
+
                 req.flash('success', 'Activity added.');
                 res.redirect('/');
             }
