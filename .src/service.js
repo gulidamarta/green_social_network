@@ -138,6 +138,11 @@ app.get('/', function(req, res){
     });
 });
 
+// Home Route (new)
+app.get('/home', function(req, res){
+    res.render('home');
+});
+
 // Route Files
 let news = require('../routes/news');
 let users = require('../routes/users');

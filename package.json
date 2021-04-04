@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/gulidamarta/green_social_network#readme",
   "dependencies": {
+    "@fontsource/roboto-slab": "^4.2.2",
     "bcrypt": "^4.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",

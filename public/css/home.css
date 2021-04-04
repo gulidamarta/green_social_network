@@ -1,0 +1,178 @@
+.gsn_header{
+    flex-direction: row;
+}
+
+.main_icon{
+    margin-left: 32px;
+    margin-top: 32px;
+}
+
+.header_links{
+    float: none;
+    list-style-type: none;
+    overflow: hidden;
+    margin-right: 32px;
+}
+
+.header_link{
+    float: right;
+    margin-left: 40px;
+    margin-top: 32px;
+}
+
+.a_header{
+    color: #746E69;
+    font-size: 26px;
+    text-decoration: none;
+    display: block;
+    font-family: "Roboto Slab", Serif;
+}
+
+.title_gsn {
+    color: #436D3F;
+    font-size: 50px;
+    font-family: Roboto, Serif;
+}
+
+.second_block{
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    margin-left: 25%;
+}
+
+.second_block__text{
+    display: inline-block;
+}
+
+
+.motivation_gsn{
+    color: black;
+    font-size: 36px;
+    margin: 0 150px 0 0;
+    font-family: Roboto, Serif;
+    font-weight: bold;
+}
+
+.second_block__button{
+    align-items: center;
+}
+
+.second_block__button button{
+    margin-top: 20px;
+    width: 325px;
+    height: 80px;
+    background-color: #436D3F;
+    color: white;
+    font-family: Roboto, Serif;
+    font-size: 26px;
+    border: none;
+    border-radius: 15px;
+    margin-left: 15%;
+}
+
+.second_block__img{
+    display: inline-block;
+}
+
+.dont_have_account_text{
+    margin-top: 3%;
+    margin-bottom: 0;
+    margin-left: 20%;
+    font-family: Roboto, Serif;
+    font-size: 22px;
+}
+
+.sign_up_text{
+    margin-top: 2px;
+    margin-bottom: 0;
+    margin-left: 35%;
+    font-family: Roboto, Serif;
+    font-size: 22px;
+    color: #436D3F;
+    font-weight: bold;
+}
+
+.svg_green_rect{
+    width: 1250px;
+    height: 36px;
+    margin-left: 25%;
+    margin-top: 10px;
+}
+
+.green_rect{
+    fill: #8CBD52;
+    height: 36px;
+    width: 1250px;
+}
+
+.third_block{
+    margin-left: 25%;
+    display: flex;
+    flex-direction: row;
+}
+
+.third_block__text{
+    display: inline-block;
+    margin-top: 50px;
+}
+
+.header_small_steps{
+    color: black;
+    font-size: 50px;
+    font-family: Roboto, Serif;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+
+.header_subsection_third_block{
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.header_want_to_help{
+    color: black;
+    font-size: 26px;
+    font-family: Roboto, Serif;
+    margin-top: 0;
+    margin-bottom: 3px;
+    font-weight: lighter;
+}
+
+.header_gsn_allows_you{
+    color: black;
+    font-size: 26px;
+    font-family: Roboto, Serif;
+    margin-top: 0;
+    margin-bottom: 3px;
+    font-weight: lighter;
+}
+
+.bold_green_text{
+    color: #436D3F;
+}
+
+.allow_item{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.allow_item__img{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 25px;
+}
+
+.allow_item__text{
+    display: inline-block;
+}
+
+.third_block__img{
+    display: inline-block;
+    width: 634px;
+    height: 632px;
+    margin-top: 10%;
+}
