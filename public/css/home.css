@@ -3,8 +3,10 @@
 }
 
 .main_icon{
-    margin-left: 32px;
+    margin-left: 3%;
     margin-top: 32px;
+    width: 4.5%;
+    height: 6.5%;
 }
 
 .header_links{
@@ -16,42 +18,44 @@
 
 .header_link{
     float: right;
-    margin-left: 40px;
+    margin-left: 0;
     margin-top: 32px;
+    margin-right: 5%;
 }
 
 .a_header{
     color: #746E69;
-    font-size: 26px;
+    font-size: 44px;
     text-decoration: none;
     display: block;
-    font-family: "Roboto Slab", Serif;
+    font-family: Roboto, Serif;
 }
 
 .title_gsn {
     color: #436D3F;
-    font-size: 50px;
+    font-size: 500%;
     font-family: Roboto, Serif;
+    font-weight: bolder;
+    margin-bottom: 4%;
 }
 
 .second_block{
     flex-direction: row;
     align-items: center;
     display: flex;
-    margin-left: 25%;
+    margin-left: 5%;
 }
 
 .second_block__text{
     display: inline-block;
 }
 
-
 .motivation_gsn{
     color: black;
-    font-size: 36px;
-    margin: 0 150px 0 0;
+    font-size: 350%;
+    margin: 0 0 0 0;
     font-family: Roboto, Serif;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .second_block__button{
@@ -59,28 +63,32 @@
 }
 
 .second_block__button button{
-    margin-top: 20px;
-    width: 325px;
-    height: 80px;
+    margin-top: 30px;
+    width: 55%;
+    height: 110px;
     background-color: #436D3F;
     color: white;
     font-family: Roboto, Serif;
-    font-size: 26px;
+    font-size: 32px;
     border: none;
     border-radius: 15px;
     margin-left: 15%;
+    font-weight: bold;
 }
 
 .second_block__img{
     display: inline-block;
+    width: 59%;
+    height: 60%;
+    margin-left: 9%;
 }
 
 .dont_have_account_text{
     margin-top: 3%;
     margin-bottom: 0;
-    margin-left: 20%;
+    margin-left: 22%;
     font-family: Roboto, Serif;
-    font-size: 22px;
+    font-size: 32px;
 }
 
 .sign_up_text{
@@ -88,40 +96,40 @@
     margin-bottom: 0;
     margin-left: 35%;
     font-family: Roboto, Serif;
-    font-size: 22px;
+    font-size: 32px;
     color: #436D3F;
     font-weight: bold;
 }
 
 .svg_green_rect{
-    width: 1250px;
-    height: 36px;
-    margin-left: 25%;
-    margin-top: 10px;
+    width: 90%;
+    height: 50px;
+    margin-left: 5%;
+    margin-top: 1.5%;
 }
 
 .green_rect{
     fill: #8CBD52;
-    height: 36px;
-    width: 1250px;
+    height: 50px;
+    width: 100%;
 }
 
 .third_block{
-    margin-left: 25%;
+    margin-left: 5%;
     display: flex;
     flex-direction: row;
 }
 
 .third_block__text{
     display: inline-block;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 .header_small_steps{
     color: black;
-    font-size: 50px;
+    font-size: 420%;
     font-family: Roboto, Serif;
-    font-weight: bold;
+    font-weight: bolder;
     margin-top: 0;
     margin-bottom: 3px;
 }
@@ -133,7 +141,7 @@
 
 .header_want_to_help{
     color: black;
-    font-size: 26px;
+    font-size: 270%;
     font-family: Roboto, Serif;
     margin-top: 0;
     margin-bottom: 3px;
@@ -142,7 +150,7 @@
 
 .header_gsn_allows_you{
     color: black;
-    font-size: 26px;
+    font-size: 270%;
     font-family: Roboto, Serif;
     margin-top: 0;
     margin-bottom: 3px;
@@ -161,8 +169,8 @@
 
 .allow_item__img{
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     margin-right: 25px;
 }
 
@@ -172,7 +180,344 @@
 
 .third_block__img{
     display: inline-block;
-    width: 634px;
-    height: 632px;
+    width: 45%;
+    height: 45%;
     margin-top: 10%;
+    margin-left: 8%;
+}
+
+.fourth_block_its_simple{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.header_its_simple{
+    color: black;
+    font-size: 420%;
+    font-family: Roboto, Serif;
+    font-weight: bolder;
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+
+.fourth_block_section{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    position: relative;
+}
+
+.div_option_rect{
+    width: 22%;
+    height: 550px;
+    border: None;
+    border-radius: 15px;
+    margin-right: 3%;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #EBF9E5;
+    position: relative;
+    text-align: center;
+}
+
+.option_text{
+    font-size: 250%;
+    font-family: Roboto, Serif;
+    font-weight: lighter;
+    fill: black;
+    position: absolute;
+    color: #333333;
+    padding-top: 75%;
+}
+
+.option_img{
+    width: 45%;
+    height: 45%;
+    margin-top: 27%;
+}
+
+.fifth_section{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: row;
+}
+
+.fifth_section__img{
+    width: 45%;
+    height: 60%;
+}
+
+.fifth_section__text{
+    width: 50%;
+    margin-left: 5%;
+}
+
+.fifth_section__topic{
+    margin-top: 15%;
+    font-size: 500%;
+    font-family: Roboto, Serif;
+    font-weight: bolder;
+}
+
+.fifth_section__subtext{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 300%;
+    font-family: Roboto, Serif;
+    font-weight: lighter;
+}
+
+.six_section{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.six_section_header{
+    font-size: 500%;
+    font-family: Roboto, Serif;
+    font-weight: bolder;
+}
+
+.categories_block{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+}
+
+.category_img{
+    width: 15%;
+    margin-right: 3%;
+    margin-left: 7%;
+}
+
+.seventh_section{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    height: 350px;
+    background-color: #EBF9E5;
+    border: None;
+}
+
+.footer_icon{
+    margin-left: 5%;
+    margin-top: 2.5%;
+}
+
+.seventh_section .first_column{
+    margin-top: 2%;
+    margin-left: 3%;
+}
+
+.seventh_section .second_column, .third_column{
+    margin-top: 2%;
+    margin-left: 7%;
+}
+
+.footer_link {
+    font-size: 150%;
+    color: #746E69;
+    font-family: Roboto, Serif;
+}
+
+.fourth_column__image_links{
+    margin-right: 5%;
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    padding-left: 45%;
+    margin-top: 2%;
+}
+
+.footer_website_img{
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+}
+
+
+@media only screen and (max-width: 1900px) {
+    .a_header{
+        font-size: 26px;
+    }
+
+    .title_gsn {
+        font-size: 40px;
+    }
+
+    .motivation_gsn{
+        color: black;
+        font-size: 32px;
+        margin: 0 10px 0 0;
+    }
+
+    .second_block__button button{
+        margin-top: 20px;
+        width: 325px;
+        height: 80px;
+        font-size: 26px;
+        margin-left: 15%;
+    }
+
+
+    .dont_have_account_text{
+        font-size: 22px;
+    }
+
+    .sign_up_text{
+        font-size: 22px;
+    }
+
+    .svg_green_rect{
+        height: 36px;
+        margin-right: 5%;
+    }
+
+    .green_rect{
+        height: 36px;
+        width: 100%;
+    }
+
+    .header_small_steps{
+        font-size: 50px;
+    }
+
+    .header_want_to_help{
+        font-size: 26px;
+    }
+
+    .header_want_to_help{
+        font-size: 26px;
+    }
+
+    .allow_item__img{
+        width: 30px;
+        height: 30px;
+    }
+
+    .allow_item__text{
+        display: inline-block;
+    }
+
+    .third_block__img{
+        width: 634px;
+        height: 632px;
+    }
+
+    .header_gsn_allows_you{
+        font-size: 26px;
+    }
+
+    .header_its_simple{
+        margin-top: 30px;
+        font-size: 50px;
+    }
+
+    .div_option_rect{
+        width: 22%;
+        height: 350px;
+        border-radius: 15px;
+        margin-right: 3%;
+    }
+
+    .option_text{
+        font-size: 26px;
+        padding-top: 75%;
+    }
+
+    .option_img{
+        width: 100px;
+        height: 100px;
+        margin-top: 35%;
+    }
+
+    .six_section_header{
+        font-size: 50px;
+    }
+
+    .fifth_section__topic{
+        font-size: 50px;
+    }
+
+    .fifth_section__subtext{
+        font-size: 26px;
+    }
+
+    .fifth_section__img{
+        width: 600px;
+        height: 450px;
+    }
+
+    .category_img{
+        width: 12%;
+    }
+
+    .footer_link {
+        font-size: 20px;
+    }
+
+    .footer_website_img{
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+    }
+
+    .fourth_column__image_links{
+        padding-left: 30%;
+    }
+}
+
+@media only screen and (max-width: 380px){
+    .header_links{
+        margin-right: 5px;
+        padding: 0;
+    }
+
+    .main_icon{
+        margin-left: 5%;
+    }
+
+    .a_header{
+        font-size: 10px;
+    }
+
+    .title_gsn {
+        font-size: 16px;
+    }
+
+    .motivation_gsn{
+        font-size: 12px;
+    }
+
+    .second_block__button button {
+        margin-top: 10px;
+        width: 80px;
+        height: 30px;
+        font-size: 8px;
+        margin-left: 12px;
+        font-weight: normal;
+    }
+
+    .dont_have_account_text{
+        font-size: 8px;
+    }
+
+    .sign_up_text{
+        font-size: 8px;
+    }
+
+    .header_small_steps{
+        font-size: 16px;
+    }
+
+    /*
+    TODO: adaptive for mobile
+    */
 }
