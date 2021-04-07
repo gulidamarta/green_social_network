@@ -76,6 +76,11 @@
     font-weight: bold;
 }
 
+.second_block__button button a{
+    color: white;
+    text-decoration: None;
+}
+
 .second_block__img{
     display: inline-block;
     width: 59%;
@@ -99,6 +104,11 @@
     font-size: 32px;
     color: #436D3F;
     font-weight: bold;
+}
+
+.sign_up_text a{
+    color: #436D3F;
+    text-decoration: None;
 }
 
 .svg_green_rect{
