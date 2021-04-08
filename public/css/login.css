@@ -58,8 +58,15 @@
     font-size: 200%;
     color: #9BA39A;
     font-family: Roboto;
-    padding-bottom: 20px;
+    padding-bottom: 2%;
     opacity: 50%;
+}
+
+.input_username:focus{
+    outline: None;
+    color: #5F764A;
+    opacity: 100%;
+    font-weight: bold;
 }
 
 .input_password{
@@ -67,15 +74,22 @@
     font-size: 200%;
     color: #9BA39A;
     font-family: Roboto;
-    padding-bottom: 20px;
+    padding-bottom: 2%;
     opacity: 50%;
+}
+
+.input_password:focus{
+    outline: None;
+    color: #5F764A;
+    opacity: 100%;
+    font-weight: bold;
 }
 
 .input-icon{
     padding-top: 3%;
     margin-right: 3%;
     width: 10%;
-    height: 10%;
+    height: 12%;
 }
 
 .separate-green-line{
@@ -164,5 +178,67 @@
 
     .title_gsn {
         font-size: 40px;
+    }
+
+    .terms_and_conditions_section{
+        margin-top: 10%;
+    }
+
+    .terms_and_conditions__header{
+        font-size: 16px;
+    }
+
+    .main_section{
+        display: flex;
+        flex-direction: row;
+        margin-left: 7%;
+        margin-right: 5%;
+    }
+
+    .welcome_header{
+        font-size: 50px;
+        margin-top: 3%;
+    }
+
+    .main_section__img{
+        margin-top: 3%;
+    }
+
+    .input_username{
+        font-size: 25px;
+    }
+
+    .input_password{
+        font-size: 25px;
+    }
+
+    .input-icon{
+        width: 25px;
+        height: 25px;
+    }
+
+    .remember_me_lbl{
+        font-size: 16px;
+    }
+
+    .header_forgot_password{
+        font-size: 18px;
+    }
+
+    .btn_submit{
+        width: 150px;
+        height: 60px;
+        font-size: 25px;
+    }
+
+    .btn_signup{
+        border-width: 2px;
+        width: 150px;
+        height: 60px;
+        font-size: 25px;
+    }
+
+    .separate-green-line{
+        height: 3px;
     }
 }

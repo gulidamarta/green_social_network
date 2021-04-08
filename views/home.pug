@@ -15,6 +15,12 @@ html
                     <li class='header_link'>
                         a(class="a_header" href='/users/logout') <b>Logout</b>
                     </li>
+                    <li class='header_link'>
+                        a(class='a_header' href='/chats') <b>Chats</b>
+                    </li>
+                    <li class='header_link'>
+                        a(class='a_header' href='/users/' + user.id) <b>Profile</b>
+                    </li>
                 else
                     <li class='header_link'>
                         a(class="a_header" href='/users/login') <b>Log in</b>

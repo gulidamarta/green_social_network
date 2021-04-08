@@ -1,0 +1,249 @@
+.gsn_header{
+    flex-direction: row;
+}
+
+.main_icon{
+    margin-left: 3%;
+    margin-top: 32px;
+    width: 4.5%;
+    height: 6.5%;
+}
+
+.header_links{
+    float: none;
+    list-style-type: none;
+    overflow: hidden;
+    margin-right: 32px;
+}
+
+.header_link{
+    float: right;
+    margin-left: 0;
+    margin-top: 32px;
+    margin-right: 5%;
+}
+
+.a_header{
+    color: #746E69;
+    font-size: 44px;
+    text-decoration: none;
+    display: block;
+    font-family: Roboto;
+}
+
+.main_section{
+    display: flex;
+    flex-direction: row;
+    margin-left: 14%;
+    margin-right: 5%;
+}
+
+.main_section__img{
+    margin-top: 3%;
+    margin-left: 7%;
+    width: 30%;
+    height: 17%;
+    margin-right: 7%;
+}
+
+.welcome_header{
+    margin-top: 0;
+    font-size: 400%;
+    font-family: Roboto, Serif;
+    font-weight: bolder;
+    color: #5F764A;
+}
+
+.separate-green-line{
+    background-color: #5F764A;
+    width: 100%;
+    height: 5px;
+}
+
+.input-icon{
+    padding-top: 3%;
+    margin-right: 3%;
+    width: 10%;
+    height: 10%;
+}
+
+.terms_and_conditions_section{
+    margin-top: 30%;
+}
+
+.terms_and_conditions__header{
+    font-size: 130%;
+    font-family: Roboto;
+    color: #9BA39A;
+    opacity: 80%;
+    font-weight: lighter;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.terms_and_conditions__header a{
+    color: #7BBBDF;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.input_password{
+    border: None;
+    font-size: 200%;
+    color: #9BA39A;
+    font-family: Roboto;
+    padding-bottom: 2%;
+    opacity: 50%;
+}
+
+.input_password:focus{
+    outline: None;
+    color: #5F764A;
+    opacity: 100%;
+    font-weight: bold;
+}
+
+.input-icon{
+    padding-top: 3%;
+    margin-right: 3%;
+    width: 10%;
+    height: 10%;
+}
+
+.input_username{
+    border: None;
+    font-size: 200%;
+    color: #9BA39A;
+    font-family: Roboto;
+    padding-bottom: 2%;
+    opacity: 50%;
+}
+
+.input_username:focus{
+    outline: None;
+    color: #5F764A;
+    opacity: 100%;
+    font-weight: bold;
+}
+
+.input_email{
+    border: None;
+    font-size: 200%;
+    color: #9BA39A;
+    font-family: Roboto;
+    padding-bottom: 2%;
+    opacity: 50%;
+}
+
+.input_email:focus{
+    outline: None;
+    color: #5F764A;
+    opacity: 100%;
+    font-weight: bold;
+}
+
+.btn-green{
+    border: None;
+    border-radius: 15px;
+    background-color: #436D3F;
+    color: white;
+    width: 40%;
+    height: 80px;
+    font-size: 200%;
+    font-family: Roboto;
+    font-weight: normal;
+    margin-right: 20%;
+}
+
+.btn_login{
+    border-color: #436D3F;
+    border-width: 3px;
+    border-radius: 15px;
+    color: #436D3F;
+    background-color: white;
+    width: 40%;
+    height: 80px;
+    font-size: 200%;
+    font-family: Roboto;
+    font-weight: normal;
+}
+
+.btn_login a{
+    color: #436D3F;
+    text-decoration: None;
+}
+
+@media only screen and (max-width: 1900px) {
+    .a_header {
+        font-size: 26px;
+    }
+
+    .title_gsn {
+        font-size: 40px;
+    }
+
+    .terms_and_conditions_section{
+        margin-top: 10%;
+    }
+
+    .terms_and_conditions__header{
+        font-size: 16px;
+    }
+
+    .main_section{
+        display: flex;
+        flex-direction: row;
+        margin-left: 7%;
+        margin-right: 5%;
+    }
+
+    .welcome_header{
+        font-size: 50px;
+        margin-top: 0;
+        margin-bottom: 3%;
+    }
+
+    .main_section__img{
+        margin-top: 0;
+    }
+
+    .input_username{
+        font-size: 25px;
+    }
+
+    .input_password{
+        font-size: 25px;
+    }
+
+    .input_email{
+        font-size: 25px;
+    }
+
+    .input-icon{
+        width: 25px;
+        height: 25px;
+    }
+
+    .remember_me_lbl{
+        font-size: 16px;
+    }
+
+    .separate-green-line{
+        height: 3px;
+    }
+
+    .btn-green{
+        width: 150px;
+        height: 60px;
+        font-size: 25px;
+    }
+
+    .btn_login{
+        border-width: 2px;
+        width: 150px;
+        height: 60px;
+        font-size: 25px;
+    }
+}
+

@@ -1,0 +1,88 @@
+.gsn_header{
+    flex-direction: row;
+}
+
+.main_icon{
+    margin-left: 3%;
+    margin-top: 32px;
+    width: 4.5%;
+    height: 6.5%;
+}
+
+.header_links{
+    float: none;
+    list-style-type: none;
+    overflow: hidden;
+    margin-right: 32px;
+}
+
+.header_link{
+    float: right;
+    margin-left: 0;
+    margin-top: 32px;
+    margin-right: 5%;
+}
+
+.a_header{
+    color: #746E69;
+    font-size: 44px;
+    text-decoration: none;
+    display: block;
+    font-family: Roboto;
+}
+
+.main_section{
+    margin-right: 5%;
+    height: 400%;
+    display: flex;
+    flex-direction: row;
+}
+
+.left_section{
+    width: 30%;
+    background-color: #EBF9E5;
+    display: flex;
+    flex-direction: column;
+}
+
+.header_items{
+    display: flex;
+    flex-direction: row;
+}
+
+.chats_header{
+    margin-top: 5%;
+    margin-left: 5%;
+    font-size: 350%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bolder;
+    color: #21461B;
+    margin-bottom: 0;
+}
+
+.add_chat_btn{
+    margin-top: 5%;
+    margin-left: 50%;
+    width: 70px;
+    height: 70px;
+    border-radius: 90px;
+    border: None;
+}
+
+.btn_img{
+    margin-right: 20px;
+    width: 70px;
+    height: 70px;
+}
+
+
+@media only screen and (max-width: 1900px) {
+    .a_header {
+        font-size: 26px;
+    }
+
+    .title_gsn {
+        font-size: 40px;
+    }
+}
