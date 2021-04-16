@@ -55,11 +55,28 @@ html
             <section class='left_section'>
                 <section class='header_items'>
                     <h1 class='chats_header'><b>Chats</b></h1>
-                    <img class='btn_img' src='/icons/icon-plus.png'/>
+                    <button class='add_chat_btn' type='submit'/>
                 </section>
-                ul.list-group
+                <section class='search_chat_section'>
+                    form(method='GET', action='/chat/search')
+                        #form-group
+                            input(class='input_search_text' type='text' name='search_text' placeholder='Search')
+                </section>
+                ul.list-group(class='chat_list_ul')
                     each chat, i in chat_list
-                        li.list-group-item
-                            a(href="/chats/" + chat._id class='chat_link')= chat.title
+                        li.list-group-item(class='chat_list_item')
+                            input(class='chat_link' type='url' name='chat_link' default="/chats/" + chat._id value=chat.title readonly)
+            </section>
+            <section class='right_section'>
+                <section class='header_section'>
+                    <img class='chat_image' src='/icons/test_profile_photo_1.png'/>
+                    <section class='header_section__text'>
+                        <h1 class='header_username'>Sara Delyu</h1>
+                        <h1 class='header_last_seen'>Last seen 2 hours ago</h1>
+                    </section>
+                    button(class='more_button')
+                </section>
+                <section class='messages_section'>
+                </section>
             </section>
         </section>
