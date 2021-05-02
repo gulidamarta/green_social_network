@@ -33,7 +33,7 @@ html
                     a(class="a_header" href='/news') <b>News</b>
                 </li>
                 <li class="header_link">
-                    a(class="a_header" href='/activities/list') <b>Activities</b>
+                    a(class="a_header_selected" href='/activities/list') <b>Activities</b>
                 </li>
                 <li class="header_link">
                     a(class="a_header" href='/home') <b>Home</b>
@@ -63,6 +63,15 @@ html
                 </li>
             </ul>
         </div>
+        <section class="first_section">
+            if user
+                <img class="profile_photo" src="/icons/test_profile_photo_1.png"/>
+                h1= user.name
+                <section class="add_activity_section">
+                    <button class='add_activity_btn' type='submit'/>
+                    h1 Create
+                </section>
+        </section>
         .container(class='flex-box-container')
             div(class="div_map" id="map")
             div(class='activity_div' )

@@ -35,6 +35,14 @@
     font-family: Roboto, Serif;
 }
 
+.a_header_selected{
+    color: black;
+    font-size: 44px;
+    text-decoration: none;
+    display: block;
+    font-family: Roboto, Serif;
+}
+
 .title_gsn {
     color: #436D3F;
     font-size: 500%;
@@ -359,6 +367,10 @@
 
 @media only screen and (max-width: 1900px) {
     .a_header{
+        font-size: 26px;
+    }
+
+    .a_header_selected{
         font-size: 26px;
     }
 
