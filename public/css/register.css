@@ -156,6 +156,10 @@
     margin-right: 20%;
 }
 
+.btn-green:focus{
+    outline: None;
+}
+
 .btn_login{
     border-color: #436D3F;
     border-width: 3px;
@@ -167,6 +171,10 @@
     font-size: 200%;
     font-family: Roboto;
     font-weight: normal;
+}
+
+.btn_login:focus{
+    outline: None;
 }
 
 .btn_login a{

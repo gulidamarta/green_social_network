@@ -132,6 +132,10 @@
     margin-right: 20%;
 }
 
+.btn_submit:focus{
+    outline: None;
+}
+
 .btn_signup{
     border-color: #436D3F;
     border-width: 3px;
@@ -143,6 +147,10 @@
     font-size: 200%;
     font-family: Roboto;
     font-weight: normal;
+}
+
+.btn_signup:focus{
+    outline: None;
 }
 
 .btn_signup a{

@@ -74,7 +74,7 @@
     align-items: center;
 }
 
-.second_block__button button{
+.second_block__button input{
     margin-top: 50px;
     margin-bottom: 20px;
     width: 100%;
@@ -88,10 +88,10 @@
     font-weight: bold;
 }
 
-.second_block__button button a{
-    color: white;
-    text-decoration: None;
+.second_block__button input:focus{
+    outline: None;
 }
+
 
 .second_block__img{
     display: inline-block;
@@ -400,7 +400,7 @@
         margin: 0 10px 0 0;
     }
 
-    .second_block__button button{
+    .second_block__button input{
         margin-top: 20px;
         height: 80px;
         font-size: 26px;
