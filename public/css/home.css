@@ -312,7 +312,17 @@
 
 .category_img{
     width: 15%;
-    margin-right: 3%;
+    margin-right: 5%;
+    margin-left: 7%;
+}
+
+.category_img_first{
+    width: 15%;
+    margin-right: 5%;
+}
+
+.category_img_last{
+    width: 15%;
     margin-left: 7%;
 }
 
@@ -348,6 +358,11 @@
     font-size: 150%;
     color: #746E69;
     font-family: Roboto, Serif;
+}
+
+.footer_a{
+    text-decoration: None;
+    color: #746E69;
 }
 
 .fourth_column__image_links{
@@ -491,11 +506,16 @@
     .footer_website_img{
         width: 40px;
         height: 40px;
-        margin-left: 10px;
+        margin-right: 0;
     }
 
     .fourth_column__image_links{
-        padding-left: 30%;
+        padding-left: 35%;
+    }
+
+    .category_img{
+        width: 15%;
+        margin-left: 7%;
     }
 }
 
