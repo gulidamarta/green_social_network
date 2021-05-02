@@ -120,7 +120,7 @@ router.get('/login', function (req, res) {
 // Login Process
 router.post('/login', function (req, res, next) {
     passport.authenticate('local', {
-        successRedirect: '/',
+        successRedirect: '/home',
         failureRedirect: '/users/login',
         failureFlash: true
     })(req, res, next);
@@ -131,7 +131,7 @@ router.get('/logout', function (req, res) {
     req.logout();
     req.flash('success', 'You are logged out.');
     // NOT sure that this is a good idea, may be the login page will be better
-    res.redirect('/');
+    res.redirect('/home');
 });
 
 function prepare_news_preview(news_list){
