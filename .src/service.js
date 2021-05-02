@@ -130,10 +130,7 @@ app.get('/', function(req, res){
         if (err){
             console.log(err);
         } else {
-            res.render('index', {
-                title: 'Green News',
-                news_list: prepare_news_preview(news_list)
-            });
+            res.render('home');
         }
     });
 });
