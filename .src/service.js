@@ -126,13 +126,7 @@ function prepare_news_preview(news_list){
 
 // Home Route
 app.get('/', function(req, res){
-    News.find({}, function (err, news_list) {
-        if (err){
-            console.log(err);
-        } else {
-            res.render('home');
-        }
-    });
+    res.render('home');
 });
 
 // Home Route (new)
