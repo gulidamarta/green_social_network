@@ -67,15 +67,19 @@ html
                 <h1 class="motivation_gsn"><b>our world cleaner.</b></h1>
                 <h1 class="motivation_gsn"><b>Only together we can restore</b></h1>
                 <h1 class="motivation_gsn"><b>the planet.</b></h1>
-                <section class="second_block__button">
-                    <form action="/users/login">
-                        <input type="submit" value="Log in">
-                    </form>
-                </section>
-                <p class="dont_have_account_text">Don't have an account?</p>
-                <p class="sign_up_text"><a href="/users/register">Sign Up</a></p>
+                if user
+                    <section class="second_block__button">
+                    </section>
+                else
+                    <section class="second_block__button">
+                        <form action="/users/login">
+                            <input type="submit" value="Log in">
+                        </form>
+                    </section>
+                    <p class="dont_have_account_text">Don't have an account?</p>
+                    <p class="sign_up_text"><a href="/users/register">Sign Up</a></p>
             </section>
-            <img class="second_block__img" src="/icons/april-green-and-clean.jpg"/>
+            <img class="second_block__img" src="/icons/main_img.jpg"/>
         </section>
         <svg class="svg_green_rect">
             <rect class="green_rect"/>

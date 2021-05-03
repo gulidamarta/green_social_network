@@ -9,8 +9,8 @@
 .main_icon{
     margin-left: 3%;
     margin-top: 32px;
-    width: 4.5%;
-    height: 6.5%;
+    width: 3%;
+    height: 6%;
 }
 
 .header_links{
@@ -386,12 +386,17 @@
         font-size: 26px;
     }
 
+    .main_icon{
+        margin-top: 10px;
+    }
+
     .a_header_selected{
         font-size: 26px;
     }
 
     .title_gsn {
         font-size: 40px;
+        margin-bottom: 8%;
     }
 
     .motivation_gsn{
@@ -401,9 +406,15 @@
     }
 
     .second_block__button input{
-        margin-top: 20px;
+        margin-top: 40px;
         height: 80px;
         font-size: 26px;
+    }
+
+    .second_block__img{
+        margin-left: 25%;
+        width: 500px;
+        height: 500px;
     }
 
 
@@ -418,6 +429,7 @@
     .svg_green_rect{
         height: 36px;
         margin-right: 5%;
+        margin-top: 3%;
     }
 
     .green_rect{
@@ -426,7 +438,7 @@
     }
 
     .header_small_steps{
-        font-size: 50px;
+        font-size: 40px;
     }
 
     .header_want_to_help{
@@ -456,8 +468,9 @@
     }
 
     .header_its_simple{
-        margin-top: 30px;
-        font-size: 50px;
+        margin-top: 80px;
+        font-size: 40px;
+        margin-bottom: 40px;
     }
 
     .div_option_rect{
@@ -470,6 +483,7 @@
     .option_text{
         font-size: 26px;
         padding-top: 55%;
+        font-weight: bold;
     }
 
     .option_img{
@@ -483,7 +497,7 @@
     }
 
     .fifth_section__topic{
-        font-size: 50px;
+        font-size: 40px;
     }
 
     .fifth_section__subtext{
@@ -491,8 +505,9 @@
     }
 
     .fifth_section__img{
-        width: 600px;
-        height: 450px;
+        width: 560px;
+        height: 400px;
+        margin-right: 5%;
     }
 
     .category_img{
@@ -504,18 +519,43 @@
     }
 
     .footer_website_img{
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         margin-right: 0;
     }
 
+    .seventh_section .first_column{
+        margin-left: 8%;
+        margin-right: 2%;
+    }
+
+    .seventh_section .second_column, .third_column{
+        margin-top: 2%;
+        margin-left: 8%;
+    }
+
     .fourth_column__image_links{
-        padding-left: 35%;
+        padding-left: 28%;
+    }
+
+    .six_section_header{
+        font-size: 40px;
     }
 
     .category_img{
         width: 15%;
         margin-left: 7%;
+    }
+
+    .seventh_section{
+        height: 250px;
+    }
+
+    .footer_icon{
+        margin-left: 5%;
+        margin-top: 2.5%;
+        width: 40px;
+        height: 80px;
     }
 }
 
@@ -526,7 +566,7 @@
     }
 
     .main_icon{
-        margin-left: 5%;
+        margin-left: 10%;
     }
 
     .a_header{
