@@ -310,20 +310,43 @@
     margin-top: 5%;
 }
 
+.category_section_1 .category_section_2 .category_section_3 .category_section_4{
+    display: flex;
+    flex-direction: column;
+}
+
 .category_img{
     width: 15%;
+}
+
+.category_section_2 .category_section_3{
     margin-right: 5%;
     margin-left: 7%;
 }
 
 .category_img_first{
     width: 15%;
+}
+
+.category_section_1{
     margin-right: 5%;
 }
 
 .category_img_last{
     width: 15%;
+}
+
+.category_section_4{
     margin-left: 7%;
+}
+
+.category_header{
+    font-family: Roboto, Serif;
+    font-size: 150%;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 2%;
+    font-weight: lighter;
 }
 
 .seventh_section{
@@ -356,13 +379,14 @@
 
 .footer_link {
     font-size: 150%;
-    color: #746E69;
+    color: black;
     font-family: Roboto, Serif;
+    font-weight: normal;
 }
 
 .footer_a{
     text-decoration: None;
-    color: #746E69;
+    color: black;
 }
 
 .fourth_column__image_links{
@@ -483,7 +507,7 @@
     .option_text{
         font-size: 26px;
         padding-top: 55%;
-        font-weight: bold;
+        font-weight: normal;
     }
 
     .option_img{
@@ -534,6 +558,14 @@
         margin-left: 8%;
     }
 
+    .category_header{
+        font-family: Roboto, Serif;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
+
     .fourth_column__image_links{
         padding-left: 28%;
     }
@@ -543,8 +575,36 @@
     }
 
     .category_img{
-        width: 15%;
-        margin-left: 7%;
+        width: 150px;
+        margin-left: 9%;
+        margin-right: 8%;
+    }
+
+    .category_img_first{
+        width: 150px;
+    }
+
+    .category_section_1{
+        margin-right: 8%;
+    }
+
+    .category_img_last{
+        width: 150px;
+        margin-left: 9%;
+    }
+
+    .category_section_2{
+        margin-right: 100px;
+        margin-left: 9%;
+    }
+
+    .category_section_3{
+        margin-right: 100px;
+        margin-left: 9%;
+    }
+
+    .category_section_4{
+        margin-left: 9%;
     }
 
     .seventh_section{
