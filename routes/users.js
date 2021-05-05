@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const multer = require('multer');
 const path = require('path');
+const statusCodes = require('http-status-codes');
 
 // Bring in User, News, Activities Models
 let User = require('../models/user');
@@ -26,13 +27,24 @@ const storage = multer.diskStorage({
 // Execute multer
 const upload = multer({storage: storage});
 
+
+// use this for checking authorization
+const authenticate = passport.authenticate('local', {session: true});
+
+function mustAuthenticated(req, res, next) {
+    if (!req.isAuthenticated()) {
+        return res.status(statusCodes.UNAUTHORIZED).send({});
+    }
+    next();
+}
+
 // Register Form
 router.get('/register', function (req, res) {
     res.render('register');
 });
 
 // Register Process
-router.post('/register', upload.single('image'), function (req, res) {
+router.post('/register', authenticate, upload.single('image'), function (req, res) {
     const name = req.body.name;
     const email = req.body.email;
     const username = req.body.username;
@@ -118,7 +130,7 @@ router.get('/login', function (req, res) {
 });
 
 // Login Process
-router.post('/login', function (req, res, next) {
+router.post('/login', authenticate, function (req, res, next) {
     passport.authenticate('local', {
         successRedirect: '/home',
         failureRedirect: '/users/login',
@@ -127,7 +139,7 @@ router.post('/login', function (req, res, next) {
 });
 
 // Logout
-router.get('/logout', function (req, res) {
+router.get('/logout', mustAuthenticated, function (req, res) {
     req.logout();
     req.flash('success', 'You are logged out.');
     // NOT sure that this is a good idea, may be the login page will be better
@@ -146,7 +158,7 @@ function prepare_news_preview(news_list){
 }
 
 // User Profile
-router.get('/:id', function (req, res) {
+router.get('/:id', mustAuthenticated, function (req, res) {
     User.findById(req.params.id, function (err, user){
         if (err){
             console.log(err);
@@ -173,7 +185,7 @@ router.get('/:id', function (req, res) {
 });
 
 // Edit Profile Page Render
-router.get('/:id/edit', function (req, res) {
+router.get('/:id/edit', mustAuthenticated, function (req, res) {
     User.findById(req.params.id, function (err, user) {
         if(err){
             console.log(err);
@@ -186,7 +198,7 @@ router.get('/:id/edit', function (req, res) {
 });
 
 // Update Submit POST User Route
-router.post('/:id/edit', upload.single('image'), function (req, res) {
+router.post('/:id/edit', mustAuthenticated, upload.single('image'), function (req, res) {
     let users = {};
     users.name = req.body.name;
     users.email = req.body.email;

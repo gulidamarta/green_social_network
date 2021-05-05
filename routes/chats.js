@@ -1,12 +1,24 @@
 const express = require('express');
+const passport = require('passport');
+const statusCodes = require('http-status-codes');
 const router = express.Router();
 
 // Bring in Models
 let Chats = require('../models/chat');
 let Messages = require('../models/message');
 
+// use this for checking authorization
+const authenticate = passport.authenticate('local', {session: true});
 
-router.get('/', function (req, res) {
+function mustAuthenticated(req, res, next) {
+    if (!req.isAuthenticated()) {
+        return res.status(statusCodes.UNAUTHORIZED).send({});
+    }
+    next();
+}
+
+
+router.get('/', mustAuthenticated, function (req, res) {
     Chats.find({}, function (err, chat_list) {
         if (err){
             console.log(err);
@@ -18,7 +30,7 @@ router.get('/', function (req, res) {
     });
 });
 
-router.get('/:id', function (req, res) {
+router.get('/:id', mustAuthenticated, function (req, res) {
     Messages.find({chat_room_id: req.params.id}, function(err, message_list) {
         if (err){
             console.log(err);

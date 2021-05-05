@@ -81,7 +81,7 @@
 .add_activity_section{
     display: flex;
     flex-direction: column;
-    margin-left: 80%;
+    margin-left: 92%;
 }
 
 .add_activity_btn{
@@ -92,6 +92,10 @@
     height: 60px;
     border: None;
     border-radius: 90px;
+}
+
+.add_activity_btn:focus{
+    outline: None;
 }
 
 .add_activity_section h1{
@@ -124,10 +128,9 @@
     }
 
     .main_icon{
-        margin-left: 3%;
         margin-top: 10px;
-        width: 6%;
-        height: 10%;
+        width: 3%;
+        height: 8%;
     }
 
     .profile_photo{
@@ -140,11 +143,11 @@
     }
 
     .add_activity_btn{
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
     }
 
     .add_activity_section h1{
-        font-size: 22px;
+        font-size: 16px;
     }
 }

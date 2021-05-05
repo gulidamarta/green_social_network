@@ -441,13 +441,14 @@
         height: 500px;
     }
 
-
     .dont_have_account_text{
         font-size: 22px;
+        margin-left: 25%;
     }
 
     .sign_up_text{
         font-size: 22px;
+        margin-left: 40%;
     }
 
     .svg_green_rect{
@@ -534,10 +535,6 @@
         margin-right: 5%;
     }
 
-    .category_img{
-        width: 12%;
-    }
-
     .footer_link {
         font-size: 20px;
     }
@@ -576,20 +573,23 @@
 
     .category_img{
         width: 150px;
+        height: 150px;
         margin-left: 9%;
         margin-right: 8%;
     }
 
     .category_img_first{
-        width: 150px;
+        width: 140px;
+        height: 150px;
     }
 
     .category_section_1{
-        margin-right: 8%;
+        margin-right: 9%;
     }
 
     .category_img_last{
         width: 150px;
+        height: 150px;
         margin-left: 9%;
     }
 
