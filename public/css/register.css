@@ -91,10 +91,10 @@
 .input_password{
     border: None;
     font-size: 200%;
-    color: #9BA39A;
+    color: #5F764A;
     font-family: Roboto;
     padding-bottom: 2%;
-    opacity: 50%;
+    opacity: 80%;
 }
 
 .input_password:focus{
@@ -114,10 +114,10 @@
 .input_username{
     border: None;
     font-size: 200%;
-    color: #9BA39A;
+    color: #5F764A;
     font-family: Roboto;
     padding-bottom: 2%;
-    opacity: 50%;
+    opacity: 80%;
 }
 
 .input_username:focus{
@@ -130,10 +130,10 @@
 .input_email{
     border: None;
     font-size: 200%;
-    color: #9BA39A;
+    color: #5F764A;
     font-family: Roboto;
     padding-bottom: 2%;
-    opacity: 50%;
+    opacity: 80%;
 }
 
 .input_email:focus{
@@ -198,7 +198,7 @@
     }
 
     .terms_and_conditions_section{
-        margin-top: 15%;
+        margin-top: 10%;
     }
 
     .terms_and_conditions__header{
@@ -224,17 +224,17 @@
     }
 
     .input_username{
-        margin-top: 5%;
+        margin-top: 7%;
         font-size: 20px;
     }
 
     .input_password{
-        margin-top: 5%;
+        margin-top: 7%;
         font-size: 20px;
     }
 
     .input_email{
-        margin-top: 5%;
+        margin-top: 7%;
         font-size: 20px;
     }
 

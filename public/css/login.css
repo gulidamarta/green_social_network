@@ -59,7 +59,7 @@
     color: #9BA39A;
     font-family: Roboto;
     padding-bottom: 2%;
-    opacity: 50%;
+    opacity: 80%;
 }
 
 .input_username:focus{
@@ -75,7 +75,7 @@
     color: #9BA39A;
     font-family: Roboto;
     padding-bottom: 2%;
-    opacity: 50%;
+    opacity: 80%;
 }
 
 .input_password:focus{
@@ -225,7 +225,7 @@
 
     .input_password{
         font-size: 20px;
-        margin-top: 5%;
+        margin-top: 10%;
     }
 
     .input-icon{
