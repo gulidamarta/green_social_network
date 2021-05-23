@@ -14,7 +14,7 @@ let Activities = require('../models/activity');
 let Chats = require('../models/chat');
 
 //
-// // Add Submit POST Route
+// Add Submit POST Route
 // router.post('/add', function (req, res) {
 //     req.checkBody('name', 'Name is required.').notEmpty();
 //     req.checkBody('author', 'Author is required.').notEmpty();
@@ -26,8 +26,7 @@ let Chats = require('../models/chat');
 //     // Get Errors
 //     let errors = req.validationErrors();
 //     if (errors){
-//         res.render('index', {
-//             title: 'Green News',
+//         res.render('/home', {
 //             errors: errors
 //         })
 //     }else{
@@ -82,7 +81,8 @@ let Chats = require('../models/chat');
 //         });
 //     }
 // });
-//
+
+
 // router.get('/:id', function (req, res) {
 //     Activities.findById(req.params.id, function (err, activity_item){
 //         if (err){
@@ -95,7 +95,12 @@ let Chats = require('../models/chat');
 //     });
 // });
 
-// API Key: 2086bbf6-3638-48d1-be92-53b9da474acf
+
+router.get('/add', function (req, res){
+    res.render('create_activity')
+});
+
+
 router.get('/list', function (req, resp){
     resp.render('activities_list')
 })

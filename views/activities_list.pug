@@ -65,11 +65,189 @@ html
             if user
                 <img class="profile_photo" src="/icons/test_profile_photo_1.png"/>
                 h1= user.name
-            <section class="add_activity_section">
-                <button class='add_activity_btn' type='submit'></button>
-                <h1>Create</h1>
-            </section>
+                <section class="add_activity_section">
+                    <form class="add_activity_form" action="/activities/add">
+                        <input class='add_activity_btn' type="submit" value="">
+                    </form>
+                    <h1>Create</h1>
+                </section>
+            else
+                <section class="add_activity_section">
+                    <form class="add_activity_form" action="/activities/add">
+                        <input class='add_activity_btn' type="submit" value="">
+                    </form>
+                    <h1>Create</h1>
+                </section>
         </section>
         .container(class='flex-box-container')
             div(class="div_map" id="map")
             div(class='activity_div' )
+        <section class="filters_section_1">
+            <section class='search_activity_by_name_section'>
+            form(method='GET', action='/activities/search_by_name')
+                #form-group
+                    input(class='input_search_text' type='text' name='search_text' placeholder='Search by name')
+            </section>
+            <section class='search_activity_by_status_section'>
+            form(method='GET', action='/activities/search_by_status')
+                #form-group
+                    <select class="activities_by_status" id="activities_by_status" name="activities_by_status">
+                        <option class="activity_status_opt" value="status">Status</option>
+                        <option class="activity_status_opt" value="created">Created</option>
+                        <option class="activity_status_opt" value="in_progress">In Progress</option>
+                        <option class="activity_status_opt" value="finished">Finished</option>
+                        <option class="activity_status_opt" value="completed">Completed</option>
+                    </select>
+            </section>
+            <section class='search_activity_by_sort_section'>
+            form(method='GET', action='/activities/search_by_sort')
+                #form-group
+                    <select class="activities_by_sort" id="activities_by_sort" name="activities_by_sort">
+                    <option class="activity_sort_opt" value="sort_by">Sort by</option>
+                    <option class="activity_sort_opt" value="publication_date">Publication Date</option>
+                    <option class="activity_sort_opt" value="amount_of_participants">Amount of participants</option>
+                    </select>
+            </section>
+        </section>
+        <section class="filters_section_1">
+            form(method='GET', action='/activities/search_by_category')
+                #form-group
+                    <select class="activities_by_category" id="activities_by_sort" name="activities_by_sort">
+                    <option class="activity_category_opt" value="sort_by">Category</option>
+                    <option class="activity_category_opt" value="co2_emissions">CO2 Emissions</option>
+                    <option class="activity_category_opt" value="plant_trees">Plant Trees</option>
+                    <option class="activity_category_opt" value="recycling">Recycling</option>
+                    <option class="activity_category_opt" value="food_waste">Food Waste</option>
+                    </select>
+            <section class='search_by_start_date_section'>
+                form(method='GET', action='/activities/search_by_start_date')
+                    #form-group
+                        <input class="input_start_date" type="date" id="start" name="trip-start" value="2020-05-24" min="2018-01-01" max="2022-01-01">
+            </section>
+            <section class='search_by_end_date_section'>
+            form(method='GET', action='/activities/search_by_end_date')
+                #form-group
+                    <input class="input_end_date" type="date" id="start" name="trip-start" value="2020-06-30" min="2018-01-01" max="2022-01-01">
+            </section>
+        </section>
+        <section class="activities_first_row">
+            <div class="first_activity">
+                <section class="header_row_activity">
+                    <h1 class="activity_header">Cycle to work scheme</h1>
+                    <img class="activity_category_img" src="/icons/co2_category_white.jpg"/>
+                </section>
+                <section class="activity_category_row">
+                    <h1 class="activity_categories_list">CO2 emission, carbon dioxide</h1>
+                </section>
+                <section class="dates_and_image_section">
+                    <section class="dates_section">
+                        <section class="start_date_section">
+                            <img class="date_icon" src="/icons/date-from.png"/>
+                            <h1 class="date_value">20.05.2021</h1>
+                        </section>
+                        <section class="end_date_section">
+                            <img class="date_icon" src="/icons/date-to.png"/>
+                            <h1 class="date_value">30.05.2021</h1>
+                        </section>
+                    </section>
+                    <section class="activity_photo_section">
+                        <img class="activity_photo" src="/icons/first_activity_img.jpg"/>
+                    </section>
+                </section>
+                <section class="activity_location">
+                    <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
+                    <h1 class="activity_location_value">Minsk, Belarus</h1>
+                </section>
+            </div>
+            <div class="second_activity">
+                <section class="header_row_activity">
+                    <h1 class="activity_header">Plant a tree</h1>
+                    <img class="activity_category_img_2" src="/icons/plant_tree_category_white.jpg"/>
+                </section>
+                <section class="activity_category_row">
+                    <h1 class="activity_categories_list">Carbon dioxide, green spaces</h1>
+                </section>
+                <section class="dates_and_image_section">
+                    <section class="dates_section">
+                        <section class="start_date_section">
+                            <img class="date_icon" src="/icons/date-from.png"/>
+                            <h1 class="date_value">19.04.2021</h1>
+                        </section>
+                    <section class="end_date_section">
+                        <img class="date_icon" src="/icons/date-to.png"/>
+                        <h1 class="date_value">19.08.2021</h1>
+                    </section>
+                </section>
+                <section class="activity_photo_section">
+                    <img class="activity_photo" src="/icons/second_activity_img.jpg"/>
+                </section>
+                </section>
+                <section class="activity_location">
+                    <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
+                    <h1 class="activity_location_value">Minsk, Belarus</h1>
+                </section>
+            </div>
+        </section>
+        <section class="activities_first_row">
+            <div class="first_activity">
+                <section class="header_row_activity">
+                    <h1 class="activity_header">Donate clothes</h1>
+                    <img class="activity_category_img_3" src="/icons/recycling_category_white.jpg"/>
+                </section>
+                <section class="activity_category_row">
+                    <h1 class="activity_categories_list">Landfill, sustainability</h1>
+                </section>
+                <section class="dates_and_image_section">
+                <section class="dates_section">
+                    <section class="start_date_section">
+                        <img class="date_icon" src="/icons/date-from.png"/>
+                        <h1 class="date_value">02.02.2021</h1>
+                    </section>
+                    <section class="end_date_section">
+                        <img class="date_icon" src="/icons/date-to.png"/>
+                        <h1 class="date_value">15.07.2021</h1>
+                    </section>
+                </section>
+                    <section class="activity_photo_section">
+                        <img class="activity_photo" src="/icons/third_activity_img.jpg"/>
+                    </section>
+                </section>
+                <section class="activity_location">
+                    <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
+                    <h1 class="activity_location_value">Minsk, Belarus</h1>
+                </section>
+            </div>
+            <div class="second_activity">
+                <section class="header_row_activity">
+                    <h1 class="activity_header">Recycle plastic</h1>
+                    <img class="activity_category_img_3" src="/icons/recycling_category_white.jpg"/>
+                </section>
+                <section class="activity_category_row">
+                    <h1 class="activity_categories_list">Landfill, natural resources, pollution</h1>
+                </section>
+                <section class="dates_and_image_section">
+                    <section class="dates_section">
+                        <section class="start_date_section">
+                            <img class="date_icon" src="/icons/date-from.png"/>
+                            <h1 class="date_value">07.01.2021</h1>
+                        </section>
+                        <section class="end_date_section">
+                            <img class="date_icon" src="/icons/date-to.png"/>
+                            <h1 class="date_value">07.01.2022</h1>
+                        </section>
+                    </section>
+                    <section class="activity_photo_section">
+                        <img class="activity_photo" src="/icons/fourth_activity_img.jpg"/>
+                    </section>
+                </section>
+                <section class="activity_location">
+                    <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
+                    <h1 class="activity_location_value">Minsk, Belarus</h1>
+                </section>
+            </div>
+        </section>
+        <section class="load_more_btn">
+            <form action="/activities/load_more">
+                <input type="submit" value="Load more">
+            </form>
+        </section>

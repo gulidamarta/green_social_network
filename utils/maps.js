@@ -4,7 +4,7 @@ var myMap;
 function init () {
     myMap = new ymaps.Map('map', {
         center: [53.9006, 27.5590],
-        zoom: 13
+        zoom: 15
     }, {
         searchControlProvider: 'yandex#search'
     });
@@ -19,9 +19,7 @@ function init () {
         balloonContent: 'Activity'
     }, {
         fillColor: 'rgba(77,140,141,0.2)',
-        //fillOpacity: 0.5,
         strokeColor: 'rgba(77,140,141,0.2)',
-        //strokeOpacity: 0.5,
         strokeWidth: 2,
         borderRadius: 90
     });
@@ -29,17 +27,32 @@ function init () {
     // myMap.geoObjects
     //     .add(myRectangle);
 
-    ymaps.modules.require(['Heatmap'], function (Heatmap) {
-        var data = [[53.9006, 27.5590], [53.92, 27.59]],
-            heatmap = new Heatmap(data);
-        heatmap.radius = 1000;
-        heatmap.setMap(myMap);
-    });
+    // Uncomment to use Heatmap
+    // ymaps.modules.require(['Heatmap'], function (Heatmap) {
+    //     var data = [[53.9006, 27.5590], [53.92, 27.59]],
+    //         heatmap = new Heatmap(data);
+    //     heatmap.radius = 1000;
+    //     heatmap.setMap(myMap);
+    // });
 
     myMap.geoObjects
         .add(new ymaps.Placemark([53.9040, 27.5590], {
             balloonContent: '<strong>red</strong> color'
         }, {
-            preset: 'islands#redSportIcon'
+            preset: 'islands#redFactoryIcon'
+        }))
+
+    myMap.geoObjects
+        .add(new ymaps.Placemark([53.9056, 27.57], {
+            balloonContent: '<strong>red</strong> color'
+        }, {
+            preset: 'islands#redFactoryIcon'
+        }))
+
+    myMap.geoObjects
+        .add(new ymaps.Placemark([53.9000, 27.57], {
+            balloonContent: '<strong>red</strong> color'
+        }, {
+            preset: 'islands#redFactoryIcon'
         }))
 }

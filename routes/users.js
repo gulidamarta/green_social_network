@@ -142,7 +142,6 @@ router.post('/login', authenticate, function (req, res, next) {
 router.get('/logout', mustAuthenticated, function (req, res) {
     req.logout();
     req.flash('success', 'You are logged out.');
-    // NOT sure that this is a good idea, may be the login page will be better
     res.redirect('/home');
 });
 
