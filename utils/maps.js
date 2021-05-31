@@ -1,3 +1,9 @@
+var locals = {
+    myVar: 1,
+    Activities: require('../models/activity'),
+    ActivityPlace: require('../models/activityPlace')
+};
+
 ymaps.ready(init);
 var myMap;
 
@@ -34,7 +40,26 @@ function init () {
     //     heatmap.radius = 1000;
     //     heatmap.setMap(myMap);
     // });
-
+    locals.Activities.find({}, function(err, activities_list){
+        if (err){
+            console.log(err);
+        }else{
+            for(let i=0; i<activities_list.length; i++){
+                locals.ActivityPlace.findById(activities_list[i].activityPlace_id, function (err, activity_place){
+                    if (err){
+                        console.log(activity_place);
+                    } else {
+                        myMap.geoObjects
+                            .add(new ymaps.Placemark([activity_place.latitude, activity_place.longitude], {
+                                balloonContent: '<strong>red</strong> color'
+                            }, {
+                                preset: 'islands#redFactoryIcon'
+                            }))
+                    }
+                })
+            }
+        }
+    });
     myMap.geoObjects
         .add(new ymaps.Placemark([53.9040, 27.5590], {
             balloonContent: '<strong>red</strong> color'

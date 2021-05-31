@@ -7,8 +7,16 @@ let activitiesSchema = mongoose.Schema({
         required: true
     },
     author: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectID,
         required: true
+    },
+    description: {
+        type: String,
+        required: false
+    },
+    category:{
+      type: String,
+      required: true
     },
     activityPlace_id: {
         type: mongoose.Schema.Types.ObjectID,
