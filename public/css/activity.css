@@ -1,0 +1,212 @@
+.flex-box-container{
+    display: flex;
+}
+
+.div_map{
+    width: 100%;
+    height: 1200px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1%;
+}
+
+.body{
+    margin: 0;
+}
+
+.gsn_header{
+    flex-direction: row;
+}
+
+.main_icon{
+    margin-left: 3%;
+    margin-top: 32px;
+    width: 4.5%;
+    height: 6.5%;
+}
+
+.header_links{
+    float: none;
+    list-style-type: none;
+    overflow: hidden;
+    margin-right: 32px;
+}
+
+.header_link{
+    float: right;
+    margin-left: 0;
+    margin-top: 32px;
+    margin-right: 5%;
+}
+
+.a_header{
+    color: #746E69;
+    font-size: 44px;
+    text-decoration: none;
+    display: block;
+    font-family: Roboto, Serif;
+}
+
+.a_header_selected{
+    color: black;
+    font-size: 44px;
+    text-decoration: none;
+    display: block;
+    font-family: Roboto, Serif;
+}
+
+.header_section{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.activity_name_h{
+    color: black;
+    font-size: 26px;
+    font-family: Roboto, Serif;
+    font-weight: normal;
+    width: 50%;
+}
+
+.edit_activity_btn{
+    margin-left: 1180%;
+    background:transparent url("/icons/icon-edit.png") no-repeat center;
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
+    border: None;
+}
+
+.map_section{
+    margin-left: 5%;
+    margin-right: 6%;
+    margin-top: 5px;
+}
+
+.dates_category_section{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+}
+
+.dates_section{
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+}
+
+.date_with_header_section{
+    display: flex;
+    flex-direction: column;
+}
+
+.start_date_section{
+    display: flex;
+    flex-direction: row;
+}
+
+.end_date_section{
+    display: flex;
+    flex-direction: row;
+}
+
+.date_header{
+    color: black;
+    font-size: 120%;
+    font-family: Roboto;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.date_icon{
+    width: 50px;
+    height: 50px;
+}
+
+.date_value{
+    font-size: 120%;
+    font-family: Roboto;
+    font-weight: normal;
+    color: #858F76;
+    padding-left: 5%;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 8%;
+}
+
+.category_icon{
+    width: 80px;
+    height: 100px;
+    margin-left: 130%;
+}
+
+.description_img_section{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+}
+
+.description_section{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.activity_photo{
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    margin-left: 30%;
+}
+
+.leave_activity_btn input{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    width: 300px;
+    height: 60px;
+    background-color: #436D3F;
+    color: white;
+    font-family: Roboto, Serif;
+    font-size: 24px;
+    border: none;
+    border-radius: 45px;
+    font-weight: normal;
+    margin-left: 40%;
+}
+
+.leave_activity_btn input:focus{
+    outline: None;
+}
+
+@media only screen and (max-width: 1900px) {
+    .a_header {
+        font-size: 26px;
+    }
+
+    .a_header_selected {
+        font-size: 26px;
+    }
+
+    .title_gsn {
+        font-size: 40px;
+    }
+
+    .div_map {
+        height: 500px;
+        margin-top: 0.5%;
+    }
+
+    .main_icon {
+        margin-top: 10px;
+        width: 3%;
+        height: 8%;
+    }
+}

@@ -126,4 +126,38 @@ router.get('/list', function (req, resp){
     });
 });
 
+router.get('/:id', function (req, res){
+    Activities.findById(req.params.id, function (err, activity_item) {
+        if (err){
+            console.log(err);
+        } else{
+            ActivityPlace.findById(activity_item.activityPlace_id, function(err, activity_place){
+                if (err){
+                    console.log(err);
+                } else {
+                    ActivitySchedule.findById(activity_item.activitySchedule_id, function (err, activity_schedule){
+                        if (err){
+                            console.log(err);
+                        } else{
+                            User.findById(activity_item.author, function (err, user){
+                                if (err){
+                                    console.log(err);
+                                } else{
+                                    res.render(
+                                        'activity', {
+                                            activity_item: activity_item,
+                                            activity_schedule: activity_schedule,
+                                            activity_place: activity_place
+                                        }
+                                    )
+                                }
+                            })
+                        }
+                    });
+                }
+            });
+        }
+    });
+})
+
 module.exports = router;

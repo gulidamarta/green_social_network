@@ -478,6 +478,12 @@
     outline: None;
 }
 
+.activity_link{
+    text-decoration: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
 
 @media only screen and (max-width: 1900px) {
     .a_header {

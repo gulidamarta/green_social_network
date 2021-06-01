@@ -1,15 +1,14 @@
 html
-    head
+    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <title>Activities</title>
         link(rel="stylesheet", href="/css/activities_list.css", type="text/css")
-        <link rel="icon" href="/icons/world.png">
+        link(rel="icon" href="/icons/world.png")
         script(src="https://api-maps.yandex.ru/2.1/?apikey=fb0c7e11-987d-497b-900e-125bedb00d77&lang=ru_RU", type="text/javascript")
         script(src="https://yastatic.net/s3/mapsapi-jslibs/heatmap/0.0.1/heatmap.min.js", type="text/javascript")
-        script
-            include ../utils/maps.js
-
+        script(src='/js/maps.js')
+    </head>
     block content
         <div class="gsn_header">
             <ul class="header_links">
@@ -125,176 +124,28 @@ html
         </section>
         if (activities_amount === 1)
             <section class="activities_first_row">
-                <div class="first_activity">
-                    <section class="header_row_activity">
-                        h1(class="activity_header")=activities_list[0].name
-                        <img class="activity_category_img" src="/icons/co2_category_white.jpg"/>
-                    </section>
-                    <section class="activity_category_row">
-                        <h1 class="activity_categories_list">CO2 emission, carbon dioxide</h1>
-                    </section>
-                    <section class="dates_and_image_section">
-                        <section class="dates_section">
-                            <section class="start_date_section">
-                                <img class="date_icon" src="/icons/date-from.png"/>
-                                <h1 class="date_value">20.05.2021</h1>
-                            </section>
-                            <section class="end_date_section">
-                                <img class="date_icon" src="/icons/date-to.png"/>
-                                <h1 class="date_value">30.05.2021</h1>
-                            </section>
-                        </section>
-                        <section class="activity_photo_section">
-                            <img class="activity_photo" src="/icons/first_activity_img.jpg"/>
-                        </section>
-                    </section>
-                    <section class="activity_location">
-                        <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
-                        <h1 class="activity_location_value">Minsk, Belarus</h1>
-                    </section>
-                </div>
-            </section>
-        else if (activities_amount === 2)
-            console.log('hhahah')
-            <section class="activities_first_row">
-                <div class="first_activity">
-                    <section class="header_row_activity">
-                        h1(class="activity_header")=activities_list[0].name
-                        <img class="activity_category_img" src="/icons/co2_category_white.jpg"/>
-                    </section>
-                    <section class="activity_category_row">
-                        <h1 class="activity_categories_list">CO2 emission, carbon dioxide</h1>
-                    </section>
-                    <section class="dates_and_image_section">
-                        <section class="dates_section">
-                            <section class="start_date_section">
-                                <img class="date_icon" src="/icons/date-from.png"/>
-                                <h1 class="date_value">20.05.2021</h1>
-                            </section>
-                        <section class="end_date_section">
-                            <img class="date_icon" src="/icons/date-to.png"/>
-                            <h1 class="date_value">30.05.2021</h1>
-                        </section>
-                    </section>
-                    <section class="activity_photo_section">
-                        <img class="activity_photo" src="/icons/first_activity_img.jpg"/>
-                    </section>
-                </section>
-                <section class="activity_location">
-                    <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
-                    <h1 class="activity_location_value">Minsk, Belarus</h1>
-                </section>
-            </div>
-            <div class="second_activity">
-                <section class="header_row_activity">
-                    h1(class="activity_header")=activities_list[1].name
-                    <img class="activity_category_img_2" src="/icons/plant_tree_category_white.jpg"/>
-                </section>
-                <section class="activity_category_row">
-                    <h1 class="activity_categories_list">Carbon dioxide, green spaces</h1>
-                </section>
-                <section class="dates_and_image_section">
-                    <section class="dates_section">
-                        <section class="start_date_section">
-                            <img class="date_icon" src="/icons/date-from.png"/>
-                            <h1 class="date_value">19.04.2021</h1>
-                        </section>
-                        <section class="end_date_section">
-                            <img class="date_icon" src="/icons/date-to.png"/>
-                            <h1 class="date_value">19.08.2021</h1>
-                        </section>
-                    </section>
-                    <section class="activity_photo_section">
-                        <img class="activity_photo" src="/icons/second_activity_img.jpg"/>
-                    </section>
-                </section>
-                <section class="activity_location">
-                    <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
-                    <h1 class="activity_location_value">Minsk, Belarus</h1>
-                </section>
-            </div>
-            </section>
-        else if (activities_amount === 3)
-            <section class="activities_first_row">
-                <div class="first_activity">
-                    <section class="header_row_activity">
-                        h1(class="activity_header")=activities_list[0].name
-                        <img class="activity_category_img" src="/icons/co2_category_white.jpg"/>
-                    </section>
-                    <section class="activity_category_row">
-                        <h1 class="activity_categories_list">CO2 emission, carbon dioxide</h1>
-                    </section>
-                    <section class="dates_and_image_section">
-                        <section class="dates_section">
-                            <section class="start_date_section">
-                                <img class="date_icon" src="/icons/date-from.png"/>
-                                <h1 class="date_value">20.05.2021</h1>
-                            </section>
-                            <section class="end_date_section">
-                                <img class="date_icon" src="/icons/date-to.png"/>
-                                <h1 class="date_value">30.05.2021</h1>
-                            </section>
-                        </section>
-                        <section class="activity_photo_section">
-                            <img class="activity_photo" src="/icons/first_activity_img.jpg"/>
-                        </section>
-                    </section>
-                    <section class="activity_location">
-                        <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
-                        <h1 class="activity_location_value">Minsk, Belarus</h1>
-                    </section>
-                </div>
-                <div class="second_activity">
-                    <section class="header_row_activity">
-                        h1(class="activity_header")=activities_list[1].name
-                        <img class="activity_category_img_2" src="/icons/plant_tree_category_white.jpg"/>
-                    </section>
-                    <section class="activity_category_row">
-                        <h1 class="activity_categories_list">Carbon dioxide, green spaces</h1>
-                    </section>
-                    <section class="dates_and_image_section">
-                        <section class="dates_section">
-                            <section class="start_date_section">
-                                <img class="date_icon" src="/icons/date-from.png"/>
-                                <h1 class="date_value">19.04.2021</h1>
-                            </section>
-                            <section class="end_date_section">
-                                <img class="date_icon" src="/icons/date-to.png"/>
-                                <h1 class="date_value">19.08.2021</h1>
-                            </section>
-                        </section>
-                        <section class="activity_photo_section">
-                            <img class="activity_photo" src="/icons/second_activity_img.jpg"/>
-                        </section>
-                    </section>
-                    <section class="activity_location">
-                        <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
-                        <h1 class="activity_location_value">Minsk, Belarus</h1>
-                    </section>
-                </div>
-                </section>
-                <section class="activities_first_row">
+                a(class='activity_link' href='/activities/'+activities_list[0]._id)
                     <div class="first_activity">
                         <section class="header_row_activity">
-                            h1(class="activity_header")=activities_list[2].name
-                            <img class="activity_category_img_3" src="/icons/recycling_category_white.jpg"/>
+                            h1(class="activity_header")=activities_list[0].name
+                            <img class="activity_category_img" src="/icons/co2_category_white.jpg"/>
                         </section>
                         <section class="activity_category_row">
-                            <h1 class="activity_categories_list">Landfill, sustainability</h1>
+                            <h1 class="activity_categories_list">CO2 emission, carbon dioxide</h1>
                         </section>
                         <section class="dates_and_image_section">
                             <section class="dates_section">
                                 <section class="start_date_section">
                                     <img class="date_icon" src="/icons/date-from.png"/>
-                                    <h1 class="date_value">02.02.2021</h1>
+                                    <h1 class="date_value">20.05.2021</h1>
                                 </section>
                                 <section class="end_date_section">
                                     <img class="date_icon" src="/icons/date-to.png"/>
-                                    <h1 class="date_value">15.07.2021</h1>
+                                    <h1 class="date_value">30.05.2021</h1>
                                 </section>
                             </section>
                             <section class="activity_photo_section">
-                                <img class="activity_photo" src="/icons/third_activity_img.jpg"/>
+                                <img class="activity_photo" src="/icons/first_activity_img.jpg"/>
                             </section>
                         </section>
                         <section class="activity_location">
@@ -302,23 +153,24 @@ html
                             <h1 class="activity_location_value">Minsk, Belarus</h1>
                         </section>
                     </div>
-                </section>
-        else if (activities_amount === 4)
+            </section>
+        else if (activities_amount === 2)
             <section class="activities_first_row">
-                <div class="first_activity">
-                    <section class="header_row_activity">
-                        h1(class="activity_header")=activities_list[0].name
-                        <img class="activity_category_img" src="/icons/co2_category_white.jpg"/>
-                    </section>
-                    <section class="activity_category_row">
-                        <h1 class="activity_categories_list">CO2 emission, carbon dioxide</h1>
-                    </section>
-                    <section class="dates_and_image_section">
-                        <section class="dates_section">
-                            <section class="start_date_section">
-                                <img class="date_icon" src="/icons/date-from.png"/>
-                                <h1 class="date_value">20.05.2021</h1>
-                            </section>
+                a(class='activity_link' href='/activities/'+activities_list[0]._id)
+                    <div class="first_activity">
+                        <section class="header_row_activity">
+                            h1(class="activity_header")=activities_list[0].name
+                            <img class="activity_category_img" src="/icons/co2_category_white.jpg"/>
+                        </section>
+                        <section class="activity_category_row">
+                            <h1 class="activity_categories_list">CO2 emission, carbon dioxide</h1>
+                        </section>
+                        <section class="dates_and_image_section">
+                            <section class="dates_section">
+                                <section class="start_date_section">
+                                    <img class="date_icon" src="/icons/date-from.png"/>
+                                    <h1 class="date_value">20.05.2021</h1>
+                                </section>
                             <section class="end_date_section">
                                 <img class="date_icon" src="/icons/date-to.png"/>
                                 <h1 class="date_value">30.05.2021</h1>
@@ -334,35 +186,311 @@ html
                     </section>
                 </div>
                 <div class="second_activity">
-                    <section class="header_row_activity">
-                        h1(class="activity_header")=activities_list[1].name
-                        <img class="activity_category_img_2" src="/icons/plant_tree_category_white.jpg"/>
-                    </section>
-                    <section class="activity_category_row">
-                        <h1 class="activity_categories_list">Carbon dioxide, green spaces</h1>
-                    </section>
-                    <section class="dates_and_image_section">
-                        <section class="dates_section">
-                            <section class="start_date_section">
-                                <img class="date_icon" src="/icons/date-from.png"/>
-                                <h1 class="date_value">19.04.2021</h1>
+                    a(class='activity_link' href='/activities/'+activities_list[1]._id)
+                        <section class="header_row_activity">
+                            h1(class="activity_header")=activities_list[1].name
+                            <img class="activity_category_img_2" src="/icons/plant_tree_category_white.jpg"/>
+                        </section>
+                        <section class="activity_category_row">
+                            <h1 class="activity_categories_list">Carbon dioxide, green spaces</h1>
+                        </section>
+                        <section class="dates_and_image_section">
+                            <section class="dates_section">
+                                <section class="start_date_section">
+                                    <img class="date_icon" src="/icons/date-from.png"/>
+                                    <h1 class="date_value">19.04.2021</h1>
+                                </section>
+                                <section class="end_date_section">
+                                    <img class="date_icon" src="/icons/date-to.png"/>
+                                    <h1 class="date_value">19.08.2021</h1>
+                                </section>
                             </section>
-                            <section class="end_date_section">
-                                <img class="date_icon" src="/icons/date-to.png"/>
-                                <h1 class="date_value">19.08.2021</h1>
+                            <section class="activity_photo_section">
+                                <img class="activity_photo" src="/icons/second_activity_img.jpg"/>
                             </section>
                         </section>
-                        <section class="activity_photo_section">
-                            <img class="activity_photo" src="/icons/second_activity_img.jpg"/>
+                        <section class="activity_location">
+                            <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
+                            <h1 class="activity_location_value">Minsk, Belarus</h1>
                         </section>
-                    </section>
-                    <section class="activity_location">
-                        <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
-                        <h1 class="activity_location_value">Minsk, Belarus</h1>
-                    </section>
-                </div>
+                    </div>
+            </section>
+        else if (activities_amount === 3)
+            <section class="activities_first_row">
+                a(class='activity_link' href='/activities/'+activities_list[0]._id)
+                    <div class="first_activity">
+                        <section class="header_row_activity">
+                            h1(class="activity_header")=activities_list[0].name
+                            <img class="activity_category_img" src="/icons/co2_category_white.jpg"/>
+                        </section>
+                        <section class="activity_category_row">
+                            <h1 class="activity_categories_list">CO2 emission, carbon dioxide</h1>
+                        </section>
+                        <section class="dates_and_image_section">
+                            <section class="dates_section">
+                                <section class="start_date_section">
+                                    <img class="date_icon" src="/icons/date-from.png"/>
+                                    <h1 class="date_value">20.05.2021</h1>
+                                </section>
+                                <section class="end_date_section">
+                                    <img class="date_icon" src="/icons/date-to.png"/>
+                                    <h1 class="date_value">30.05.2021</h1>
+                                </section>
+                            </section>
+                            <section class="activity_photo_section">
+                                <img class="activity_photo" src="/icons/first_activity_img.jpg"/>
+                            </section>
+                        </section>
+                        <section class="activity_location">
+                            <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
+                            <h1 class="activity_location_value">Minsk, Belarus</h1>
+                        </section>
+                    </div>
+                    <div class="second_activity">
+                        a(class='activity_link' href='/activities/'+activities_list[1]._id)
+                            <section class="header_row_activity">
+                                h1(class="activity_header")=activities_list[1].name
+                                <img class="activity_category_img_2" src="/icons/plant_tree_category_white.jpg"/>
+                            </section>
+                            <section class="activity_category_row">
+                                <h1 class="activity_categories_list">Carbon dioxide, green spaces</h1>
+                            </section>
+                            <section class="dates_and_image_section">
+                                <section class="dates_section">
+                                    <section class="start_date_section">
+                                        <img class="date_icon" src="/icons/date-from.png"/>
+                                        <h1 class="date_value">19.04.2021</h1>
+                                    </section>
+                                    <section class="end_date_section">
+                                        <img class="date_icon" src="/icons/date-to.png"/>
+                                        <h1 class="date_value">19.08.2021</h1>
+                                    </section>
+                                </section>
+                                <section class="activity_photo_section">
+                                    <img class="activity_photo" src="/icons/second_activity_img.jpg"/>
+                                </section>
+                            </section>
+                            <section class="activity_location">
+                                <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
+                                <h1 class="activity_location_value">Minsk, Belarus</h1>
+                            </section>
+                        </div>
                 </section>
                 <section class="activities_first_row">
+                    a(class='activity_link' href='/activities/'+activities_list[2]._id)
+                        <div class="first_activity">
+                            <section class="header_row_activity">
+                                h1(class="activity_header")=activities_list[2].name
+                                <img class="activity_category_img_3" src="/icons/recycling_category_white.jpg"/>
+                            </section>
+                            <section class="activity_category_row">
+                                <h1 class="activity_categories_list">Landfill, sustainability</h1>
+                            </section>
+                            <section class="dates_and_image_section">
+                                <section class="dates_section">
+                                    <section class="start_date_section">
+                                        <img class="date_icon" src="/icons/date-from.png"/>
+                                        <h1 class="date_value">02.02.2021</h1>
+                                    </section>
+                                    <section class="end_date_section">
+                                        <img class="date_icon" src="/icons/date-to.png"/>
+                                        <h1 class="date_value">15.07.2021</h1>
+                                    </section>
+                                </section>
+                                <section class="activity_photo_section">
+                                    <img class="activity_photo" src="/icons/third_activity_img.jpg"/>
+                                </section>
+                            </section>
+                            <section class="activity_location">
+                                <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
+                                <h1 class="activity_location_value">Minsk, Belarus</h1>
+                            </section>
+                        </div>
+                </section>
+        else if (activities_amount === 4)
+            <section class="activities_first_row">
+                a(class='activity_link' href='/activities/'+activities_list[0]._id)
+                    <div class="first_activity">
+                        <section class="header_row_activity">
+                            h1(class="activity_header")=activities_list[0].name
+                            <img class="activity_category_img" src="/icons/co2_category_white.jpg"/>
+                        </section>
+                        <section class="activity_category_row">
+                            <h1 class="activity_categories_list">CO2 emission, carbon dioxide</h1>
+                        </section>
+                        <section class="dates_and_image_section">
+                            <section class="dates_section">
+                                <section class="start_date_section">
+                                    <img class="date_icon" src="/icons/date-from.png"/>
+                                    <h1 class="date_value">20.05.2021</h1>
+                                </section>
+                                <section class="end_date_section">
+                                    <img class="date_icon" src="/icons/date-to.png"/>
+                                    <h1 class="date_value">30.05.2021</h1>
+                                </section>
+                            </section>
+                            <section class="activity_photo_section">
+                                <img class="activity_photo" src="/icons/first_activity_img.jpg"/>
+                            </section>
+                        </section>
+                        <section class="activity_location">
+                            <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
+                            <h1 class="activity_location_value">Minsk, Belarus</h1>
+                        </section>
+                    </div>
+                    <div class="second_activity">
+                        a(class='activity_link' href='/activities/'+activities_list[1]._id)
+                            <section class="header_row_activity">
+                                h1(class="activity_header")=activities_list[1].name
+                                <img class="activity_category_img_2" src="/icons/plant_tree_category_white.jpg"/>
+                            </section>
+                            <section class="activity_category_row">
+                                <h1 class="activity_categories_list">Carbon dioxide, green spaces</h1>
+                            </section>
+                            <section class="dates_and_image_section">
+                                <section class="dates_section">
+                                    <section class="start_date_section">
+                                        <img class="date_icon" src="/icons/date-from.png"/>
+                                        <h1 class="date_value">19.04.2021</h1>
+                                    </section>
+                                    <section class="end_date_section">
+                                        <img class="date_icon" src="/icons/date-to.png"/>
+                                        <h1 class="date_value">19.08.2021</h1>
+                                    </section>
+                                </section>
+                                <section class="activity_photo_section">
+                                    <img class="activity_photo" src="/icons/second_activity_img.jpg"/>
+                                </section>
+                            </section>
+                            <section class="activity_location">
+                                <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
+                                <h1 class="activity_location_value">Minsk, Belarus</h1>
+                            </section>
+                        </div>
+                </section>
+                <section class="activities_first_row">
+                    a(class='activity_link' href='/activities/'+activities_list[2]._id)
+                        <div class="first_activity">
+                            <section class="header_row_activity">
+                                h1(class="activity_header")=activities_list[2].name
+                                <img class="activity_category_img_3" src="/icons/recycling_category_white.jpg"/>
+                            </section>
+                            <section class="activity_category_row">
+                                <h1 class="activity_categories_list">Landfill, sustainability</h1>
+                            </section>
+                            <section class="dates_and_image_section">
+                                <section class="dates_section">
+                                    <section class="start_date_section">
+                                        <img class="date_icon" src="/icons/date-from.png"/>
+                                        <h1 class="date_value">02.02.2021</h1>
+                                    </section>
+                                    <section class="end_date_section">
+                                        <img class="date_icon" src="/icons/date-to.png"/>
+                                        <h1 class="date_value">15.07.2021</h1>
+                                    </section>
+                                </section>
+                                <section class="activity_photo_section">
+                                    <img class="activity_photo" src="/icons/third_activity_img.jpg"/>
+                                </section>
+                            </section>
+                            <section class="activity_location">
+                                <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
+                                <h1 class="activity_location_value">Minsk, Belarus</h1>
+                            </section>
+                        </div>
+                        <div class="second_activity">
+                            a(class='activity_link' href='/activities/'+activities_list[3]._id)
+                                <section class="header_row_activity">
+                                    h1(class="activity_header")=activities_list[3].name
+                                    <img class="activity_category_img_3" src="/icons/recycling_category_white.jpg"/>
+                                </section>
+                                <section class="activity_category_row">
+                                    <h1 class="activity_categories_list">Landfill, natural resources, pollution</h1>
+                                </section>
+                                <section class="dates_and_image_section">
+                                    <section class="dates_section">
+                                        <section class="start_date_section">
+                                            <img class="date_icon" src="/icons/date-from.png"/>
+                                            <h1 class="date_value">07.01.2021</h1>
+                                        </section>
+                                        <section class="end_date_section">
+                                            <img class="date_icon" src="/icons/date-to.png"/>
+                                            <h1 class="date_value">07.01.2022</h1>
+                                        </section>
+                                    </section>
+                                    <section class="activity_photo_section">
+                                        <img class="activity_photo" src="/icons/fourth_activity_img.jpg"/>
+                                    </section>
+                                </section>
+                                <section class="activity_location">
+                                    <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
+                                    <h1 class="activity_location_value">Minsk, Belarus</h1>
+                                </section>
+                            </div>
+                </section>
+        else if (activities_amount > 4)
+            <section class="activities_first_row">
+                a(class='activity_link' href='/activities/'+activities_list[0]._id)
+                    <div class="first_activity">
+                        <section class="header_row_activity">
+                            h1(class="activity_header")=activities_list[0].name
+                            <img class="activity_category_img" src="/icons/co2_category_white.jpg"/>
+                        </section>
+                        <section class="activity_category_row">
+                            <h1 class="activity_categories_list">CO2 emission, carbon dioxide</h1>
+                        </section>
+                        <section class="dates_and_image_section">
+                            <section class="dates_section">
+                                <section class="start_date_section">
+                                    <img class="date_icon" src="/icons/date-from.png"/>
+                                    <h1 class="date_value">20.05.2021</h1>
+                                </section>
+                                <section class="end_date_section">
+                                    <img class="date_icon" src="/icons/date-to.png"/>
+                                    <h1 class="date_value">30.05.2021</h1>
+                                </section>
+                            </section>
+                            <section class="activity_photo_section">
+                                <img class="activity_photo" src="/icons/first_activity_img.jpg"/>
+                            </section>
+                        </section>
+                        <section class="activity_location">
+                            <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
+                            <h1 class="activity_location_value">Minsk, Belarus</h1>
+                        </section>
+                    </div>
+                    <div class="second_activity">
+                        a(class='activity_link' href='/activities/'+activities_list[1]._id)
+                            <section class="header_row_activity">
+                                h1(class="activity_header")=activities_list[1].name
+                                <img class="activity_category_img_2" src="/icons/plant_tree_category_white.jpg"/>
+                            </section>
+                            <section class="activity_category_row">
+                                <h1 class="activity_categories_list">Carbon dioxide, green spaces</h1>
+                            </section>
+                            <section class="dates_and_image_section">
+                                <section class="dates_section">
+                                    <section class="start_date_section">
+                                        <img class="date_icon" src="/icons/date-from.png"/>
+                                        <h1 class="date_value">19.04.2021</h1>
+                                    </section>
+                                <section class="end_date_section">
+                                    <img class="date_icon" src="/icons/date-to.png"/>
+                                    <h1 class="date_value">19.08.2021</h1>
+                                </section>
+                            </section>
+                            <section class="activity_photo_section">
+                                <img class="activity_photo" src="/icons/second_activity_img.jpg"/>
+                            </section>
+                            </section>
+                            <section class="activity_location">
+                                <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
+                                <h1 class="activity_location_value">Minsk, Belarus</h1>
+                            </section>
+                        </div>
+            </section>
+            <section class="activities_first_row">
+                a(class='activity_link' href='/activities/'+activities_list[2]._id)
                     <div class="first_activity">
                         <section class="header_row_activity">
                             h1(class="activity_header")=activities_list[2].name
@@ -372,16 +500,16 @@ html
                             <h1 class="activity_categories_list">Landfill, sustainability</h1>
                         </section>
                         <section class="dates_and_image_section">
-                            <section class="dates_section">
-                                <section class="start_date_section">
-                                    <img class="date_icon" src="/icons/date-from.png"/>
-                                    <h1 class="date_value">02.02.2021</h1>
-                                </section>
-                                <section class="end_date_section">
-                                    <img class="date_icon" src="/icons/date-to.png"/>
-                                    <h1 class="date_value">15.07.2021</h1>
-                                </section>
+                        <section class="dates_section">
+                            <section class="start_date_section">
+                                <img class="date_icon" src="/icons/date-from.png"/>
+                                <h1 class="date_value">02.02.2021</h1>
                             </section>
+                            <section class="end_date_section">
+                                <img class="date_icon" src="/icons/date-to.png"/>
+                                <h1 class="date_value">15.07.2021</h1>
+                            </section>
+                        </section>
                             <section class="activity_photo_section">
                                 <img class="activity_photo" src="/icons/third_activity_img.jpg"/>
                             </section>
@@ -392,150 +520,34 @@ html
                         </section>
                     </div>
                     <div class="second_activity">
-                        <section class="header_row_activity">
-                            h1(class="activity_header")=activities_list[3].name
-                            <img class="activity_category_img_3" src="/icons/recycling_category_white.jpg"/>
-                        </section>
-                        <section class="activity_category_row">
-                            <h1 class="activity_categories_list">Landfill, natural resources, pollution</h1>
-                        </section>
-                        <section class="dates_and_image_section">
-                            <section class="dates_section">
-                                <section class="start_date_section">
-                                    <img class="date_icon" src="/icons/date-from.png"/>
-                                    <h1 class="date_value">07.01.2021</h1>
+                        a(class='activity_link' href='/activities/'+activities_list[3]._id)
+                            <section class="header_row_activity">
+                                h1(class="activity_header")=activities_list[3].name
+                                <img class="activity_category_img_3" src="/icons/recycling_category_white.jpg"/>
+                            </section>
+                            <section class="activity_category_row">
+                                <h1 class="activity_categories_list">Landfill, natural resources, pollution</h1>
+                            </section>
+                            <section class="dates_and_image_section">
+                                <section class="dates_section">
+                                    <section class="start_date_section">
+                                        <img class="date_icon" src="/icons/date-from.png"/>
+                                        <h1 class="date_value">07.01.2021</h1>
+                                    </section>
+                                    <section class="end_date_section">
+                                        <img class="date_icon" src="/icons/date-to.png"/>
+                                        <h1 class="date_value">07.01.2022</h1>
+                                    </section>
                                 </section>
-                                <section class="end_date_section">
-                                    <img class="date_icon" src="/icons/date-to.png"/>
-                                    <h1 class="date_value">07.01.2022</h1>
+                                <section class="activity_photo_section">
+                                    <img class="activity_photo" src="/icons/fourth_activity_img.jpg"/>
                                 </section>
                             </section>
-                            <section class="activity_photo_section">
-                                <img class="activity_photo" src="/icons/fourth_activity_img.jpg"/>
+                            <section class="activity_location">
+                                <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
+                                <h1 class="activity_location_value">Minsk, Belarus</h1>
                             </section>
-                        </section>
-                        <section class="activity_location">
-                            <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
-                            <h1 class="activity_location_value">Minsk, Belarus</h1>
-                        </section>
-                    </div>
-                </section>
-        else if (activities_amount > 4)
-            <section class="activities_first_row">
-                <div class="first_activity">
-                    <section class="header_row_activity">
-                        h1(class="activity_header")=activities_list[0].name
-                        <img class="activity_category_img" src="/icons/co2_category_white.jpg"/>
-                    </section>
-                    <section class="activity_category_row">
-                        <h1 class="activity_categories_list">CO2 emission, carbon dioxide</h1>
-                    </section>
-                    <section class="dates_and_image_section">
-                        <section class="dates_section">
-                            <section class="start_date_section">
-                                <img class="date_icon" src="/icons/date-from.png"/>
-                                <h1 class="date_value">20.05.2021</h1>
-                            </section>
-                            <section class="end_date_section">
-                                <img class="date_icon" src="/icons/date-to.png"/>
-                                <h1 class="date_value">30.05.2021</h1>
-                            </section>
-                        </section>
-                        <section class="activity_photo_section">
-                            <img class="activity_photo" src="/icons/first_activity_img.jpg"/>
-                        </section>
-                    </section>
-                    <section class="activity_location">
-                        <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
-                        <h1 class="activity_location_value">Minsk, Belarus</h1>
-                    </section>
-                </div>
-                <div class="second_activity">
-                    <section class="header_row_activity">
-                        h1(class="activity_header")=activities_list[1].name
-                        <img class="activity_category_img_2" src="/icons/plant_tree_category_white.jpg"/>
-                    </section>
-                    <section class="activity_category_row">
-                        <h1 class="activity_categories_list">Carbon dioxide, green spaces</h1>
-                    </section>
-                    <section class="dates_and_image_section">
-                        <section class="dates_section">
-                            <section class="start_date_section">
-                                <img class="date_icon" src="/icons/date-from.png"/>
-                                <h1 class="date_value">19.04.2021</h1>
-                            </section>
-                        <section class="end_date_section">
-                            <img class="date_icon" src="/icons/date-to.png"/>
-                            <h1 class="date_value">19.08.2021</h1>
-                        </section>
-                    </section>
-                    <section class="activity_photo_section">
-                        <img class="activity_photo" src="/icons/second_activity_img.jpg"/>
-                    </section>
-                    </section>
-                    <section class="activity_location">
-                        <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
-                        <h1 class="activity_location_value">Minsk, Belarus</h1>
-                    </section>
-                </div>
-            </section>
-            <section class="activities_first_row">
-                <div class="first_activity">
-                    <section class="header_row_activity">
-                        h1(class="activity_header")=activities_list[2].name
-                        <img class="activity_category_img_3" src="/icons/recycling_category_white.jpg"/>
-                    </section>
-                    <section class="activity_category_row">
-                        <h1 class="activity_categories_list">Landfill, sustainability</h1>
-                    </section>
-                    <section class="dates_and_image_section">
-                    <section class="dates_section">
-                        <section class="start_date_section">
-                            <img class="date_icon" src="/icons/date-from.png"/>
-                            <h1 class="date_value">02.02.2021</h1>
-                        </section>
-                        <section class="end_date_section">
-                            <img class="date_icon" src="/icons/date-to.png"/>
-                            <h1 class="date_value">15.07.2021</h1>
-                        </section>
-                    </section>
-                        <section class="activity_photo_section">
-                            <img class="activity_photo" src="/icons/third_activity_img.jpg"/>
-                        </section>
-                    </section>
-                    <section class="activity_location">
-                        <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
-                        <h1 class="activity_location_value">Minsk, Belarus</h1>
-                    </section>
-                </div>
-                <div class="second_activity">
-                    <section class="header_row_activity">
-                        h1(class="activity_header")=activities_list[3].name
-                        <img class="activity_category_img_3" src="/icons/recycling_category_white.jpg"/>
-                    </section>
-                    <section class="activity_category_row">
-                        <h1 class="activity_categories_list">Landfill, natural resources, pollution</h1>
-                    </section>
-                    <section class="dates_and_image_section">
-                        <section class="dates_section">
-                            <section class="start_date_section">
-                                <img class="date_icon" src="/icons/date-from.png"/>
-                                <h1 class="date_value">07.01.2021</h1>
-                            </section>
-                            <section class="end_date_section">
-                                <img class="date_icon" src="/icons/date-to.png"/>
-                                <h1 class="date_value">07.01.2022</h1>
-                            </section>
-                        </section>
-                        <section class="activity_photo_section">
-                            <img class="activity_photo" src="/icons/fourth_activity_img.jpg"/>
-                        </section>
-                    </section>
-                    <section class="activity_location">
-                        <img class="activity_location_img" src="/icons/icon-maps-pin.png"/>
-                        <h1 class="activity_location_value">Minsk, Belarus</h1>
-                    </section>
-                </div>
+                        </div>
             </section>
             <section class="load_more_btn">
                 <form action="/activities/load_more">

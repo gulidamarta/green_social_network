@@ -1,8 +1,47 @@
-var locals = {
-    myVar: 1,
-    Activities: require('../models/activity'),
-    ActivityPlace: require('../models/activityPlace')
-};
+let mongoose = require('mongoose');
+
+// Activity schema
+let activitiesSchema = mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    author: {
+        type: mongoose.Schema.Types.ObjectID,
+        required: true
+    },
+    description: {
+        type: String,
+        required: false
+    },
+    category:{
+        type: String,
+        required: true
+    },
+    activityPlace_id: {
+        type: mongoose.Schema.Types.ObjectID,
+        required: true
+    },
+    activitySchedule_id: {
+        type: mongoose.Schema.Types.ObjectID,
+        required: true
+    }
+});
+
+let Activities = mongoose.model('Activities', activitiesSchema);
+// ActivityPlace schema
+let ActivityPlaceSchema = mongoose.Schema({
+    latitude: {
+        type:  mongoose.Schema.Types.Decimal,
+        required: true
+    },
+    longitude: {
+        type: mongoose.Schema.Types.Decimal,
+        required: true
+    }
+});
+
+let ActivityPlace = mongoose.model('ActivityPlace', ActivityPlaceSchema);
 
 ymaps.ready(init);
 var myMap;
