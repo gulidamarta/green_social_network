@@ -56,21 +56,21 @@ function init () {
     // });
     myMap.geoObjects
         .add(new ymaps.Placemark([53.9040, 27.5590], {
-            balloonContent: '<strong>red</strong> color'
+            balloonContent: 'Cycle to work scheme'
         }, {
             preset: 'islands#redFactoryIcon'
         }))
 
     myMap.geoObjects
         .add(new ymaps.Placemark([53.9056, 27.57], {
-            balloonContent: '<strong>red</strong> color'
+            balloonContent: 'Plant a tree'
         }, {
             preset: 'islands#redFactoryIcon'
         }))
 
     myMap.geoObjects
         .add(new ymaps.Placemark([53.9000, 27.57], {
-            balloonContent: '<strong>red</strong> color'
+            balloonContent: 'Donate clothes'
         }, {
             preset: 'islands#redFactoryIcon'
         }))

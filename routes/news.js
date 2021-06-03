@@ -21,6 +21,17 @@ const storage = multer.diskStorage({
     }
 });
 
+// Access Control
+function ensureAuthenticated(req, res, next){
+    if (!res.isAuthenticated){
+        return next();
+    }
+    else{
+        req.flash('danger', 'Please, login.');
+        res.redirect('/users/login');
+    }
+}
+
 // Execute multer
 const upload = multer({storage: storage});
 
@@ -135,15 +146,11 @@ router.get('/:id', function (req, res) {
     });
 });
 
-// Access Control
-function ensureAuthenticated(req, res, next){
-    if (!res.isAuthenticated){
-        return next();
-    }
-    else{
-        req.flash('danger', 'Please, login.');
-        res.redirect('/users/login');
-    }
-}
+// News List Page
+router.get('', function (req, res){
+    res.render(
+        'news'
+    )
+})
 
 module.exports = router;

@@ -1,11 +1,4 @@
 extends layout
 
 block content
-    h1 #{title}
-    h5 Written by #{author}
-    p= news_item.body
-    hr
-    if user
-        if user.id == news_item.author
-            a.btn.btn-default(href='/news/edit/'+news_item._id) Edit
-            a.btn.btn-danger(href='/news/delete/'+news_item._id) Delete
+    <h1>News Page</h1>

@@ -8,6 +8,7 @@ html
         script(src="https://api-maps.yandex.ru/2.1/?apikey=fb0c7e11-987d-497b-900e-125bedb00d77&lang=ru_RU", type="text/javascript")
         script(src="https://yastatic.net/s3/mapsapi-jslibs/heatmap/0.0.1/heatmap.min.js", type="text/javascript")
         script(src='/js/maps.js')
+        script(src="https://canvasjs.com/assets/script/canvasjs.min.js")
     </head>
     block content
         <div class="gsn_header">
@@ -61,6 +62,34 @@ html
             </ul>
         </div>
         <section class="first_section">
+            <button id="myBtn">Open Modal</button>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+            <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <!-- Tab links -->
+                    <div class="tab">
+                        <button class="tablinks" onclick="openChart(event, 'London')">London</button>
+                        <button class="tablinks" onclick="openChart(event, 'Paris')">Paris</button>
+                        <button class="tablinks" onclick="openChart(event, 'Tokyo')">Tokyo</button>
+                    </div>
+
+                    <!-- Tab content -->
+                    <div id="London" class="tabcontent" id="cityName">
+                        <div id="chartContainerLondon" style="height: 300px; width: 100%;"></div>
+                    </div>
+
+                    <div id="Paris" class="tabcontent" id="cityName">
+                        <div id="chartContainerParis" style="height: 300px; width: 100%;"></div>
+                    </div>
+
+                    <div id="Tokyo" class="tabcontent" id="cityName">
+                        <div id="chartContainerTokyo" style="height: 300px; width: 100%;"></div>
+                    </div>
+            </div>
+            script(src='/js/open-window.js')
+            </div>
             if user
                 <img class="profile_photo" src="/icons/test_profile_photo_1.png"/>
                 h1= user.name
