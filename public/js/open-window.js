@@ -29,26 +29,26 @@ window.onclick = function(event) {
             }]
         },
         data: [{
-            yValueFormatString: "#,### Units",
-            xValueFormatString: "YYYY",
+            yValueFormatString: "#,###",
+            xValueFormatString: "HH:MM:SS",
             type: "spline",
             dataPoints: [
-                {x: new Date(2002, 0), y: 2506000},
-                {x: new Date(2003, 0), y: 2798000},
-                {x: new Date(2004, 0), y: 3386000},
-                {x: new Date(2005, 0), y: 6944000},
-                {x: new Date(2006, 0), y: 6026000},
-                {x: new Date(2007, 0), y: 2394000},
-                {x: new Date(2008, 0), y: 1872000},
-                {x: new Date(2009, 0), y: 2140000},
-                {x: new Date(2010, 0), y: 7289000},
-                {x: new Date(2011, 0), y: 4830000},
-                {x: new Date(2012, 0), y: 2009000},
-                {x: new Date(2013, 0), y: 2840000},
-                {x: new Date(2014, 0), y: 2396000},
-                {x: new Date(2015, 0), y: 1613000},
-                {x: new Date(2016, 0), y: 2821000},
-                {x: new Date(2017, 0), y: 2000000}
+                {x: new Date(2021, 6, 3, 12, 5, 30), y: 2506000},
+                {x: new Date(2021, 6, 3, 12, 10, 30), y: 2798000},
+                {x: new Date(2021, 6, 3, 12, 15, 30), y: 3386000},
+                {x: new Date(2021, 6, 3, 12, 20, 30), y: 6944000},
+                {x: new Date(2021, 6, 3, 12, 25, 30), y: 6026000},
+                {x: new Date(2021, 6, 3, 12, 30, 30), y: 2394000},
+                {x: new Date(2021, 6, 3, 12, 35, 30), y: 1872000},
+                {x: new Date(2021, 6, 3, 12, 40, 30), y: 2140000},
+                {x: new Date(2021, 6, 3, 12, 45, 30), y: 7289000},
+                {x: new Date(2021, 6, 3, 12, 50, 30), y: 4830000},
+                {x: new Date(2021, 6, 3, 12, 55, 30), y: 2009000},
+                {x: new Date(2021, 6, 3, 13, 0, 30), y: 2840000},
+                {x: new Date(2021, 6, 3, 13, 5, 30), y: 2396000},
+                {x: new Date(2021, 6, 3, 13, 10, 30), y: 1613000},
+                {x: new Date(2021, 6, 3, 13, 15, 30), y: 2821000},
+                {x: new Date(2021, 6, 3, 13, 20, 30), y: 2000000}
             ]
         }]
     });
@@ -139,23 +139,23 @@ window.onclick = function(event) {
     }
 }
 
-function openChart(evt, cityName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
+// function openChart(evt, cityName) {
+//     // Declare all variables
+//     var i, tabcontent, tablinks;
+//
+//     // Get all elements with class="tabcontent" and hide them
+//     tabcontent = document.getElementsByClassName("tabcontent");
+//     for (i = 0; i < tabcontent.length; i++) {
+//         tabcontent[i].style.display = "none";
+//     }
+//
+//     // Get all elements with class="tablinks" and remove the class "active"
+//     tablinks = document.getElementsByClassName("tablinks");
+//     for (i = 0; i < tablinks.length; i++) {
+//         tablinks[i].className = tablinks[i].className.replace(" active", "");
+//     }
+//
+//     // Show the current tab, and add an "active" class to the button that opened the tab
+//     document.getElementById(cityName).style.display = "block";
+//     evt.currentTarget.className += " active";
+// }
