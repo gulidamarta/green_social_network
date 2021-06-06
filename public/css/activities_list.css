@@ -548,6 +548,8 @@
 /* Create an active/current tablink class */
 .tab button.active {
     border-bottom: 1px solid #ddd;
+    background-color: #ddd;
+    border-radius: 15px;
 }
 
 /* Style the tab content */

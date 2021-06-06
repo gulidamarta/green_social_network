@@ -4,16 +4,11 @@ const statusCodes = require('http-status-codes');
 const router = express.Router();
 
 
-// User Model
 let User = require('../models/user');
-// ActivitySchedule Model
 let ActivitySchedule = require('../models/activitySchedule');
-// ActivityPlace Model
 let ActivityPlace = require('../models/activityPlace');
-// Activity Model
 let Activities = require('../models/activity');
-// Chat Model
-let Chats = require('../models/chat');
+let Device = require('../models/device');
 
 // use this for checking authorization
 const authenticate = passport.authenticate('local', {session: true});
@@ -117,13 +112,40 @@ router.get('/list', function (req, resp){
         if (err){
             console.log(err);
         } else{
-            console.log(activities_list);
             resp.render('activities_list',{
                 activities_list: activities_list,
                 activities_amount: activities_list.length
             });
         }
     });
+});
+
+router.get('/devices', function (req, resp) {
+    Activities.find({}, function (err, activities_list) {
+        if (err) {
+            console.log(err);
+        } else {
+            var result_json = [];
+            for (let i = 0; i < activities_list.length; i++){
+                ActivityPlace.findById(activities_list[i].activityPlace_id, function(err, activity_place){
+                    if (err){
+                        console.log(err);
+                    } else{
+                        let temp = {
+                            activity: activities_list[i],
+                            activity_place: activity_place
+                        };
+                        result_json.push(temp);
+                    }
+                })
+            }
+            setTimeout(() => {  resp.send({
+                activities_list: result_json,
+                activities_amount: activities_list.length,
+            }); }, 100);
+
+        }
+    })
 });
 
 router.get('/:id', function (req, res){
@@ -158,6 +180,29 @@ router.get('/:id', function (req, res){
             });
         }
     });
-})
+});
+
+router.post('/device/add', function(req, resp){
+    let device = Device();
+    device.device_id = req.query.device_id;
+    device.latitude = req.query.latitude;
+    device.longitude = req.query.longitude;
+    device.temperature = req.query.temperature;
+    device.humidity = req.query.humidity;
+    device.dew_point = req.query.dew_point;
+    device.carbon_dioxide = req.query.carbon_dioxide;
+    device.tvoc = req.query.tvoc;
+    device.formaldehyde = req.query.formaldehyde;
+    device.toluene = req.query.toluene;
+    device.cpm = req.query.cpm;
+
+    device.save(function(err){
+        if (err){
+            console.log(err);
+        } else {
+            resp.send(device)
+        }
+    })
+});
 
 module.exports = router;

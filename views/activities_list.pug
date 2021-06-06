@@ -5,7 +5,7 @@ html
         <title>Activities</title>
         link(rel="stylesheet", href="/css/activities_list.css", type="text/css")
         link(rel="icon" href="/icons/world.png")
-        script(src="https://api-maps.yandex.ru/2.1/?apikey=fb0c7e11-987d-497b-900e-125bedb00d77&lang=ru_RU", type="text/javascript")
+        script(src="https://api-maps.yandex.ru/2.1/?apikey=fb0c7e11-987d-497b-900e-125bedb00d77&lang=en_US&l=sat", type="text/javascript")
         script(src="https://yastatic.net/s3/mapsapi-jslibs/heatmap/0.0.1/heatmap.min.js", type="text/javascript")
         script(src="https://canvasjs.com/assets/script/canvasjs.min.js")
     </head>
@@ -71,8 +71,8 @@ html
                         <button class="tablinks" onclick="openChart(event, 'Carbon dioxide')">Carbon dioxide</button>
                         <button class="tablinks" onclick="openChart(event, 'Tvoc')">Tvoc</button>
                         <button class="tablinks" onclick="openChart(event, 'Formaldehyde')">Formaldehyde</button>
-                        <button class="tablinks" onclick="openChart(event, 'Toluence')">Toluence</button>
-                        <button class="tablinks" onclick="openChart(event, 'Cpm')">Cpm</button>
+                        <button class="tablinks" onclick="openChart(event, 'Toluene')">Toluene</button>
+                        <button class="tablinks" onclick="openChart(event, 'Radiation')">Radiation</button>
                     </div>
 
                     <!-- Tab content -->
@@ -88,12 +88,12 @@ html
                         <div id="chartContainerFormaldehyde" style="height: 300px; width: 1241px;"></div>
                     </div>
 
-                    <div id="Toluence" class="tabcontent" id="cityName" style="height: 300px; width: 100%;">
-                        <div id="chartContainerToluence" style="height: 300px; width: 1241px;"></div>
+                    <div id="Toluene" class="tabcontent" id="cityName" style="height: 300px; width: 100%;">
+                        <div id="chartContainerToluene" style="height: 300px; width: 1241px;"></div>
                     </div>
 
-                    <div id="Cpm" class="tabcontent" id="cityName" style="height: 300px; width: 100%;">
-                        <div id="chartContainerCpm" style="height: 300px; width: 1241px;"></div>
+                    <div id="Radiation" class="tabcontent" id="cityName" style="height: 300px; width: 100%;">
+                        <div id="chartContainerRadiation" style="height: 300px; width: 1241px;"></div>
                     </div>
             </div>
             script(src='/js/maps.js')

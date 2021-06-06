@@ -1,11 +1,9 @@
 ymaps.ready(init);
 var myMap;
 
-// Get the modal
+
 let modal = document.getElementById("myModal");
-// Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
-// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
 }
@@ -17,34 +15,34 @@ let chartCarbonDioxide = new CanvasJS.Chart("chartContainerCarbonDioxide", {
     },
     axisY: {
         //title: "Units Sold",
-        valueFormatString: "#0,,.",
-        suffix: "mn",
+        //valueFormatString: "#0,,.",
+        suffix: "ppm",
         stripLines: [{
-            value: 3366500,
-            label: "Average"
+            value: 450,
+            label: "Upper bound"
         }]
     },
     data: [{
-        yValueFormatString: "#,###",
-        xValueFormatString: "HH:MM:SS",
+        yValueFormatString: "#,### ppm",
+        xValueFormatString: "H:mm:ss",
         type: "spline",
         dataPoints: [
-            {x: new Date(2021, 6, 3, 12, 5, 30), y: 2506000},
-            {x: new Date(2021, 6, 3, 12, 10, 30), y: 2798000},
-            {x: new Date(2021, 6, 3, 12, 15, 30), y: 3386000},
-            {x: new Date(2021, 6, 3, 12, 20, 30), y: 6944000},
-            {x: new Date(2021, 6, 3, 12, 25, 30), y: 6026000},
-            {x: new Date(2021, 6, 3, 12, 30, 30), y: 2394000},
-            {x: new Date(2021, 6, 3, 12, 35, 30), y: 1872000},
-            {x: new Date(2021, 6, 3, 12, 40, 30), y: 2140000},
-            {x: new Date(2021, 6, 3, 12, 45, 30), y: 7289000},
-            {x: new Date(2021, 6, 3, 12, 50, 30), y: 4830000},
-            {x: new Date(2021, 6, 3, 12, 55, 30), y: 2009000},
-            {x: new Date(2021, 6, 3, 13, 0, 30), y: 2840000},
-            {x: new Date(2021, 6, 3, 13, 5, 30), y: 2396000},
-            {x: new Date(2021, 6, 3, 13, 10, 30), y: 1613000},
-            {x: new Date(2021, 6, 3, 13, 15, 30), y: 2821000},
-            {x: new Date(2021, 6, 3, 13, 20, 30), y: 2000000}
+            {x: new Date(2021, 6, 3, 12, 5, 30), y: 430},
+            {x: new Date(2021, 6, 3, 12, 10, 30), y: 435},
+            {x: new Date(2021, 6, 3, 12, 15, 30), y: 440},
+            {x: new Date(2021, 6, 3, 12, 20, 30), y: 423},
+            {x: new Date(2021, 6, 3, 12, 25, 30), y: 425},
+            {x: new Date(2021, 6, 3, 12, 30, 30), y: 427},
+            {x: new Date(2021, 6, 3, 12, 35, 30), y: 430},
+            {x: new Date(2021, 6, 3, 12, 40, 30), y: 430},
+            {x: new Date(2021, 6, 3, 12, 45, 30), y: 428},
+            {x: new Date(2021, 6, 3, 12, 50, 30), y: 428},
+            {x: new Date(2021, 6, 3, 12, 55, 30), y: 436},
+            {x: new Date(2021, 6, 3, 13, 0, 30), y: 441},
+            {x: new Date(2021, 6, 3, 13, 5, 30), y: 443},
+            {x: new Date(2021, 6, 3, 13, 10, 30), y: 445},
+            {x: new Date(2021, 6, 3, 13, 15, 30), y: 443},
+            {x: new Date(2021, 6, 3, 13, 20, 30), y: 446}
         ]
     }]
 });
@@ -56,34 +54,34 @@ let chartContainerTvoc = new CanvasJS.Chart("chartContainerTvoc", {
     },
     axisY: {
         //title: "Units Sold",
-        valueFormatString: "#0,,.",
-        suffix: "mn",
+        valueFormatString: "#,0.####",
+        suffix: "mg/m3",
         stripLines: [{
-            value: 3366500,
-            label: "Average"
+            value: 0.601,
+            label: "Upper bound"
         }]
     },
     data: [{
-        yValueFormatString: "#,###",
-        xValueFormatString: "HH:MM:SS",
+        yValueFormatString: "#,#0.#### mg/m3",
+        xValueFormatString: "H:mm:ss",
         type: "spline",
         dataPoints: [
-            {x: new Date(2021, 6, 3, 12, 5, 30), y: 2506000},
-            {x: new Date(2021, 6, 3, 12, 10, 30), y: 2798000},
-            {x: new Date(2021, 6, 3, 12, 15, 30), y: 3386000},
-            {x: new Date(2021, 6, 3, 12, 20, 30), y: 6944000},
-            {x: new Date(2021, 6, 3, 12, 25, 30), y: 6026000},
-            {x: new Date(2021, 6, 3, 12, 30, 30), y: 2394000},
-            {x: new Date(2021, 6, 3, 12, 35, 30), y: 1872000},
-            {x: new Date(2021, 6, 3, 12, 40, 30), y: 2140000},
-            {x: new Date(2021, 6, 3, 12, 45, 30), y: 7289000},
-            {x: new Date(2021, 6, 3, 12, 50, 30), y: 4830000},
-            {x: new Date(2021, 6, 3, 12, 55, 30), y: 2009000},
-            {x: new Date(2021, 6, 3, 13, 0, 30), y: 2840000},
-            {x: new Date(2021, 6, 3, 13, 5, 30), y: 2396000},
-            {x: new Date(2021, 6, 3, 13, 10, 30), y: 1613000},
-            {x: new Date(2021, 6, 3, 13, 15, 30), y: 2821000},
-            {x: new Date(2021, 6, 3, 13, 20, 30), y: 2000000}
+            {x: new Date(2021, 6, 3, 12, 5, 30), y: 0.201},
+            {x: new Date(2021, 6, 3, 12, 10, 30), y: 0.205},
+            {x: new Date(2021, 6, 3, 12, 15, 30), y: 0.203},
+            {x: new Date(2021, 6, 3, 12, 20, 30), y: 0.234},
+            {x: new Date(2021, 6, 3, 12, 25, 30), y: 0.346},
+            {x: new Date(2021, 6, 3, 12, 30, 30), y: 0.378},
+            {x: new Date(2021, 6, 3, 12, 35, 30), y: 0.345},
+            {x: new Date(2021, 6, 3, 12, 40, 30), y: 0.321},
+            {x: new Date(2021, 6, 3, 12, 45, 30), y: 0.318},
+            {x: new Date(2021, 6, 3, 12, 50, 30), y: 0.389},
+            {x: new Date(2021, 6, 3, 12, 55, 30), y: 0.401},
+            {x: new Date(2021, 6, 3, 13, 0, 30), y: 0.420},
+            {x: new Date(2021, 6, 3, 13, 5, 30), y: 0.433},
+            {x: new Date(2021, 6, 3, 13, 10, 30), y: 0.456},
+            {x: new Date(2021, 6, 3, 13, 15, 30), y: 0.459},
+            {x: new Date(2021, 6, 3, 13, 20, 30), y: 0.430}
         ]
     }]
 });
@@ -95,138 +93,149 @@ let chartFormaldehyde = new CanvasJS.Chart("chartContainerFormaldehyde", {
     },
     axisY: {
         //title: "Units Sold",
-        valueFormatString: "#0,,.",
-        suffix: "mn",
+        valueFormatString: "#,0.####",
+        suffix: "mg/m3",
         stripLines: [{
-            value: 3366500,
-            label: "Average"
+            value: 0.301,
+            label: "Upper bound"
         }]
     },
     data: [{
-        yValueFormatString: "#,###",
-        xValueFormatString: "HH:MM:SS",
+        yValueFormatString: "#,#0.#### mg/m3",
+        xValueFormatString: "H:mm:ss",
         type: "spline",
         dataPoints: [
-            {x: new Date(2021, 6, 3, 12, 5, 30), y: 2506000},
-            {x: new Date(2021, 6, 3, 12, 10, 30), y: 2798000},
-            {x: new Date(2021, 6, 3, 12, 15, 30), y: 3386000},
-            {x: new Date(2021, 6, 3, 12, 20, 30), y: 6944000},
-            {x: new Date(2021, 6, 3, 12, 25, 30), y: 6026000},
-            {x: new Date(2021, 6, 3, 12, 30, 30), y: 2394000},
-            {x: new Date(2021, 6, 3, 12, 35, 30), y: 1872000},
-            {x: new Date(2021, 6, 3, 12, 40, 30), y: 2140000},
-            {x: new Date(2021, 6, 3, 12, 45, 30), y: 7289000},
-            {x: new Date(2021, 6, 3, 12, 50, 30), y: 4830000},
-            {x: new Date(2021, 6, 3, 12, 55, 30), y: 2009000},
-            {x: new Date(2021, 6, 3, 13, 0, 30), y: 2840000},
-            {x: new Date(2021, 6, 3, 13, 5, 30), y: 2396000},
-            {x: new Date(2021, 6, 3, 13, 10, 30), y: 1613000},
-            {x: new Date(2021, 6, 3, 13, 15, 30), y: 2821000},
-            {x: new Date(2021, 6, 3, 13, 20, 30), y: 2000000}
+            {x: new Date(2021, 6, 3, 12, 5, 30), y: 0.098},
+            {x: new Date(2021, 6, 3, 12, 10, 30), y: 0.088},
+            {x: new Date(2021, 6, 3, 12, 15, 30), y: 0.123},
+            {x: new Date(2021, 6, 3, 12, 20, 30), y: 0.119},
+            {x: new Date(2021, 6, 3, 12, 25, 30), y: 0.129},
+            {x: new Date(2021, 6, 3, 12, 30, 30), y: 0.136},
+            {x: new Date(2021, 6, 3, 12, 35, 30), y: 0.145},
+            {x: new Date(2021, 6, 3, 12, 40, 30), y: 0.149},
+            {x: new Date(2021, 6, 3, 12, 45, 30), y: 0.134},
+            {x: new Date(2021, 6, 3, 12, 50, 30), y: 0.131},
+            {x: new Date(2021, 6, 3, 12, 55, 30), y: 0.125},
+            {x: new Date(2021, 6, 3, 13, 0, 30), y: 0.108},
+            {x: new Date(2021, 6, 3, 13, 5, 30), y: 0.098},
+            {x: new Date(2021, 6, 3, 13, 10, 30), y: 0.071},
+            {x: new Date(2021, 6, 3, 13, 15, 30), y: 0.089},
+            {x: new Date(2021, 6, 3, 13, 20, 30), y: 0.074}
         ]
     }]
 });
 
-let chartToluence = new CanvasJS.Chart("chartContainerToluence", {
+let chartToluene = new CanvasJS.Chart("chartContainerToluene", {
     animationEnabled: true,
     title:{
-        text: "Toluence"
+        text: "Toluene"
     },
     axisY: {
-        //title: "Units Sold",
-        valueFormatString: "#0,,.",
-        suffix: "mn",
+        valueFormatString: "#,0.####",
+        suffix: "",
         stripLines: [{
-            value: 3366500,
-            label: "Average"
+            value: 1,
+            label: "Detected"
         }]
     },
     data: [{
         yValueFormatString: "#,###",
-        xValueFormatString: "HH:MM:SS",
+        xValueFormatString: "H:mm:ss",
         type: "spline",
         dataPoints: [
-            {x: new Date(2021, 6, 3, 12, 5, 30), y: 2506000},
-            {x: new Date(2021, 6, 3, 12, 10, 30), y: 2798000},
-            {x: new Date(2021, 6, 3, 12, 15, 30), y: 3386000},
-            {x: new Date(2021, 6, 3, 12, 20, 30), y: 6944000},
-            {x: new Date(2021, 6, 3, 12, 25, 30), y: 6026000},
-            {x: new Date(2021, 6, 3, 12, 30, 30), y: 2394000},
-            {x: new Date(2021, 6, 3, 12, 35, 30), y: 1872000},
-            {x: new Date(2021, 6, 3, 12, 40, 30), y: 2140000},
-            {x: new Date(2021, 6, 3, 12, 45, 30), y: 7289000},
-            {x: new Date(2021, 6, 3, 12, 50, 30), y: 4830000},
-            {x: new Date(2021, 6, 3, 12, 55, 30), y: 2009000},
-            {x: new Date(2021, 6, 3, 13, 0, 30), y: 2840000},
-            {x: new Date(2021, 6, 3, 13, 5, 30), y: 2396000},
-            {x: new Date(2021, 6, 3, 13, 10, 30), y: 1613000},
-            {x: new Date(2021, 6, 3, 13, 15, 30), y: 2821000},
-            {x: new Date(2021, 6, 3, 13, 20, 30), y: 2000000}
+            {x: new Date(2021, 6, 3, 12, 5, 30), y: 0},
+            {x: new Date(2021, 6, 3, 12, 10, 30), y: 1},
+            {x: new Date(2021, 6, 3, 12, 15, 30), y: 0},
+            {x: new Date(2021, 6, 3, 12, 20, 30), y: 0},
+            {x: new Date(2021, 6, 3, 12, 25, 30), y: 0},
+            {x: new Date(2021, 6, 3, 12, 30, 30), y: 0},
+            {x: new Date(2021, 6, 3, 12, 35, 30), y: 1},
+            {x: new Date(2021, 6, 3, 12, 40, 30), y: 0},
+            {x: new Date(2021, 6, 3, 12, 45, 30), y: 0},
+            {x: new Date(2021, 6, 3, 12, 50, 30), y: 0},
+            {x: new Date(2021, 6, 3, 12, 55, 30), y: 0},
+            {x: new Date(2021, 6, 3, 13, 0, 30), y: 1},
+            {x: new Date(2021, 6, 3, 13, 5, 30), y: 1},
+            {x: new Date(2021, 6, 3, 13, 10, 30), y: 0},
+            {x: new Date(2021, 6, 3, 13, 15, 30), y: 0},
+            {x: new Date(2021, 6, 3, 13, 20, 30), y: 0}
         ]
     }]
 });
 
-let chartCpm = new CanvasJS.Chart("chartContainerCpm", {
+let chartRadiation = new CanvasJS.Chart("chartContainerRadiation", {
     animationEnabled: true,
     title:{
-        text: "Cpm"
+        text: "Radiation"
     },
     axisY: {
-        //title: "Units Sold",
-        valueFormatString: "#0,,.",
-        suffix: "mn",
+        title: "Microroentgen per hour",
+        valueFormatString: "#,0.####",
+        suffix: "mp/h",
         stripLines: [{
-            value: 3366500,
-            label: "Average"
+            value: 25,
+            label: "Upper bound"
         }]
     },
     data: [{
-        yValueFormatString: "#,###",
-        xValueFormatString: "HH:MM:SS",
+        yValueFormatString: "#,#0.#### mp/h",
+        xValueFormatString: "H:mm:ss",
         type: "spline",
         dataPoints: [
-            {x: new Date(2021, 6, 3, 12, 5, 30), y: 2506000},
-            {x: new Date(2021, 6, 3, 12, 10, 30), y: 2798000},
-            {x: new Date(2021, 6, 3, 12, 15, 30), y: 3386000},
-            {x: new Date(2021, 6, 3, 12, 20, 30), y: 6944000},
-            {x: new Date(2021, 6, 3, 12, 25, 30), y: 6026000},
-            {x: new Date(2021, 6, 3, 12, 30, 30), y: 2394000},
-            {x: new Date(2021, 6, 3, 12, 35, 30), y: 1872000},
-            {x: new Date(2021, 6, 3, 12, 40, 30), y: 2140000},
-            {x: new Date(2021, 6, 3, 12, 45, 30), y: 7289000},
-            {x: new Date(2021, 6, 3, 12, 50, 30), y: 4830000},
-            {x: new Date(2021, 6, 3, 12, 55, 30), y: 2009000},
-            {x: new Date(2021, 6, 3, 13, 0, 30), y: 2840000},
-            {x: new Date(2021, 6, 3, 13, 5, 30), y: 2396000},
-            {x: new Date(2021, 6, 3, 13, 10, 30), y: 1613000},
-            {x: new Date(2021, 6, 3, 13, 15, 30), y: 2821000},
-            {x: new Date(2021, 6, 3, 13, 20, 30), y: 2000000}
+            {x: new Date(2021, 6, 3, 12, 5, 30), y: 2.03},
+            {x: new Date(2021, 6, 3, 12, 10, 30), y: 3.12},
+            {x: new Date(2021, 6, 3, 12, 15, 30), y: 2.45},
+            {x: new Date(2021, 6, 3, 12, 20, 30), y: 4.01},
+            {x: new Date(2021, 6, 3, 12, 25, 30), y: 2.98},
+            {x: new Date(2021, 6, 3, 12, 30, 30), y: 3.1},
+            {x: new Date(2021, 6, 3, 12, 35, 30), y: 3.01},
+            {x: new Date(2021, 6, 3, 12, 40, 30), y: 2.9},
+            {x: new Date(2021, 6, 3, 12, 45, 30), y: 2.94},
+            {x: new Date(2021, 6, 3, 12, 50, 30), y: 2.12},
+            {x: new Date(2021, 6, 3, 12, 55, 30), y: 1.89},
+            {x: new Date(2021, 6, 3, 13, 0, 30), y: 1.98},
+            {x: new Date(2021, 6, 3, 13, 5, 30), y: 2.01},
+            {x: new Date(2021, 6, 3, 13, 10, 30), y: 2.23},
+            {x: new Date(2021, 6, 3, 13, 15, 30), y: 2.45},
+            {x: new Date(2021, 6, 3, 13, 20, 30), y: 1.98}
         ]
     }]
 });
+
+
+function createCircle(coordinates, radius){
+    myCircle = new ymaps.Circle([
+        coordinates,
+        radius
+    ], {
+        fillColor: '#00FF00',
+        strokeColor: '#2a7a37',
+        opacity: 0.1,
+        strokeWidth: 2,
+    });
+
+    return myCircle;
+}
+
+function createPlacemark(coordinates, activityName, activityDescription){
+    myPlacemark = new ymaps.Placemark(coordinates, {
+        // Чтобы балун и хинт открывались на метке, необходимо задать ей определенные свойства.
+        balloonContentHeader: activityName,
+        balloonContentBody: activityDescription,
+    },{
+        preset: 'islands#redFactoryIcon'
+    });
+
+    return myPlacemark;
+}
 
 function init () {
     chartCarbonDioxide.render();
     myMap = new ymaps.Map('map', {
-        center: [53.9006, 27.5590],
-        zoom: 15
+        center: [53.9040, 27.5590],
+        zoom: 16.5,
     }, {
         searchControlProvider: 'yandex#search'
-    });
-
-    // Creating a rectangle using an auxiliary class.
-    myRectangle = new ymaps.Rectangle([
-        // Setting the coordinates of the diagonal corners of the rectangle.
-        [53.9006, 27.5590],
-        [53.92, 27.59],
-    ], {
-        //Properties
-        balloonContent: 'Activity'
-    }, {
-        fillColor: 'rgba(77,140,141,0.2)',
-        strokeColor: 'rgba(77,140,141,0.2)',
-        strokeWidth: 2,
-        borderRadius: 90
     });
 
     // Uncomment to use Heatmap
@@ -236,47 +245,41 @@ function init () {
     //     heatmap.radius = 1000;
     //     heatmap.setMap(myMap);
     // });
-    // locals.Activities.find({}, function(err, activities_list){
-    //     if (err){
-    //         console.log(err);
-    //     }else{
-    //         for(let i=0; i<activities_list.length; i++){
-    //             locals.ActivityPlace.findById(activities_list[i].activityPlace_id, function (err, activity_place){
-    //                 if (err){
-    //                     console.log(activity_place);
-    //                 } else {
-    //                     myMap.geoObjects
-    //                         .add(new ymaps.Placemark([activity_place.latitude, activity_place.longitude], {
-    //                             balloonContent: '<strong>red</strong> color'
-    //                         }, {
-    //                             preset: 'islands#redFactoryIcon'
-    //                         }))
-    //                 }
-    //             })
-    //         }
-    //     }
-    // });
-    // myMap.geoObjects
-    //     .add(new ymaps.Placemark([53.9040, 27.5590], {
-    //         balloonContent: 'Cycle to work scheme'
-    //     }, {
-    //         preset: 'islands#redFactoryIcon'
-    //     }))
 
-    myPlacemark = new ymaps.Placemark([53.9040, 27.5590], {
-        // Чтобы балун и хинт открывались на метке, необходимо задать ей определенные свойства.
-        balloonContentHeader: 'Cycle to work scheme',
-        balloonContentBody: 'By opting for cycle to work scheme I intend to cut my carbon footprint (CO2 emission) and therefore reduce harmful and deadly emissions.'
-    },{
-        preset: 'islands#redFactoryIcon'
-    });
-    myMap.geoObjects.add(myPlacemark);
+
+    fetch('/activities/devices')
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let myPlacemark = createPlacemark(
+                [53.9040, 27.5590],
+                data.activities_list[0].activity.name,
+                data.activities_list[0].activity.description,
+            );
+            // Creating a circle.
+            let myCircle = createCircle( [53.9040, 27.5590], 100);
+            myMap.geoObjects.add(myPlacemark);
+            myMap.geoObjects.add(myCircle);
+
+            myPlacemark = createPlacemark(
+                [53.9056, 27.57],
+                data.activities_list[1].activity.name,
+                data.activities_list[1].activity.description,
+            );
+            // Creating a circle.
+            myCircle = createCircle( [53.9056, 27.57], 100);
+            myMap.geoObjects.add(myPlacemark);
+            myMap.geoObjects.add(myCircle);
+        });
+
     // myMap.geoObjects
-    //     .add(new ymaps.Placemark([53.9056, 27.57], {
-    //         balloonContent: 'Plant a tree'
-    //     }, {
-    //         preset: 'islands#redFactoryIcon'
-    //     }))
+    //     .add(createPlacemark(
+    //         [53.9056, 27.57],
+    //         'Plant a tree',
+    //         'Plant a tree in a forest')
+    //     );
+    // myMap.geoObjects.add(createCircle( [53.9056, 27.57], 100));
     //
     // myMap.geoObjects
     //     .add(new ymaps.Placemark([53.9000, 27.57], {
@@ -288,11 +291,11 @@ function init () {
     myMap.events.add('balloonopen', function (event) {
         modal.style.display = "block";
 
-        chartCarbonDioxide.render();
         chartContainerTvoc.render();
         chartFormaldehyde.render();
-        chartToluence.render();
-        chartCpm.render();
+        chartToluene.render();
+        chartRadiation.render();
+        chartCarbonDioxide.render();
     });
 }
 
