@@ -75,26 +75,26 @@ html
                         <h1 class="date_header">Start date</h1>
                         <section class="start_date_section">
                             <img class="date_icon" src="/icons/date-from.png"/>
-                            <h1 class="date_value">20.05.2021</h1>
+                            <h1 class="date_value">08.06.2021</h1>
                         </section>
                     </section>
                     <section class="date_with_header_section" style="margin-left: 10%">
                         <h1 class="date_header">End date</h1>
                         <section class="end_date_section">
                             <img class="date_icon" src="/icons/date-to.png"/>
-                            <h1 class="date_value">30.05.2021</h1>
+                            <h1 class="date_value">08.07.2021</h1>
                         </section>
                     </section>
                 </section>
                 <section class='category_img_section'>
                     if activity_item.category === 'co2_emissions'
                         <img class="category_icon" src="/icons/co2_category_white.jpg"/>
-                    if activity_item.category === 'plant_trees'
+                    else if activity_item.category === 'plant_trees'
                         <img class="category_icon" src="/icons/plant_tree_category_white.jpg"/>
-                    if activity_item.category === 'recycling'
-                        <img class="category_icon" src="/icons/recycling_category_white.jpg"/>
-                    if activity_item.category === 'recycling'
-                        <img class="category_icon" src="/icons/plant_tree_category_white.jpg"/>
+                    else if activity_item.category === 'recycling'
+                        <img class="category_icon" src="/icons/recycling_category_white.jpg" style="width: 100px; height: 100px; margin-left: 85%;"/>
+                    else if activity_item.category === 'food_waste'
+                        <img class="category_icon" src="/icons/food_category_white.jpg"/>
                 </section>
             </section>
             <section class='description_img_section'>

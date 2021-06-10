@@ -134,6 +134,7 @@
     font-family: Roboto;
     padding-bottom: 2%;
     opacity: 80%;
+    width: 90%;
 }
 
 .input_email:focus{

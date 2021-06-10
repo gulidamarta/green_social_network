@@ -6,6 +6,11 @@ let deviceSchema = mongoose.Schema({
         type: Number,
         required: true,
     },
+    timestamp: {
+        type: Date,
+        default: Date.now,
+        required: true,
+    },
     latitude: {
         type: mongoose.Schema.Types.Decimal,
         required: true,

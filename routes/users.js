@@ -44,7 +44,7 @@ router.get('/register', function (req, res) {
 });
 
 // Register Process
-router.post('/register', authenticate, upload.single('image'), function (req, res) {
+router.post('/register', function (req, res) {
     const name = req.body.name;
     const email = req.body.email;
     const username = req.body.username;
@@ -60,69 +60,38 @@ router.post('/register', authenticate, upload.single('image'), function (req, re
 
     let errors = req.validationErrors();
     if (errors){
+        console.log(errors);
         res.render('register', {
             errors: errors
         });
     }else{
-        if (req.file){
-            let newUser = new User({
-                name: name,
-                email: email,
-                username: username,
-                password: password,
-                image_url: req.file.originalname,
-            });
+        let newUser = new User({
+            name: name,
+            email: email,
+            username: username,
+            password: password,
+        });
 
-            bcrypt.genSalt(10, function (err, salt) {
-                bcrypt.hash(newUser.password, salt, function (err, hash) {
+        bcrypt.genSalt(10, function (err, salt) {
+            bcrypt.hash(newUser.password, salt, function (err, hash) {
+                if (err){
+                    console.log(err);
+                }
+
+                newUser.password = hash;
+                newUser.save(function (err) {
                     if (err){
                         console.log(err);
+                    }else{
+                        //req.flash('success', 'You are now registered and can log in.');
+                        console.log(JSON.stringify(newUser));
+                        res.redirect('/home');
                     }
-
-                    newUser.password = hash;
-                    newUser.save(function (err) {
-                        if (err){
-                            console.log(err);
-                            return;
-                        }else{
-                            req.flash('success', 'You are now registered and can log in.');
-                            res.redirect('/users/login');
-                        }
-                    })
-                });
+                })
             });
-        }
-        else {
-            let newUser = new User({
-                name: name,
-                email: email,
-                username: username,
-                password: password,
-            });
-
-            bcrypt.genSalt(10, function (err, salt) {
-                bcrypt.hash(newUser.password, salt, function (err, hash) {
-                    if (err){
-                        console.log(err);
-                    }
-
-                    newUser.password = hash;
-                    newUser.save(function (err) {
-                        if (err){
-                            console.log(err);
-                            return;
-                        }else{
-                            req.flash('success', 'You are now registered and can log in.');
-                            res.redirect('/users/login');
-                        }
-                    })
-                });
-            });
-        }
+        });
     }
-
 });
-
 
 // Login Form
 router.get('/login', function (req, res) {

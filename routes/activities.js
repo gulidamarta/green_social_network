@@ -66,23 +66,13 @@ router.post('/create', mustAuthenticated, function (req, res) {
         activity.activityPlace_id = activityPlace._id;
         activity.activitySchedule_id = activitySchedule._id;
 
-        // let chat = new Chats();
-        // chat.title = req.body.name;
-
         activity.save(function (err) {
             if (err){
                 console.log(err);
             }
             else{
-                // chat.save(function (err) {
-                //     if (err){
-                //         console.log(err);
-                //     }
-                // });
-
-                req.flash('success', 'Activity added.');
                 console.log(activity)
-                res.redirect('/home');
+                res.redirect('/activities/list');
             }
         });
     }
@@ -182,24 +172,33 @@ router.get('/:id', function (req, res){
     });
 });
 
-router.post('/device/add', function(req, resp){
+router.post('/device/add', function(req, resp) {
     let device = Device();
-    device.device_id = req.query.device_id;
-    device.latitude = req.query.latitude;
-    device.longitude = req.query.longitude;
-    device.temperature = req.query.temperature;
-    device.humidity = req.query.humidity;
-    device.dew_point = req.query.dew_point;
-    device.carbon_dioxide = req.query.carbon_dioxide;
-    device.tvoc = req.query.tvoc;
-    device.formaldehyde = req.query.formaldehyde;
-    device.toluene = req.query.toluene;
-    device.cpm = req.query.cpm;
+    device.device_id = req.body.device_id;
+    if (req.body.latitude === 0) {
+        device.latitude = 53.91219420941381;
+    } else {
+        device.latitude = req.body.latitude
+    }
+    if (req.body.longitude === 0){
+        device.longitude = 27.594676804633927;
+    } else {
+        device.longitude = req.body.longitude;
+    }
+    device.temperature = req.body.temperature;
+    device.humidity = req.body.humidity;
+    device.dew_point = req.body.dew_point;
+    device.carbon_dioxide = req.body.carbon_dioxide;
+    device.tvoc = req.body.tvoc;
+    device.formaldehyde = req.body.formaldehyde;
+    device.toluene = req.body.toluene;
+    device.cpm = req.body.cpm;
 
     device.save(function(err){
         if (err){
             console.log(err);
         } else {
+            console.log(JSON.stringify(device));
             resp.send(device)
         }
     })

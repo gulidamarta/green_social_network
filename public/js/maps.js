@@ -55,6 +55,7 @@ let chartContainerTvoc = new CanvasJS.Chart("chartContainerTvoc", {
     axisY: {
         //title: "Units Sold",
         valueFormatString: "#,0.####",
+        // need value in ppm
         suffix: "mg/m3",
         stripLines: [{
             value: 0.601,
@@ -94,6 +95,7 @@ let chartFormaldehyde = new CanvasJS.Chart("chartContainerFormaldehyde", {
     axisY: {
         //title: "Units Sold",
         valueFormatString: "#,0.####",
+        // ppm
         suffix: "mg/m3",
         stripLines: [{
             value: 0.301,
@@ -205,13 +207,25 @@ let chartRadiation = new CanvasJS.Chart("chartContainerRadiation", {
 
 function createCircle(coordinates, radius){
     myCircle = new ymaps.Circle([
+        // Координаты центра круга.
         coordinates,
+        // Радиус круга в метрах.
         radius
     ], {
-        fillColor: '#00FF00',
-        strokeColor: '#2a7a37',
-        opacity: 0.1,
-        strokeWidth: 2,
+        // Содержимое балуна.
+        balloonContent: "Радиус круга - 10 км",
+    }, {
+        // Задаем опции круга.
+        // Включаем возможность перетаскивания круга.
+        draggable: true,
+        // Цвет заливки.
+        // Последний байт (77) определяет прозрачность.
+        // Прозрачность заливки также можно задать используя опцию "fillOpacity".
+        fillColor: "#DB709377",
+        // Цвет обводки.
+        strokeColor: "#990066",
+        strokeOpacity: 0.1,
+        strokeWidth: 1
     });
 
     return myCircle;
