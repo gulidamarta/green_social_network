@@ -151,7 +151,7 @@
     box-shadow: 2px 5px 5px #b8b8b8;
     width: 75%;
     color: #21461B;
-    background: url('/icons/test_profile_photo_1.png') no-repeat 15px 10px;
+    background: url('/icons/circle_ico_default.png') no-repeat 15px 10px;
     background-size: 50px 50px;
     background-color: white;
     padding-left: 15%;
@@ -165,6 +165,22 @@
     border: None;
     background-color: #21461B;
     color: white;
+    cursor: pointer;
+}
+
+.chat_link_selected{
+    border: None;
+    border-radius: 15px;
+    height: 80px;
+    box-shadow: 2px 5px 5px #b8b8b8;
+    width: 75%;
+    color: white;
+    background: url('/icons/first_activity_img_round.png') no-repeat 15px 10px;
+    background-size: 50px 50px;
+    background-color: #21461B;
+    padding-left: 15%;
+    font-size: 120%;
+    font-family: Roboto;
     cursor: pointer;
 }
 
@@ -359,12 +375,24 @@
         font-size: 16px;
     }
 
+    .chat_link_selected{
+        height: 65px;
+        padding-left: 23%;
+        width: 67%;
+        font-size: 16px;
+    }
+
     .chat_link:focus{
         font-size: 16px;
     }
 
+    .chat_link_selected:focus{
+        font-size: 16px;
+        outline: None;
+    }
+
     .header_section{
-        height: 17.5%;
+        height: 16%;
     }
 
     .header_section__text .header_username{
@@ -391,7 +419,7 @@
         margin-left: 3%;
         width: 80px;
         height: 80px;
-        border-radius: 360px;
+        border-radius: 50%;
     }
 
     .header_username{

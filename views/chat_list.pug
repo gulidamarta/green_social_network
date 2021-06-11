@@ -70,12 +70,16 @@ html
                 </section>
                 ul.list-group(class='chat_list_ul')
                     each chat, i in chat_list
-                        li.list-group-item(class='chat_list_item')
-                            input(class='chat_link' type='url' style='background: url('+chat.photo_url+') no-repeat 15px 10px; background-size: 50px 50px; -moz-border-radius: 360px;' name='chat_link' default="/chats/" + chat._id value=chat.title readonly)
+                        if (i === 0)
+                            li.list-group-item(class='chat_list_item')
+                                input(class='chat_link_selected' type='url' name='chat_link' default="/chats/" + chat._id value=chat.title readonly)
+                        else if (i > 0)
+                            li.list-group-item(class='chat_list_item')
+                                input(class='chat_link' type='url' style='background: url('+chat.photo_url+') no-repeat 15px 10px; background-size: 50px 50px; background-color: white' name='chat_link' default="/chats/" + chat._id value=chat.title readonly)
             </section>
             <section class='right_section'>
                 <section class='header_section'>
-                    <img class='chat_image' src='/icons/first_activity_img.jpg'/>
+                    <img class='chat_image' src='/icons/first_activity_img_round.png'/>
                     <section class='header_section__text'>
                         <h1 class='header_username'>Cycle to work scheme</h1>
                         <h1 class='header_last_seen'>2 Members</h1>

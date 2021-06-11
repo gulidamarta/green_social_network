@@ -3,9 +3,7 @@ const chatMessages = document.querySelector('.chat-messages');
 
 const socket = io();
 
-// News Model
-// let Messages = require('/models/message');
-document.getElementsByClassName("chat_link")[0].focus();
+//document.getElementsByClassName("chat_link")[0].focus();
 
 // Message from server
 socket.on('message', function (message) {
