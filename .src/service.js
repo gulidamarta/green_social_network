@@ -30,7 +30,7 @@ db.once('open', function () {
         const adminName = 'Chat Admin';
 
         // Welcome current user
-        socket.emit('message', formatMessage(adminName, 'Welcome to CharCord!'));
+        //socket.emit('message', formatMessage(adminName, 'Welcome to activity chat!'));
 
         // Broadcast when a user connects
         // emit message for everybody except that user, who emits
@@ -43,7 +43,7 @@ db.once('open', function () {
 
         // Listen for chatMessage
         socket.on('chatMessage', function (msg) {
-            io.emit('message', formatMessage('Current User', msg));
+            io.emit('message', formatMessage(msg));
         });
     });
 });

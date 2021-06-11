@@ -83,13 +83,13 @@
 
 .add_chat_btn{
     background:transparent url("/icons/icon-plus.png") no-repeat center;
-    background-size: 50px 50px;
-    width: 50px;
-    height: 50px;
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
     border: None;
     border-radius: 90px;
     margin-top: 5%;
-    padding-left: 110%;
+    padding-left: 115%;
 }
 
 .add_chat_btn:focus{
@@ -125,7 +125,8 @@
     background: None;
     background-color: white;
     padding-left: 5%;
-    width: 70%
+    width: 70%;
+    color: black;
 }
 
 .input_search_text:focus::placeholder{
@@ -199,7 +200,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 50px;
-    margin-left: 60%;
+    margin-left: 52%;
 }
 
 .messages_section{
@@ -211,16 +212,10 @@
 
 .input_msg_text{
     font-family: Roboto;
-    font-size: 95%;
-    color: #746E69;
-    font-weight: lighter;
     background-color: #EBF9E5;
     border-radius: 45px;
     border: None;
     width: 100%;
-    height: 50px;
-    margin-top: 46%;
-    position: relative;
     z-index: 10;
     padding-left: 20px;
 }
@@ -234,17 +229,43 @@
     color: transparent;
 }
 
+.send_msg_area{
+    font-family: Roboto;
+    font-size: 110%;
+    color: #746E69;
+    font-weight: lighter;
+    background-color: #EBF9E5;
+    border-radius: 90px;
+    border: None;
+    width: 62%;
+    height: 55px;
+    position: fixed;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: #436D3F;
+    box-shadow: 2px 2px 2px #b8b8b8;
+}
+
+.time_p{
+    font-family: Roboto;
+    font-size: 95%;
+    color: #746E69;
+    font-weight: lighter;
+    alignment: center;
+    margin-left: 40%;
+}
+
 .input_msg_div{
     position: relative;
 }
 
 .post_msg{
-    position: absolute;
     background:transparent url("/icons/icons8-telegram-app-480.png") no-repeat center;
-    background-size: 50px 50px;
+    background-size: 65px 65px;
     border-radius: 180px;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border: None;
     cursor: pointer;
     z-index: 2;
@@ -252,6 +273,47 @@
 
 .post_msg:focus{
     outline: None;
+}
+
+.chat-messages{
+    padding-bottom: 77px;
+}
+
+.chat-messages{
+    font-family: Roboto;
+    font-size: 95%;
+}
+
+.another_user_div{
+    background-color: #BBD6A3;
+    border-radius: 90px;
+    color: black;
+    max-width: 40%;
+    height: 50px;
+    font-weight: lighter;
+}
+
+.message{
+    background-color: #21461B;
+    border-radius: 90px;
+    color: white;
+    max-width: 40%;
+    min-width: 30%;
+    height: 50px;
+    font-weight: lighter;
+    margin-left: 60%;
+}
+
+.text{
+    padding-top: 4%;
+    padding-left: 7%;
+    font-weight: lighter;
+}
+
+.meta{
+    padding-top: 4%;
+    padding-left: 7%;
+    font-weight: lighter;
 }
 
 @media only screen and (max-width: 1900px) {
@@ -329,11 +391,12 @@
         margin-left: 3%;
         width: 80px;
         height: 80px;
+        border-radius: 360px;
     }
 
     .header_username{
         font-size: 18px;
-        padding-top: 5%;
+        padding-top: 0;
     }
 
     .header_last_seen{

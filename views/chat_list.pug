@@ -71,14 +71,14 @@ html
                 ul.list-group(class='chat_list_ul')
                     each chat, i in chat_list
                         li.list-group-item(class='chat_list_item')
-                            input(class='chat_link' type='url' name='chat_link' default="/chats/" + chat._id value=chat.title readonly)
+                            input(class='chat_link' type='url' style='background: url('+chat.photo_url+') no-repeat 15px 10px; background-size: 50px 50px; -moz-border-radius: 360px;' name='chat_link' default="/chats/" + chat._id value=chat.title readonly)
             </section>
             <section class='right_section'>
                 <section class='header_section'>
-                    <img class='chat_image' src='/icons/test_profile_photo_1.png'/>
+                    <img class='chat_image' src='/icons/first_activity_img.jpg'/>
                     <section class='header_section__text'>
-                        <h1 class='header_username'>Sara Delyu</h1>
-                        <h1 class='header_last_seen'>Last seen 2 hours ago</h1>
+                        <h1 class='header_username'>Cycle to work scheme</h1>
+                        <h1 class='header_last_seen'>2 Members</h1>
                     </section>
                     <section class='more_buttons_section'>
                         button(class='more_button')
@@ -89,19 +89,21 @@ html
                 <section class='messages_section'>
                     div(id='chat')
                         form(id='chat-form')
-                            br
                             div(class='chat-messages')
                                 p(class='time_p')='Today 12:23 AM'
                                 each message_item, i in message_list
-                                    p(class="meta")= message_item.username
-                                    span=message_item.date
-                                    p(class="text")=message_item.text
+                                    if (message_item.username === 'Chat Admin')
+                                        <div class='current_user_div'>
+                                            p(class="text")=message_item.text
+                                        </div>
+                                    else
+                                        <div class='another_user_div'>
+                                            p(class="text")=message_item.text
+                                        </div>
 
-                            br
-                            #form-group
-                                textarea.form-control(id='msg' class='input_msg_text' name='message' placeholder='Type a message here ...' required autocomplete="on")
-                            br
-                            input.btn.btn-primary(class="post_msg" type='submit', value='')
+                            #form-group(class='send_msg_area')
+                                input.form-control(id='msg' class='input_msg_text' name='message' placeholder='Type a message here ...' required autocomplete="on")
+                                input.btn.btn-primary(class="post_msg" type='submit', value='')
                     script(
                         src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
                         integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="

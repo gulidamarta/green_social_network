@@ -8,11 +8,13 @@ let chatsSchema = mongoose.Schema({
     },
     created_at: {
         type: Date,
-        required: true
+        required: true,
+        default: Date.now()
     },
-    photo_id: {
-        type: mongoose.Schema.Types.ObjectID,
-        required: false
+    photo_url: {
+        type: String,
+        required: true,
+        default: '/icons/ico_default.jpg',
     }
 });
 
