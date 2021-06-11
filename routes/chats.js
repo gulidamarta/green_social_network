@@ -18,19 +18,26 @@ function mustAuthenticated(req, res, next) {
 }
 
 
-router.get('/', mustAuthenticated, function (req, res) {
+router.get('/', function (req, res) {
     Chats.find({}, function (err, chat_list) {
         if (err){
             console.log(err);
         } else {
-            res.render('chat_list', {
-                chat_list: chat_list
-            });
+            Messages.find({char_room_id: chat_list[0].chat_room_id}, function (err, message_list){
+                if (err){
+                    console.log(err);
+                } else{
+                    res.render('chat_list', {
+                        chat_list: chat_list,
+                        message_list: message_list
+                    });
+                }
+            })
         }
     });
 });
 
-router.get('/:id', mustAuthenticated, function (req, res) {
+router.get('/:id', function (req, res) {
     Messages.find({chat_room_id: req.params.id}, function(err, message_list) {
         if (err){
             console.log(err);

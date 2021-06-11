@@ -49,6 +49,7 @@
     background-color: #EBF9E5;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .right_section{
@@ -58,7 +59,7 @@
 }
 
 .header_section{
-    height: 15%;
+    height: 20%;
     display: flex;
     flex-direction: row;
     background-color: #EBF9E5;
@@ -105,8 +106,8 @@
     height: 50px;
     width: 75%;
     margin-left: 15%;
-    background: url('/icons/icon-search.png') no-repeat 15px 10px;
-    background-size: 25px 25px;
+    background: url('/icons/icon-search.png') no-repeat 17px 15px;
+    background-size: 22px 22px;
     background-color: white;
     box-shadow: 2px 5px 5px #b8b8b8;
     color: #C4C4C4;
@@ -114,7 +115,7 @@
 
 .input_search_text::placeholder{
     padding-left: 10%;
-    padding-top: 5%;
+    padding-top: 10%;
 }
 
 .input_search_text:focus{
@@ -149,12 +150,13 @@
     box-shadow: 2px 5px 5px #b8b8b8;
     width: 75%;
     color: #21461B;
-    background: url('/icons/test_profile_photo_1.png') no-repeat 15px 15px;
+    background: url('/icons/test_profile_photo_1.png') no-repeat 15px 10px;
     background-size: 50px 50px;
     background-color: white;
     padding-left: 15%;
     font-size: 120%;
     font-family: Roboto;
+    cursor: pointer;
 }
 
 .chat_link:focus{
@@ -162,6 +164,7 @@
     border: None;
     background-color: #21461B;
     color: white;
+    cursor: pointer;
 }
 
 .chat_image{
@@ -177,7 +180,7 @@
 }
 
 .header_section__text .header_username{
-    margin-top: 25%;
+    margin-top: 30%;
     font-family: Roboto;
     font-size: 150%;
     margin-bottom: 10%;
@@ -192,8 +195,63 @@
     padding-top: 0;
 }
 
-.more_button{
+.more_buttons_section{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-left: 60%;
+}
 
+.messages_section{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input_msg_text{
+    font-family: Roboto;
+    font-size: 95%;
+    color: #746E69;
+    font-weight: lighter;
+    background-color: #EBF9E5;
+    border-radius: 45px;
+    border: None;
+    width: 100%;
+    height: 50px;
+    margin-top: 46%;
+    position: relative;
+    z-index: 10;
+    padding-left: 20px;
+}
+
+.input_msg_text:focus{
+    outline: None;
+    padding-left: 20px;
+}
+
+.input_msg_text:focus::placeholder{
+    color: transparent;
+}
+
+.input_msg_div{
+    position: relative;
+}
+
+.post_msg{
+    position: absolute;
+    background:transparent url("/icons/icons8-telegram-app-480.png") no-repeat center;
+    background-size: 50px 50px;
+    border-radius: 180px;
+    width: 70px;
+    height: 70px;
+    border: None;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.post_msg:focus{
+    outline: None;
 }
 
 @media only screen and (max-width: 1900px) {
@@ -206,42 +264,45 @@
     }
 
     .main_icon{
+        margin-top: 10px;
         width: 3%;
-        height: 5%;
+        height: 8%;
+        margin-left: 10px;
     }
 
     .chats_header{
-        font-size: 36px;
+        font-size: 32px;
     }
 
     .add_chat_btn{
-        padding-left: 95%;
+        padding-left: 100%;
         background-size: 40px 40px;
         width: 40px;
         height: 40px;
     }
 
     .input_search_text{
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .input_search_text::placeholder{
         padding-left: 15%;
+        padding-top: 10px;
     }
 
     .chat_link{
-        height: 70px;
+        height: 65px;
         padding-left: 23%;
         width: 67%;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .chat_link:focus{
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .header_section{
-        height: 10%;
+        height: 17.5%;
     }
 
     .header_section__text .header_username{
@@ -255,17 +316,31 @@
     }
 
     .more_button{
-        margin-top: 50px;
-        margin-left: 60%;
-        width: 10px;
-        height: 10px;
-        border-radius: 180px;
+        width: 2px;
+        height: 12px;
+        border-radius: 360px;
         border: None;
         color: #21461B;
-        background-color: #21461B;
+        background-color: #C4C4C4;
+        margin-left: 5px;
     }
 
     .chat_image{
         margin-left: 3%;
+        width: 80px;
+        height: 80px;
+    }
+
+    .header_username{
+        font-size: 18px;
+        padding-top: 5%;
+    }
+
+    .header_last_seen{
+        font-size: 14px;
+    }
+
+    .left_section{
+        height: 620px;
     }
 }

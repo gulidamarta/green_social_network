@@ -80,9 +80,36 @@ html
                         <h1 class='header_username'>Sara Delyu</h1>
                         <h1 class='header_last_seen'>Last seen 2 hours ago</h1>
                     </section>
-                    button(class='more_button')
+                    <section class='more_buttons_section'>
+                        button(class='more_button')
+                        button(class='more_button')
+                        button(class='more_button')
+                    </section>
                 </section>
                 <section class='messages_section'>
+                    div(id='chat')
+                        form(id='chat-form')
+                            br
+                            div(class='chat-messages')
+                                p(class='time_p')='Today 12:23 AM'
+                                each message_item, i in message_list
+                                    p(class="meta")= message_item.username
+                                    span=message_item.date
+                                    p(class="text")=message_item.text
+
+                            br
+                            #form-group
+                                textarea.form-control(id='msg' class='input_msg_text' name='message' placeholder='Type a message here ...' required autocomplete="on")
+                            br
+                            input.btn.btn-primary(class="post_msg" type='submit', value='')
+                    script(
+                        src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+                        integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+                        crossorigin="anonymous"
+                    )
+                    script(src="/socket.io/socket.io.js")
+                    script
+                        include ../public/js/chat.js
                 </section>
             </section>
         </section>
