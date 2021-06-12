@@ -1,0 +1,153 @@
+.flex-box-container{
+    display: flex;
+}
+
+.div_map{
+    width: 100%;
+    height: 900px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1%;
+}
+
+.body{
+    margin: 0;
+}
+
+.gsn_header{
+    flex-direction: row;
+}
+
+.main_icon{
+    margin-left: 3%;
+    margin-top: 32px;
+    width: 4.5%;
+    height: 6.5%;
+}
+
+.header_links{
+    float: none;
+    list-style-type: none;
+    overflow: hidden;
+    margin-right: 32px;
+}
+
+.header_link{
+    float: right;
+    margin-left: 0;
+    margin-top: 32px;
+    margin-right: 5%;
+}
+
+.a_header{
+    color: #746E69;
+    font-size: 44px;
+    text-decoration: none;
+    display: block;
+    font-family: Roboto, Serif;
+}
+
+.a_header_selected{
+    color: black;
+    font-size: 44px;
+    text-decoration: none;
+    display: block;
+    font-family: Roboto, Serif;
+}
+
+.header_section{
+    display: flex;
+    flex-direction: row;
+}
+
+.top_section{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+}
+
+.news_name_h{
+    color: black;
+    font-size: 26px;
+    font-family: Roboto, Serif;
+    font-weight: normal;
+    width: 50%;
+}
+
+.news_publication_date{
+    color: #746E69;
+    font-size: 18px;
+    font-family: Roboto, Serif;
+    font-weight: normal;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.new_category_name{
+    color: #746E69;
+    font-size: 18px;
+    font-family: Roboto, Serif;
+    font-weight: normal;
+    padding-bottom: 5px;
+    margin:0;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.edit_news_btn{
+    margin-top: 20px;
+    margin-left: 1180%;
+    background:transparent url("/icons/icon-edit.png") no-repeat center;
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
+    border: None;
+}
+
+.news_category_div{
+    border-radius: 45px;
+    background-color: #ebf5e6;
+    width: 11%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.news_text_block{
+    margin: 20px 5%;
+}
+
+.first_block{
+    width: 100%;
+    font-family: Roboto, Serif;
+    font-weight: 300;
+    font-size: 22px;
+    color: black;
+}
+
+.news_img{
+    align-content: center;
+    margin-left: 30%;
+}
+
+@media only screen and (max-width: 1900px) {
+    .a_header {
+        font-size: 26px;
+    }
+
+    .a_header_selected {
+        font-size: 26px;
+    }
+
+    .title_gsn {
+        font-size: 40px;
+    }
+
+    .main_icon {
+        margin-top: 10px;
+        width: 3%;
+        height: 8%;
+    }
+}

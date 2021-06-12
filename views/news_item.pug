@@ -2,8 +2,8 @@ html
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <title>News</title>
-        link(rel="stylesheet", href="/css/news.css", type="text/css")
+        title=news_item.title
+        link(rel="stylesheet", href="/css/news_item.css", type="text/css")
         link(rel="icon" href="/icons/world.png")
     </head>
     block content
@@ -57,61 +57,20 @@ html
             </li>
         </ul>
         </div>
-        <section class="add_activity_section">
-            <form class="add_activity_form" action="/activities/add">
-                <input class='add_activity_btn' type="submit" value="">
-            </form>
-            <h1>Create</h1>
-        </section>
-        <section class='search_sort_section'>
-            form(method='GET', action='/news/search_by_name')
-                #form-group
-                    input(class='input_search_text' type='text' name='search_text' placeholder='Search')
-            form(method='GET', action='/news/sort_by_category')
-                #form-group
-                    <select class="news_by_category" id="news_by_category" name="news_by_category">
-                        <option class="news_category_opt" value="latest">Latest news</option>
-                        <option class="news_category_opt" value="old">Old news</option>
-                        <option class="news_category_opt" value="inner">Inner news</option>
-                    </select>
-        </section>
-        <section class='new_section'>
-            <section class='first_row_news'>
-                a(class='news_link' href='/news/' + news_list[0]._id)
-                    <div class='first_news'>
-                        img(class="news_img" src=news_list[0].image_url)
-                        h1(class='news_header')=news_list[0].title
-                        <p class='new_publication_date'>Published at 22:04</p>
-                        p(class='news_short_description')=news_list[0].short_description
-                    </div>
-                a(class='news_link_second' href='/news/' + news_list[1]._id)
-                    <div class='second_news'>
-                        img(class="news_img" src=news_list[1].image_url)
-                        h1(class='news_header')=news_list[1].title
-                        <p class='new_publication_date'>Published on 10 June 2021</p>
-                        p(class='news_short_description')=news_list[1].short_description
-                    </div>
+        <section class='top_section'>
+            <section class='header_section'>
+                h1(class='news_name_h')=news_item.title
+                form(action="/news/edit/" + news_item._id)
+                    <input class="edit_news_btn" type="submit" value="">
             </section>
-            <section class='space_section'></section>
-            <section class='first_row_news'>
-                a(class='news_link' href='/news/' + news_list[2]._id)
-                    <div class='first_news'>
-                        img(class="news_img" src=news_list[2].image_url)
-                        h1(class='news_header')=news_list[2].title
-                        <p class='new_publication_date'>Published on 9 June 2021</p>
-                        p(class='news_short_description')=news_list[2].short_description
-                    </div>
-                a(class='news_link_second' href='/news/' + news_list[3]._id)
-                    <div class='second_news'>
-                        img(class="news_img" src=news_list[3].image_url)
-                        h1(class='news_header')=news_list[3].title
-                        <p class='new_publication_date'>Published on 18 May 2021</p>
-                        p(class='news_short_description')=news_list[3].short_description
-                    </div>
-            </section>
+            p(class='news_publication_date')='Published at 22:04'
+            <div class='news_category_div'>
+                p(class='new_category_name')='Nuclear Energy'
+            </div>
         </section>
-        <section class="load_more_btn">
-            <form action="/news/load_more">
-                <input type="submit" value="Load more">
-            </form>
+        <section class='news_text_block'>
+            p(class='first_block')='The Belarusian NPP will consist of two power units with a total capacity of up to 2400 (2x1200) MW.\n' + '\n'+'Its location is the Ostrovets site of the Grodno region.\n'+'\n'+'For the Belarusian NPP the Russian project “NPP-2006” was chosen with water-cooled reactors (VVER) of the third generation. Generation 3 - advanced reactors of increased safety and reliability. This project complies with modern international requirements for nuclear and radiation safety.'
+            p(class='first_block')='Building a nuclear plant requires a large area, especially the one near a natural water body. This is because nuclear power plants need water in order to expel heat which is part of their condenser system. This is usually achieved with clearing of forests which can disturb the natural habitat of myriad of creatures that live nearby. Moreover, this can also disrupt the ecological balance of the region.'
+            img(class='news_img' src='/icons/news_main.png')
+            p(class='first_block')='In mid-2006 the government approved a plan for the construction of an initial 2000 MWe PWR nuclear power plant in the Mogilev region of eastern Belarus. This was expected to provide electricity at half the cost of that from Russian gas and to provide some 30% of the country\'s electricity by 2020 at a cost of about €4 billion (January 2008 estimate) on a turnkey basis.'
         </section>

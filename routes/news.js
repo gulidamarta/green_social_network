@@ -137,20 +137,72 @@ router.get('/delete/:id', function (req, res) {
 // Get Single News
 router.get('/:id', function (req, res) {
     News.findById(req.params.id, function (err, news_item) {
-        User.findById(news_item.author, function (err, user) {
-            res.render('news', {
-                news_item: news_item,
-                author: user.name
-            });
+        res.render('news_item', {
+            news_item: news_item,
         });
     });
 });
 
 // News List Page
 router.get('', function (req, res){
-    res.render(
-        'news'
-    )
+    // let news_1 = News();
+    // news_1.title = 'Construction of a nuclear power plant';
+    // news_1.image_url = '/icons/news_1.jpg';
+    // news_1.short_description = 'Building a nuclear plant requires \n' +
+    //     'a large area, especially the one near \n' +
+    //     'a natural water body...';
+    // news_1.body = '';
+    //
+    // let news_2 = News();
+    // news_2.title = 'Forest loss escalates biodiversity change';
+    // news_2.image_url = '/icons/news_2.jpg';
+    // news_2.short_description = 'The research, led by the university of Edinburgh and the University of \n' +
+    //     'St Andrews, investigated the mpacts...';
+    // news_2.body = '';
+    //
+    // let news_3 = News();
+    // news_3.title = 'Antarctic sea ice loss explained in a new study';
+    // news_3.image_url = '/icons/news_3.jpg';
+    // news_3.short_description = 'Sea ice surrounding Antarctica provides an important habitat for many species including penguins and seals...';
+    // news_3.body = '';
+    //
+    // let news_4 = News();
+    // news_4.title = 'Ban new gas boilers from 2025 to reach net-zero ';
+    // news_4.image_url = '/icons/news_4.jpg';
+    // news_4.short_description = 'The International Energy Agency (IEA) says that no new fossil fuel boilers should be sold from 2025...';
+    // news_4.body = '';
+    //
+    // news_1.save(function (err){
+    //     if (err){
+    //         console.log(err);
+    //     }
+    // });
+    // news_2.save(function (err){
+    //     if (err){
+    //         console.log(err);
+    //     }
+    // });
+    // news_3.save(function (err){
+    //     if (err){
+    //         console.log(err);
+    //     }
+    // });
+    // news_4.save(function (err){
+    //     if(err){
+    //         console.log(err);
+    //     }
+    // });
+    News.find({}, function(err, news_list){
+        if(err){
+            console.log(err);
+        } else{
+            res.render(
+                'news',{
+                    news_list: news_list
+                }
+            )
+        }
+    })
 })
 
 module.exports = router;
