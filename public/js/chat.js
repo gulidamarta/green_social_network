@@ -46,6 +46,7 @@ function outputMessage(message) {
 
     const div = document.createElement('div');
     div.classList.add('message');
+    //document.getElementsByClassName('p_last_chat_msg').innerHTML = message.text;
     div.innerHTML = '<p class="meta">'
         + message.username + ' ' +
         '<span>'
@@ -55,4 +56,5 @@ function outputMessage(message) {
         message.text +
         '</p>';
     document.querySelector('.chat-messages').appendChild(div);
+    document.querySelector('.p_last_chat_msg_selected').innerHTML='Me: ' + message.username;
 }

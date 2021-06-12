@@ -6,16 +6,17 @@ let chatsSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    created_at: {
-        type: Date,
-        required: true,
-        default: Date.now()
-    },
     photo_url: {
         type: String,
         required: true,
         default: '/icons/ico_default.jpg',
+    },
+    last_msg: {
+        type: String,
+        required: false,
     }
 });
+
+chatsSchema.set('timestamps', true);
 
 let Chats = module.exports = mongoose.model('Chats', chatsSchema);

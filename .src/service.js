@@ -43,6 +43,7 @@ db.once('open', function () {
 
         // Listen for chatMessage
         socket.on('chatMessage', function (msg) {
+            //document.getElementsByClassName('p_last_chat_msg').innerHTML = msg;
             io.emit('message', formatMessage(msg));
         });
     });

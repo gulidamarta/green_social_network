@@ -72,10 +72,20 @@ html
                     each chat, i in chat_list
                         if (i === 0)
                             li.list-group-item(class='chat_list_item')
-                                input(class='chat_link_selected' type='url' name='chat_link' default="/chats/" + chat._id value=chat.title readonly)
+                                <section class='first_row_chat_item'>
+                                    input(class='chat_link_selected' type='url' name='chat_link' default="/chats/" + chat._id value='' readonly)
+                                    p(class='activity_name_p_selected')=chat.title
+                                    p(class='last_chat_msg_time_selected')=chat.updatedAt.getHours()+':'+chat.updatedAt.getMinutes()+' AM'
+                                </section>
+                                p(class='p_last_chat_msg_selected')=chat.last_msg
                         else if (i > 0)
                             li.list-group-item(class='chat_list_item')
-                                input(class='chat_link' type='url' style='background: url('+chat.photo_url+') no-repeat 15px 10px; background-size: 50px 50px; background-color: white' name='chat_link' default="/chats/" + chat._id value=chat.title readonly)
+                                <section class='first_row_chat_item'>
+                                    input(class='chat_link' type='url' style='background: url('+chat.photo_url+') no-repeat 15px 10px; background-size: 50px 50px; background-color: white' name='chat_link' default="/chats/" + chat._id value='' readonly)
+                                    p(class='activity_name_p')=chat.title
+                                    p(class='last_chat_msg_time_selected')=chat.updatedAt.getHours() - i + ':' + chat.updatedAt.getMinutes() + ' AM'
+                                </section>
+                                p(class='p_last_chat_msg')=chat.last_msg
             </section>
             <section class='right_section'>
                 <section class='header_section'>
